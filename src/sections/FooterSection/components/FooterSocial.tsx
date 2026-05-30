@@ -7,7 +7,7 @@ export const FooterSocial = () => {
       <div className="box-border caret-transparent gap-x-0 flex flex-col gap-y-3">
         <div className="text-[15px] box-border caret-transparent leading-6 text-white/80 md:text-base">
           <div className="font-medium text-white mb-1">Location</div>
-          <div>Glasgow + Stirling<br />Central Scotland</div>
+          <div>Killearn Workshop<br />Loch Lomond & Glasgow West End</div>
         </div>
         <div className="text-[15px] box-border caret-transparent leading-6 text-white/80 md:text-base">
           <div className="font-medium text-white mb-1">Phone</div>

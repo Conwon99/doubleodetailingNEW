@@ -1,4 +1,4 @@
-import { packagesData, categoryLabels } from "../../data/packages";
+import { packagesData, categoryLabels, PRICE_DISCLAIMER_TEXT } from "../../data/packages";
 import type { PackageData } from "../../data/packages";
 
 const categoryOrder: PackageData["category"][] = [
@@ -8,7 +8,7 @@ const categoryOrder: PackageData["category"][] = [
 ];
 
 /** Gallery image for packages hero background */
-const PACKAGES_HERO_IMAGE = "/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM (3).jpeg";
+const PACKAGES_HERO_IMAGE = "/landrover.jpeg";
 
 /** Service section images from home page - used as section headers */
 const categoryImages: Record<PackageData["category"], string> = {
@@ -71,11 +71,29 @@ export const PackagesOverview = () => {
                     >
                       {pkg.imageUrl && (
                         <div className="relative w-full md:w-[320px] lg:w-[380px] md:min-h-[200px] md:shrink-0 aspect-[4/3] md:aspect-auto bg-neutral-100 overflow-hidden">
-                          <img
-                            src={pkg.imageUrl}
-                            alt=""
-                            className="w-full h-full object-cover"
-                          />
+                          {pkg.id === "casino-royale" ? (
+                            <div className="grid grid-cols-3 gap-1 h-full w-full p-1 bg-black">
+                              {[
+                                "/packages/casino-royale-gallery-1.jpeg",
+                                "/packages/casino-royale-gallery-2.jpeg",
+                                "/packages/casino-royale-gallery-3.jpeg",
+                              ].map((src, index) => (
+                                <img
+                                  key={src}
+                                  src={src}
+                                  alt={`Casino Royale image ${index + 1}`}
+                                  className="w-full h-full object-cover rounded-sm"
+                                  loading="lazy"
+                                />
+                              ))}
+                            </div>
+                          ) : (
+                            <img
+                              src={pkg.imageUrl}
+                              alt=""
+                              className="w-full h-full object-cover"
+                            />
+                          )}
                         </div>
                       )}
                       <div className="p-5 md:p-6 flex-1 flex flex-col min-w-0">
@@ -159,6 +177,17 @@ export const PackagesOverview = () => {
                 </li>
                 <li>
                   <span className="font-refrigerator uppercase text-base md:text-lg font-bold text-black">
+                    <a href="/jet-ski-detailing" className="hover:text-cta-dark hover:underline">
+                      Jet Ski and Boat Detailing
+                    </a>
+                  </span>
+                  <span className="font-figtree text-[15px] text-gray-700 leading-6">
+                    {" "}
+                    — Specialist jet ski and boat detailing and protection at our Killearn workshop (unit-based, year-round).
+                  </span>
+                </li>
+                <li>
+                  <span className="font-refrigerator uppercase text-base md:text-lg font-bold text-black">
                     Fabric Coating (Interior){" "}
                     <span className="font-normal normal-case text-[13px] md:text-sm text-gray-600">
                       (Starts from £75)
@@ -177,57 +206,68 @@ export const PackagesOverview = () => {
                 WHICH PACKAGE IS RIGHT FOR YOU?
               </h3>
               <img
-                src="/Picture1.png"
+                src="/packageoverview.png"
                 alt="Which package is right for you"
                 className="mx-auto mb-4 max-w-[680px] w-full h-auto rounded-lg border border-neutral-200 bg-white"
                 loading="lazy"
               />
               <p className="font-figtree text-[15px] text-gray-600 md:text-base leading-6">
                 We know choosing a package isn't the easiest for most to decipher, so we have created a section to know what is best
-                for your vehicle. All packages are crafted with care to deliver optimal results for your vehicle. Below is a summary
-                of main packages, but be sure to check out our special services as well.
+                for your vehicle. Explore our detailing packages to find the right level of protection and finish for your vehicle,
+                with a clear price list and package breakdown to help you choose confidently. Below is a summary of main packages,
+                but be sure to check out our special services as well.
               </p>
             </div>
 
             <div className="mt-10 md:mt-14 max-w-[860px] mx-auto">
+              <h4 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-4">
+                Here is a summary of our services:
+              </h4>
               <div className="flex flex-col gap-6">
                 <div>
                   <h4 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-2">
-                    MACHINE POLISHING AND COATING
+                    Maintenance
                   </h4>
-                  <ul className="space-y-2 list-none pl-0">
-                    <li className="font-figtree text-[15px] text-gray-700 leading-6">
-                      ● Revive dull, hazy, or swirl marked paintwork to provide better protection than dealership options, and protection for your asset.
-                    </li>
-                  </ul>
+                  <p className="font-figtree text-[15px] text-gray-700 leading-6">
+                    Designed for clients who want their vehicle consistently presented to a high standard without compromise.
+                  </p>
                 </div>
 
                 <div>
                   <h4 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-2">
-                    DEEP CLEANING
+                    Deep Cleaning
                   </h4>
-                  <ul className="space-y-2 list-none pl-0">
-                    <li className="font-figtree text-[15px] text-gray-700 leading-6">
-                      ● Every inch covered inside and outside, restoring a showroom valeting finish.
-                    </li>
-                  </ul>
+                  <p className="font-figtree text-[15px] text-gray-700 leading-6">
+                    A comprehensive interior and exterior reset intended to restore used or neglected vehicles back to a refined
+                    condition.
+                  </p>
                 </div>
 
                 <div>
                   <h4 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-2">
-                    MAINTENANCE
+                    Machine Polishing & Ceramic Protection
                   </h4>
-                  <ul className="space-y-2 list-none pl-0">
-                    <li className="font-figtree text-[15px] text-gray-700 leading-6">
-                      ● To achieve the same results over and over again, and keep paintwork shiny.
-                    </li>
-                    <li className="font-figtree text-[15px] text-gray-700 leading-6">
-                      ● If you’re too busy to keep on top of keeping your vehicle.
-                    </li>
-                  </ul>
+                  <p className="font-figtree text-[15px] text-gray-700 leading-6">
+                    Focused on gloss, clarity, defect reduction, and durable protection for owners who value the finish and
+                    long-term condition of their vehicle.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-2">
+                    Unit & Mobile Services
+                  </h4>
+                  <p className="font-figtree text-[15px] text-gray-700 leading-6">
+                    Select services are available both mobile and from our private detailing unit, with advanced correction and
+                    long-term ceramic packages carried out in controlled indoor conditions for optimal results.
+                  </p>
                 </div>
               </div>
             </div>
+
+            <p className="mt-10 md:mt-14 font-figtree text-[14px] text-gray-600 md:text-[15px] leading-6 text-center max-w-[860px] mx-auto">
+              {PRICE_DISCLAIMER_TEXT}
+            </p>
           </div>
         </div>
       </section>

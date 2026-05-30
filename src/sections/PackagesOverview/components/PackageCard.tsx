@@ -1,17 +1,39 @@
 import type { PackageData } from "../../../data/packages";
+import { PRICE_DISCLAIMER_TEXT } from "../../../data/packages";
 
 type PackageCardProps = { package: PackageData };
 
 export const PackageCard = ({ package: pkg }: PackageCardProps) => {
+  const isCasinoRoyale = pkg.id === "casino-royale";
+  const casinoRoyaleImages = [
+    "/packages/casino-royale-gallery-1.jpeg",
+    "/packages/casino-royale-gallery-2.jpeg",
+    "/packages/casino-royale-gallery-3.jpeg",
+  ];
+
   return (
     <article className="rounded-xl overflow-hidden bg-black text-white border border-neutral-800 shadow-lg">
       {pkg.imageUrl && (
         <div className="relative w-full aspect-[4/3] bg-neutral-900 overflow-hidden">
-          <img
-            src={pkg.imageUrl}
-            alt=""
-            className="w-full h-full object-cover"
-          />
+          {isCasinoRoyale ? (
+            <div className="grid grid-cols-3 gap-1 h-full w-full p-1 bg-black">
+              {casinoRoyaleImages.map((src, index) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt={`Casino Royale image ${index + 1}`}
+                  className="w-full h-full object-cover rounded-sm"
+                  loading="lazy"
+                />
+              ))}
+            </div>
+          ) : (
+            <img
+              src={pkg.imageUrl}
+              alt=""
+              className="w-full h-full object-cover"
+            />
+          )}
         </div>
       )}
       <div className="relative p-6 md:p-8">
@@ -47,6 +69,21 @@ export const PackageCard = ({ package: pkg }: PackageCardProps) => {
               </ul>
             </div>
           ))}
+          {pkg.idealFor && pkg.idealFor.length > 0 && (
+            <div>
+              <h4 className="font-figtree font-bold text-sm uppercase tracking-wide text-white border-b border-neutral-600 pb-1 mb-2">
+                Ideal For
+              </h4>
+              <ul className="space-y-1.5">
+                {pkg.idealFor.map((item, i) => (
+                  <li key={i} className="font-figtree text-sm text-neutral-200 flex gap-2">
+                    <span className="text-neutral-500 shrink-0">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           {pkg.extras && (
             <div>
               <h4 className="font-figtree font-bold text-sm uppercase tracking-wide text-white border-b border-neutral-600 pb-1 mb-2">
@@ -86,8 +123,8 @@ export const PackageCard = ({ package: pkg }: PackageCardProps) => {
               </span>
             )}
           </div>
-          <p className="font-figtree text-xs text-neutral-500 italic text-right">
-            Price/Time can vary based on vehicle condition and size.
+          <p className="font-figtree text-xs text-neutral-500 italic text-right max-w-[280px]">
+            {PRICE_DISCLAIMER_TEXT}
           </p>
         </div>
 

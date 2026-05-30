@@ -5,7 +5,7 @@ const faqs: { question: string; answer: string }[] = [
   { question: "How long does it take?", answer: "Typically a few hours depending on the vehicle and condition. We'll give you a better idea when you book or request a quote." },
   { question: "Do you come to me?", answer: "Yes. We're mobile and come to you. We need a suitable space and power. We cover Glasgow and the surrounding areas—get in touch to confirm." },
   { question: "Will it affect my warranty?", answer: "Professional engine bay cleaning, when done correctly, should not affect warranty. We use safe methods and don't remove or modify any components. If you have concerns, check with your dealer." },
-  { question: "What areas do you cover?", answer: "We're based in North Glasgow and cover Glasgow, Central Scotland, Stirling, and the surrounding areas. Contact us with your location and we'll confirm we can reach you." },
+  { question: "What areas do you cover?", answer: "We're workshop-based in Killearn and provide mobile detailing across Loch Lomond, Glasgow West End, and surrounding premium areas. Contact us with your location and we'll confirm we can reach you." },
 ];
 
 export const EngineBayFAQ = () => {

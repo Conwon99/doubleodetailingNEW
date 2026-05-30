@@ -29,101 +29,110 @@ export type PackageData = {
   note?: string;
   /** Optional image for the package (path under /packages/) */
   imageUrl?: string;
+  /** Optional ideal-for bullets */
+  idealFor?: string[];
 };
 
-const PRICE_DISCLAIMER =
-  "Price/time vary by vehicle size and condition.";
-
-export const PRICE_DISCLAIMER_TEXT = PRICE_DISCLAIMER;
+export const PRICE_DISCLAIMER_TEXT =
+  "All pricing is based on vehicles in average condition. Larger vehicles, excessive contamination, pet hair, mould, or neglected interiors may require additional time and cost. Mobile appointments available seasonally and weather permitting. Unit-based services available year-round.";
 
 export const packagesData: PackageData[] = [
   {
-    id: "casino-royale",
+    id: "no-time-to-die",
     category: "machine-polishing",
-    title: "SINGLE STAGE PAINT ENHANCEMENT + CERAMIC COATING",
-    tagline: "CASINO ROYALE",
+    title: "GLOSS ENHANCEMENT + 12 MONTH PROTECTION",
+    tagline: "NO TIME TO DIE",
     summary:
-      "Single-stage paint enhancement to remove light defects, oxidation and light swirl marks (typically 60–80% correction), followed by a durable ceramic coating for long-lasting gloss and protection. Ideal for vehicles needing a noticeable uplift in clarity and depth without a full multi-stage correction. Typical duration from 10–12 hours.",
+      "A machine polishing package designed to dramatically improve gloss, depth and paint clarity while adding durable long-term protection. Ideal for dull or lightly swirled paintwork needing a visual refresh without full correction.",
     sections: [
       {
-        heading: "EXTERIOR PREP",
+        heading: "EXTERIOR PREPARATION",
         items: [
-          "Wheel arches, alloys, exhaust tips deep cleaned & decontaminated",
-          "Safe multi-stage wash using prewash, snow foam & 2-bucket method",
-          "Paint chemically decontaminated (iron, sap & tar removal) and clay treated",
-          "Dried with plush towels & air blow-dry to reduce water spotting",
+          "Safe wash & decontamination process",
+          "Wheels, arches & exhaust tips deep cleaned",
+          "Iron, tar & sap removal",
+          "Clay treatment",
+          "Spot-free drying process",
         ],
       },
       {
-        heading: "PAINT ENHANCEMENT",
+        heading: "ENHANCEMENT",
         items: [
-          "Single-stage machine polish to remove light defects, oxidation & light swirl marks (60–80% correction)",
-          "Glass, exhaust tips & chrome polished",
-          "Two IPA panel wipe-downs for coating prep",
+          "Single-stage machine polish",
+          "Oxidation & haze reduction",
+          "Increased gloss, clarity & depth",
+          "Paintwork refined for a sharper finish",
         ],
       },
       {
-        heading: "CERAMIC COATING OPTIONS",
+        heading: "PROTECTION",
         items: [
-          "Paint Enhancement + 2-Year Ceramic Coating – Starts from £325",
-          "Paint Enhancement + 3-Year Ceramic Coating – Starts from £400",
-          "Wheels off service (Unit only) – Starts from £125",
+          "12-month ceramic paint protection",
+          "Glass sealed",
+          "Tyres & trims dressed",
+        ],
+      },
+    ],
+    idealFor: [
+      "Dull or lightly swirled paintwork",
+      "Enthusiast vehicles",
+      "Vehicles needing a visual refresh",
+      "Owners wanting high gloss without full correction",
+    ],
+    priceDisplay: "Starts from £275",
+    durationDisplay: "Approx. 7–8 hours",
+    imageUrl: "/packages/snow-time-to-die.jpeg",
+  },
+  {
+    id: "casino-royale",
+    category: "machine-polishing",
+    title: "STAGE 1 PAINT CORRECTION + CERAMIC COATING",
+    tagline: "CASINO ROYALE",
+    summary:
+      "Professional paint correction paired with durable ceramic protection for maximum gloss, easier maintenance, and long-lasting results. Available as 2-year ceramic coating or upgraded 3-year unit-only package.",
+    sections: [
+      {
+        heading: "2-YEAR CERAMIC COATING",
+        items: [
+          "Full safe wash & decontamination",
+          "Clay bar treatment",
+          "Stage 1 machine correction",
+          "Swirl mark reduction",
+          "Increased gloss & paint clarity",
+          "Ceramic coating applied to paintwork",
+          "Glass cleaned & protected",
+          "Tyres & trims dressed",
         ],
       },
       {
-        heading: "SERVICE AVAILABILITY",
+        heading: "3-YEAR CERAMIC COATING (UNIT ONLY)",
         items: [
-          "Mobile Service: April to September",
-          "Unit Service: All Year",
+          "Everything included in the 2-Year Ceramic Package",
+          "Upgraded long-term ceramic coating",
+          "Enhanced chemical & environmental resistance",
+          "Additional durability & gloss retention",
+          "Unit only – optimal coating conditions and curing time",
+        ],
+      },
+      {
+        heading: "OPTIONAL ADD-ON",
+        items: [
+          "Wheels-Off Ceramic Protection (Unit Only) – Starts from £125",
+          "Wheels safely removed",
+          "Inner barrels deep cleaned & decontaminated",
+          "Ceramic coating applied to wheels & calipers",
+          "Easier maintenance & brake dust removal",
         ],
       },
     ],
     priceOptions: [
-      "Paint Enhancement + 2-Year Ceramic Coating – Starts from £325",
-      "Paint Enhancement + 3-Year Ceramic Coating – Starts from £400",
-      "Wheels off service (Unit only) – Starts from £125",
+      "2-Year Ceramic Coating – Starts from £375 (Approx. 1 full day)",
+      "3-Year Ceramic Coating (Unit Only) – Starts from £450 (Approx. 1.5–2 days, cure time required)",
+      "Wheels-Off Ceramic Protection (Unit Only) – Starts from £125",
     ],
-    priceDisplay: "Starts from £325 / £400",
-    durationDisplay: "Typically 10–12 hours",
-    imageUrl: "/packages/casino-royale.png",
-  },
-  {
-    id: "snow-time-to-die",
-    category: "machine-polishing",
-    title: "LIGHT MACHINE POLISH + CERAMIC WAX",
-    tagline: "SNOW TIME TO DIE",
-    subtitle: "Light machine polish + ceramic wax",
-    summary:
-      "Light machine polish and ceramic wax package designed to enhance gloss and depth while adding durable protection. Ideal for vehicles needing a refresh without a full correction. Typical duration from 8 hours.",
-    sections: [
-      {
-        heading: "EXTERIOR PREP",
-        items: [
-          "Wheel arches, alloys, tyres & exhaust tips deep cleaned and decontaminated",
-          "Safe prewash, snow foam & 2-bucket wash using soft mitts and brushes",
-        ],
-      },
-      {
-        heading: "DECONTAMINATION",
-        items: [
-          "Chemical decontamination (iron, tar & sap removal)",
-          "Clay bar treatment for bonded contaminants",
-          "Rinsed, towel dried & air blown to prevent spotting",
-        ],
-      },
-      {
-        heading: "POLISH & PROTECTION",
-        items: [
-          "Light machine polish to enhance gloss and depth",
-          "Glass, exhaust tips & chrome refined",
-          "Paintwork prepped with panel wipe for coating adhesion",
-          "Glass sealed, trims & tyres dressed",
-        ],
-      },
-    ],
-    priceDisplay: "Starts from £240",
-    durationDisplay: "Typically 8 hours",
-    imageUrl: "/packages/snow-time-to-die.jpeg",
+    priceDisplay: "Starts from £375 / £450",
+    durationDisplay: "Approx. 1 full day – 2 days (3-year unit)",
+    imageUrl: "/packages/casino-royale-cover.jpeg",
   },
   {
     id: "shaken-not-stirred",
@@ -131,44 +140,49 @@ export const packagesData: PackageData[] = [
     title: "DEEP CLEAN DETAIL",
     tagline: "SHAKEN, NOT STIRRED",
     summary:
-      "Our ultimate reset detail. A full deep clean of the interior and exterior, including safe wash, decontamination, SONAX ceramic protection, and thorough interior detail. Brings your car back to a highly refined, fresh condition and sets the foundation for ongoing maintenance. Typical duration from 5 hours.",
+      "A comprehensive interior and exterior transformation designed to restore heavily used or neglected vehicles back to a high standard. Typical duration from 4 hours.",
     sections: [
       {
         heading: "EXTERIOR",
         items: [
-          "Wheel arches, alloys, exhaust tips deep cleaned and protected",
-          "Safe multi-stage wash using prewash, snow foam, and 2-bucket method",
-          "Paintwork chemically decontaminated (iron, sap & tar removal)",
-          "SONAX 6-month ceramic sealant for gloss & protection",
-          "Dried with plush towels & air blow-dry to avoid water spots",
-          "Trim, arches & tyres dressed (Satin or Gloss finish)",
+          "Safe multi-stage wash process",
+          "Wheels, arches & exhaust tips deep cleaned",
+          "Full chemical decontamination",
+          "Tar, iron & sap removal",
+          "6-month paint protection applied",
+          "Tyres, trims & arches dressed",
+          "Spot-free drying process",
         ],
       },
       {
         heading: "INTERIOR",
         items: [
           "Full deep vacuum including boot",
-          "Compressed air dust removal & detailed cleaning of all surfaces",
-          "Carpets & mats shampooed and wet-vac extracted",
-          "Seats, consoles, vents, belts, and switches thoroughly detailed",
-          "Matte UV-protective interior dressing applied",
-          "Glass cleaned inside & out",
-          "Door shuts and jambs cleaned & protected",
+          "Compressed air dust removal",
+          "Detailed cleaning of all interior surfaces",
+          "Carpets & mats shampooed & extracted",
+          "Seats, vents, switches & consoles detailed",
+          "UV-protective interior dressing applied",
+          "Interior & exterior glass cleaned",
+          "Door shuts & jambs deep cleaned",
         ],
       },
     ],
+    idealFor: [
+      "Neglected vehicles (add-ons recommended)",
+      "Seasonal resets",
+      "End-of-lease returns",
+    ],
     extras: {
-      heading: "EXTRAS",
+      heading: "OPTIONAL ADD-ONS",
       items: [
-        "Engine Detail – £50",
-        "Fabric Coating – £70",
-        "Upgraded Coating – POA",
-        "Ozone Machine Treatment for Odours – POA",
+        "Engine Bay Detail – Starts from £50",
+        "Ozone Odour Treatment – POA",
         "Excessive Pet Hair Removal – POA",
       ],
     },
     priceDisplay: "Starts from £170",
-    durationDisplay: "Typically 5 hours",
+    durationDisplay: "Approx. from 4 hours",
     imageUrl: "/packages/shaken-not-stirred.png",
   },
   {
@@ -177,69 +191,40 @@ export const packagesData: PackageData[] = [
     title: "MAINTENANCE DETAIL",
     tagline: "SPECTRE",
     summary:
-      "A maintenance detail designed to keep your vehicle looking its best between full details. Includes a thorough exterior safe wash with protection and an interior refresh to maintain a clean, well-presented finish. Typical duration from 3 hours.",
+      "A more thorough interior and exterior reset designed to keep your vehicle consistently clean, protected, and easy to maintain. Typical duration 2.5–3 hours.",
     sections: [
       {
         heading: "EXTERIOR",
         items: [
-          "Wheel arches, alloys & exhaust tips cleaned and decontaminated",
-          "Safe multi-stage wash using prewash, snow foam & 2-bucket method",
-          "SONAX 3-month ceramic sealant for gloss & protection",
-          "Dried with plush towels & air blow-dry to avoid water spots",
-          "Trim, arches & tyres dressed (Matte, Satin, or Gloss finish)",
+          "Everything included in the Exterior Safe Wash",
+          "Paintwork decontamination where necessary",
+          "Additional protection top-up",
         ],
       },
       {
         heading: "INTERIOR",
         items: [
-          "Full vacuum including upholstery & boot",
-          "Compressed air dust removal & detailed surface cleaning",
+          "Full interior vacuum including boot",
           "Carpets & mats deep cleaned",
-          "Seats, consoles, vents, and switches detailed",
-          "Matte UV-protective interior dressing topped up",
-          "Glass cleaned inside & out",
-          "Door shuts & jambs cleaned and protected",
+          "Interior surfaces detailed",
+          "Vents, switches & consoles cleaned",
+          "UV-protective interior dressing applied",
+          "Interior & exterior glass cleaned",
+          "Door shuts & jambs cleaned",
         ],
       },
     ],
-    priceDisplay: "Starts from £90",
-    durationDisplay: "Typically 3 hours",
-    imageUrl: "/packages/spectre.png",
-  },
-  {
-    id: "q",
-    category: "maintenance",
-    title: "MAINTENANCE VALET",
-    tagline: "Q",
-    summary:
-      "A lighter upkeep valet covering all standard cleaning inside and out. Ideal for maintaining cleanliness between full details, available only after a recent detail with Double O Detailing. Typical duration from 2 hours.",
-    sections: [
-      {
-        heading: "EXTERIOR",
-        items: [
-          "Wheel arches, alloys & tyres cleaned",
-          "Safe prewash & 2-bucket contact wash",
-          "Liquid wax applied for added gloss",
-          "Dried with soft microfibre towels",
-          "Tyres dressed (Satin or Gloss finish)",
-        ],
-      },
-      {
-        heading: "INTERIOR",
-        items: [
-          "Full vacuum (boot included if empty)",
-          "Dust removal & wipe-down of all surfaces",
-          "Carpets & mats vacuumed, cleaned & dried",
-          "Glass cleaned inside & out",
-          "Door sills pressure washed & dried",
-        ],
-      },
+    idealFor: [
+      "3–8 week maintenance",
+      "Family vehicles",
+      "Daily drivers",
+      "Keeping vehicles at a consistently high standard",
     ],
     note:
-      'Must have had "Shaken, Not Stirred", "Spectre" or "Casino Royale" within 2–8 weeks to book.',
-    priceDisplay: "Starts from £60",
-    durationDisplay: "Typically 2 hours",
-    imageUrl: "/packages/q.png",
+      "Vehicle must have received a Deep Clean, Maintenance Detail, or Paint Enhancement package within the last 2–8 weeks.",
+    priceDisplay: "Starts from £90",
+    durationDisplay: "Approx. 2.5–3 hours",
+    imageUrl: "/packages/spectre.png",
   },
   {
     id: "007",
@@ -247,25 +232,28 @@ export const packagesData: PackageData[] = [
     title: "EXTERIOR SAFE WASH",
     tagline: "007",
     summary:
-      "An exterior-only safe wash designed to minimise swirls and scratches while protecting your paintwork. Includes thorough cleaning, decontamination, protection, and dressing. Typical duration from 1.5–2 hours.",
+      "A safe, professional maintenance wash designed to preserve your vehicle's finish using premium products and careful wash methods. Typical duration 1.5–2 hours.",
     sections: [
       {
         heading: "EXTERIOR",
         items: [
-          "Wheel arches, alloys & exhaust tips deep cleaned and decontaminated",
-          "Safe prewash, snow foam & 2-bucket wash with soft brushes including intricate areas",
-          "SONAX 3-month ceramic sealant for gloss & protection",
-          "Dried with plush towels & air blow-dry to avoid spotting",
-          "Trim, arches & tyres dressed (Satin or Gloss finish)",
+          "Safe pre-wash & snow foam",
+          "Two-bucket contact wash",
+          "Wheels, arches & exhaust tips cleaned",
+          "Intricate areas cleaned with soft brushes",
+          "3-month paint protection applied",
+          "Tyres & trims dressed",
+          "Plush towel & air-assisted drying process",
         ],
       },
     ],
-    extras: {
-      heading: "EXTRAS",
-      items: ["Upgraded Coating (POA)", "Engine Bay Maintenance"],
-    },
+    idealFor: [
+      "Well-maintained vehicles",
+      "Weekly, fortnightly or monthly upkeep",
+      "Enthusiast-maintained cars",
+    ],
     priceDisplay: "Starts from £50",
-    durationDisplay: "Typically 1.5–2 hours",
+    durationDisplay: "Approx. 1.5–2 hours",
     imageUrl: "/packages/exterior-wash.png",
   },
 ];

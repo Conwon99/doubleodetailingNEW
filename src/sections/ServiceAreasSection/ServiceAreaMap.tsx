@@ -1,18 +1,53 @@
 import { useEffect, useRef } from "react";
+import { locations } from "../../data/locations";
 import "leaflet/dist/leaflet.css";
 
-/** Rough polygon [lat, lng] covering Glasgow, West Dunbartonshire, Stirlingshire and surrounding areas we serve. */
-const SERVICE_AREA_POLYGON: [number, number][] = [
-  [55.82, -4.78],   // SW – south of Dumbarton / Clyde
-  [55.82, -3.92],   // SE – east of Stirling
-  [56.15, -3.92],   // NE – north of Stirling
-  [56.15, -4.52],   // N – above Killearn / Drymen
-  [56.02, -4.78],   // NW – Helensburgh / Gare Loch
-  [55.82, -4.78],   // close polygon
-];
+const LOCATION_POINTS = locations
+  .filter((loc) => loc.geo)
+  .map((loc) => ({
+    name: loc.name,
+    lat: Number(loc.geo!.latitude),
+    lng: Number(loc.geo!.longitude),
+  }));
 
-const MAP_CENTER: [number, number] = [55.98, -4.35];
-const MAP_ZOOM = 9;
+type Point = { lat: number; lng: number };
+
+function cross(o: Point, a: Point, b: Point): number {
+  return (a.lng - o.lng) * (b.lat - o.lat) - (a.lat - o.lat) * (b.lng - o.lng);
+}
+
+/**
+ * Build a convex hull from the approved location points so the service-area
+ * polygon tightly wraps only the configured towns.
+ */
+function buildConvexHull(points: Point[]): Point[] {
+  if (points.length <= 3) return [...points];
+
+  const sorted = [...points].sort((p1, p2) =>
+    p1.lng === p2.lng ? p1.lat - p2.lat : p1.lng - p2.lng
+  );
+
+  const lower: Point[] = [];
+  for (const point of sorted) {
+    while (lower.length >= 2 && cross(lower[lower.length - 2], lower[lower.length - 1], point) <= 0) {
+      lower.pop();
+    }
+    lower.push(point);
+  }
+
+  const upper: Point[] = [];
+  for (let i = sorted.length - 1; i >= 0; i -= 1) {
+    const point = sorted[i];
+    while (upper.length >= 2 && cross(upper[upper.length - 2], upper[upper.length - 1], point) <= 0) {
+      upper.pop();
+    }
+    upper.push(point);
+  }
+
+  lower.pop();
+  upper.pop();
+  return [...lower, ...upper];
+}
 
 export function ServiceAreaMap() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,8 +62,8 @@ export function ServiceAreaMap() {
       if (cancelled || !containerRef.current) return;
 
       const map = L.default.map(containerRef.current, {
-        center: MAP_CENTER,
-        zoom: MAP_ZOOM,
+        center: [56.02, -4.42],
+        zoom: 9,
         scrollWheelZoom: true,
       });
 
@@ -36,14 +71,27 @@ export function ServiceAreaMap() {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }).addTo(map);
 
-      const polygon = L.default.polygon(SERVICE_AREA_POLYGON, {
-        color: "#0d5c2e",
-        weight: 2,
-        fillColor: "#0d5c2e",
-        fillOpacity: 0.25,
-      }).addTo(map);
+      const bounds = L.default.latLngBounds([]);
+      LOCATION_POINTS.forEach((point) => {
+        bounds.extend([point.lat, point.lng]);
+      });
 
-      map.fitBounds(polygon.getBounds(), { padding: [24, 24] });
+      const hull = buildConvexHull(LOCATION_POINTS);
+      if (hull.length >= 3) {
+        L.default.polygon(
+          hull.map((p) => [p.lat, p.lng] as [number, number]),
+          {
+            color: "#0d5c2e",
+            weight: 2,
+            fillColor: "#0d5c2e",
+            fillOpacity: 0.2,
+          }
+        ).addTo(map);
+      }
+
+      if (bounds.isValid()) {
+        map.fitBounds(bounds, { padding: [24, 24] });
+      }
       mapRef.current = map;
     });
 
@@ -61,7 +109,7 @@ export function ServiceAreaMap() {
       <div
         ref={containerRef}
         className="w-full h-full min-h-[280px] lg:min-h-[320px] rounded-xl overflow-hidden border border-neutral-200 shadow-sm bg-neutral-100 [&_.leaflet-control]:!z-[100] [&_.leaflet-pane]:!z-[1]"
-        aria-label="Map showing Double O Detailing service area (Glasgow and Central Scotland)"
+        aria-label="Map showing Double O Detailing service area near Loch Lomond and Glasgow West End"
       />
     </div>
   );

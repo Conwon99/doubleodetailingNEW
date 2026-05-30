@@ -8,7 +8,7 @@ export const HeroText = () => {
           <div><span className="text-gray-400">in Glasgow</span></div>
         </h1>
         <div className="text-base box-border caret-transparent blur-0 leading-[26px] md:text-lg font-figtree">
-          Professional mobile car detailing and valeting service in North Glasgow, bringing premium car care directly to your doorstep.
+          Professional vehicle detailing - mobile services covering Loch Lomond, Glasgow West End & surrounding areas. Workshop based in Killearn.
         </div>
       </div>
       <div className="items-center box-border caret-transparent gap-x-5 flex blur-0 flex-wrap gap-y-5 mt-6 md:gap-x-6 md:gap-y-6 md:mt-7">

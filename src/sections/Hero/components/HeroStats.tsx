@@ -28,7 +28,7 @@ export const HeroStats = () => {
         </div>
       </div>
       <div className="text-white/90 text-xs md:text-sm text-center">
-        Based on 28 reviews
+        Based on 37 reviews
       </div>
     </a>
   );

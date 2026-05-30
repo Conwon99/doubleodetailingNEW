@@ -17,6 +17,7 @@ const staticPages: string[] = [
   "contact",
   "deep-cleans",
   "engine-bay-detailing",
+  "jet-ski-detailing",
   "gallery",
   "headlight-restoration",
   "interior-fabric-coating",

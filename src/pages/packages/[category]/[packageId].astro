@@ -8,6 +8,7 @@ import {
   packagesData,
   categoryLabels,
   getPackageByCategoryAndId,
+  PRICE_DISCLAIMER_TEXT,
 } from "../../../data/packages";
 import type { PackageData } from "../../../data/packages";
 
@@ -25,6 +26,14 @@ const title = pkg.tagline ? `${pkg.title} – "${pkg.tagline}"` : pkg.title;
 const description =
   pkg.summary.slice(0, 155) + (pkg.summary.length > 155 ? "…" : "");
 const canonical = `https://doubleodetailing.co.uk/packages/${categoryId}/${pkg.id}`;
+const casinoRoyaleGallery =
+  pkg.id === "casino-royale"
+    ? [
+        "/packages/casino-royale-gallery-1.jpeg",
+        "/packages/casino-royale-gallery-2.jpeg",
+        "/packages/casino-royale-gallery-3.jpeg",
+      ]
+    : [];
 ---
 
 <Layout
@@ -55,8 +64,24 @@ const canonical = `https://doubleodetailing.co.uk/packages/${categoryId}/${pkg.i
           <div class="max-w-[640px] mx-auto">
             <PackageCard package={pkg} client:load />
           </div>
-          <p class="mt-8 text-[15px] text-gray-600 md:text-base text-center">
-            All packages are tailored to your vehicle. <a href="/contact" class="text-cta hover:underline">Get a quote</a> for exact pricing.
+          {casinoRoyaleGallery.length > 0 && (
+            <div class="mt-8 max-w-[980px] mx-auto">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+                {casinoRoyaleGallery.map((src, index) => (
+                  <div class="rounded-lg overflow-hidden border border-neutral-200 bg-white">
+                    <img
+                      src={src}
+                      alt={`Casino Royale photo ${index + 1}`}
+                      class="w-full h-full object-cover aspect-[4/3]"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          <p class="mt-8 text-[15px] text-gray-600 md:text-base text-center max-w-[720px] mx-auto">
+            {PRICE_DISCLAIMER_TEXT} <a href="/contact" class="text-cta hover:underline">Get a quote</a> for your vehicle.
           </p>
         </div>
       </section>

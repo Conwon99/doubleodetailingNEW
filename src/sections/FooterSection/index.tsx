@@ -13,7 +13,7 @@ export const FooterSection = () => {
               <Logo />
               <div className="box-border caret-transparent mt-6">
                 <div className="text-[15px] box-border caret-transparent leading-6 text-white/80 md:text-base">
-                  Professional mobile car detailing and valeting service based in the north of Glasgow. We provide premium car care services across Central Scotland, including Glasgow and Stirling. Mobile service with own power and water supply.
+                  Workshop based in Killearn, covering Loch Lomond, Glasgow West End and surrounding premium areas. Mobile and unit-based car, jet ski and boat detailing with own power and water supply.
                 </div>
               </div>
             </div>

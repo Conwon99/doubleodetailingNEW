@@ -66,6 +66,13 @@ export const services: Service[] = [
       "Thorough cleaning and dressing of the engine bay. Safe, professional treatment to showcase and protect under-bonnet areas.",
     imageUrl: "/Engine detailing.png",
   },
+  {
+    slug: "jet-ski-detailing",
+    title: "Jet Ski and Boat Detailing",
+    shortDescription:
+      "Specialist jet ski and boat detailing and protection at our Killearn workshop. Deep clean, decontamination, interior and exterior care, and durable marine coatings.",
+    imageUrl: "/Deep clean detailing.png",
+  },
 ];
 
 export const serviceSlugs = services.map((s) => s.slug);

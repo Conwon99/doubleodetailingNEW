@@ -5,7 +5,7 @@ const faqs: { question: string; answer: string }[] = [
   { question: "How long does the coating last?", answer: "With proper care, the coating can last a year or more. We'll advise on aftercare. Keeping the top clean and avoiding harsh chemicals helps." },
   { question: "Do you come to me?", answer: "Yes. We're mobile and come to you. We need a suitable space and power. We cover Glasgow and the surrounding areas—get in touch to confirm." },
   { question: "Can you fix tears or damage?", answer: "We focus on cleaning, restoration, and coating. Significant tears or structural damage may need a trimmer or specialist; we can advise when we assess the top." },
-  { question: "What areas do you cover?", answer: "We're based in North Glasgow and cover Glasgow, Central Scotland, Stirling, and the surrounding areas. Contact us with your location and we'll confirm we can reach you." },
+  { question: "What areas do you cover?", answer: "We're workshop-based in Killearn and provide mobile detailing across Loch Lomond, Glasgow West End, and surrounding premium areas. Contact us with your location and we'll confirm we can reach you." },
 ];
 
 export const SoftTopFAQ = () => {

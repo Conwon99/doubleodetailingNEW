@@ -3,7 +3,7 @@ export const GalleryGrid = () => {
     { src: "/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM.jpeg", alt: "Double O Detailing Gallery 1" },
     { src: "/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM (1).jpeg", alt: "Double O Detailing Gallery 2" },
     { src: "/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM (2).jpeg", alt: "Double O Detailing Gallery 3" },
-    { src: "/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM (3).jpeg", alt: "Double O Detailing Gallery 4" },
+    { src: "/gallery/landrover.jpeg", alt: "Double O Detailing Gallery 4 - Land Rover" },
     { src: "/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM (4).jpeg", alt: "Double O Detailing Gallery 5" },
   ];
 

@@ -7,7 +7,7 @@ export type QuoteSectionProps = {
 
 export const QuoteSection = ({ showTerms = true }: QuoteSectionProps) => {
   return (
-    <section id="contact" className="relative bg-cover bg-center bg-no-repeat pt-[120px] pb-[60px] md:pt-[150px] md:pb-[100px]" style={{ backgroundImage: `url('/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM (3).jpeg')` }}>
+    <section id="contact" className="relative bg-cover bg-center bg-no-repeat pt-[120px] pb-[60px] md:pt-[150px] md:pb-[100px]" style={{ backgroundImage: `url('/landrover.jpeg')` }}>
       <div className="absolute inset-0 bg-black/60"></div>
       <div className="relative max-w-[1204px] mx-auto px-5 md:px-8">
         <div className="flex flex-col items-center gap-y-8 md:gap-y-12">
@@ -61,7 +61,7 @@ export const QuoteSection = ({ showTerms = true }: QuoteSectionProps) => {
                   </a>
                 </div>
                 <div className="text-white/80 text-[15px] md:text-base">
-                  Glasgow + Stirling, Central Scotland
+                  Loch Lomond, Glasgow West End & surrounding areas
                 </div>
               </div>
             </div>

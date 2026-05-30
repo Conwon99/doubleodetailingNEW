@@ -5,7 +5,7 @@ const faqs: { question: string; answer: string }[] = [
   { question: "How long does headlight restoration last?", answer: "With proper UV protection applied, results can last a few years depending on use and care. We'll advise on aftercare. Without protection, haze can return sooner." },
   { question: "Do you come to me?", answer: "Yes. We're mobile and bring the equipment to you. We need a suitable space and power. We cover Glasgow and the surrounding areas—get in touch to confirm." },
   { question: "Can you do both headlights in one visit?", answer: "Yes. We typically restore both headlights in one session so they match and your car looks consistent." },
-  { question: "What areas do you cover?", answer: "We're based in North Glasgow and cover Glasgow, Central Scotland, Stirling, and the surrounding areas. Contact us with your location and we'll confirm we can reach you." },
+  { question: "What areas do you cover?", answer: "We're workshop-based in Killearn and provide mobile detailing across Loch Lomond, Glasgow West End, and surrounding premium areas. Contact us with your location and we'll confirm we can reach you." },
 ];
 
 export const HeadlightRestorationFAQ = () => {

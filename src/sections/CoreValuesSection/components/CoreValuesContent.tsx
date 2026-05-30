@@ -13,7 +13,7 @@ export const CoreValuesContent = () => {
       </div>
       <div className="text-gray-700 box-border caret-transparent">
         <p className="text-[15px] box-border caret-transparent leading-6 md:text-base">
-          At Double-O Detailing, we're passionate about restoring and protecting vehicles to the highest standard. Based in the north of Glasgow, we provide professional mobile detailing and valeting across Central Scotland. We pride ourselves on quality, attention to detail, and customer satisfaction—and we bring the service to you with our fully equipped mobile unit.
+          At Double-O Detailing, we're passionate about restoring and protecting vehicles to the highest standard. With our workshop in Killearn, we provide mobile detailing across Loch Lomond, Glasgow West End and surrounding areas, plus unit-based services for paint correction, ceramic coatings, and specialist detailing. Mobile appointments are available seasonally and weather permitting; advanced correction and long-term ceramic packages are carried out year-round in our private detailing unit.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-3 mt-5">
           <div className="flex items-center gap-2">
@@ -22,7 +22,15 @@ export const CoreValuesContent = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
               </svg>
             </span>
-            <span className="text-[15px] font-medium text-black md:text-base">Fully Mobile</span>
+            <span className="text-[15px] font-medium text-black md:text-base">Mobile Service</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600" aria-hidden>
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </span>
+            <span className="text-[15px] font-medium text-black md:text-base">Killearn Workshop</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600" aria-hidden>
