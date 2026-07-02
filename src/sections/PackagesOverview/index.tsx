@@ -55,29 +55,6 @@ export const PackagesOverview = () => {
       <section className="box-border py-[60px] md:py-[100px]">
         <div className="box-border max-w-[1204px] mx-auto px-5 md:px-8">
           <div className="box-border flex flex-col gap-y-16 md:gap-y-20">
-            {/* Pricing table */}
-            <div>
-              <h3 className="font-refrigerator uppercase text-xl md:text-2xl font-bold text-black mb-6 text-center">
-                Pricing
-              </h3>
-              <PriceSizeTable rows={allPricingRows} />
-            </div>
-
-            {/* Vehicle size guide */}
-            <div id="size-guide" className="scroll-mt-24 max-w-[860px] mx-auto">
-              <h4 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-4 text-center">
-                Vehicle Size Guide
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {vehicleSizeGuide.map(({ size, examples }) => (
-                  <div key={size} className="rounded-lg border border-neutral-200 bg-white p-4">
-                    <p className="font-refrigerator uppercase text-sm font-bold text-black">{size}</p>
-                    <p className="font-figtree text-sm text-gray-700 mt-1">{examples}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {byCategory.map(({ categoryId, label, packages, imageUrl }) => (
               <div key={categoryId}>
                 {/* Section header with image */}
@@ -164,6 +141,29 @@ export const PackagesOverview = () => {
                 </div>
               </div>
             ))}
+
+            {/* Pricing table */}
+            <div>
+              <h3 className="font-refrigerator uppercase text-xl md:text-2xl font-bold text-black mb-6 text-center">
+                Pricing
+              </h3>
+              <PriceSizeTable rows={allPricingRows} />
+            </div>
+
+            {/* Vehicle size guide */}
+            <div id="size-guide" className="scroll-mt-24 max-w-[860px] mx-auto">
+              <h4 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-4 text-center">
+                Vehicle Size Guide
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {vehicleSizeGuide.map(({ size, examples }) => (
+                  <div key={size} className="rounded-lg border border-neutral-200 bg-white p-4">
+                    <p className="font-refrigerator uppercase text-sm font-bold text-black">{size}</p>
+                    <p className="font-figtree text-sm text-gray-700 mt-1">{examples}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             {/* Special services */}
             <div className="mt-10 md:mt-14 border-t border-neutral-200 pt-8 md:pt-10">
