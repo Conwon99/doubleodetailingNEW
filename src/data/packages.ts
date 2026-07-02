@@ -8,6 +8,20 @@ export type PackageSection = {
   items: string[];
 };
 
+/** Prices for a single package tier across vehicle sizes */
+export type SizePricing = {
+  small: string;
+  medium: string;
+  large: string;
+  xl: string;
+};
+
+/** A named pricing tier (e.g. 2-Year vs 3-Year Ceramic) with its own size pricing */
+export type PricingTier = {
+  label: string;
+  prices: SizePricing;
+};
+
 export type PackageData = {
   id: string;
   category: "machine-polishing" | "deep-clean" | "maintenance";
@@ -31,10 +45,21 @@ export type PackageData = {
   imageUrl?: string;
   /** Optional ideal-for bullets */
   idealFor?: string[];
+  /** Per-vehicle-size pricing for single-tier packages */
+  pricingBySize?: SizePricing;
+  /** Per-vehicle-size pricing for multi-tier packages (e.g. Casino Royale 2-Year/3-Year) */
+  pricingTiers?: PricingTier[];
 };
 
 export const PRICE_DISCLAIMER_TEXT =
-  "All pricing is based on vehicles in average condition. Larger vehicles, excessive contamination, pet hair, mould, or neglected interiors may require additional time and cost. Mobile appointments available seasonally and weather permitting. Unit-based services available year-round.";
+  "Prices shown are for vehicles in average condition. Heavily contaminated, neglected or oversized vehicles may require additional time and will be quoted accordingly.";
+
+export const vehicleSizeGuide: { size: string; examples: string }[] = [
+  { size: "Small", examples: "Fiat 500, MINI, VW Polo, VW Golf" },
+  { size: "Medium", examples: "BMW 3 Series, Audi A4, Range Rover Evoque, Audi Q3" },
+  { size: "Large", examples: "BMW X5, Audi Q5, Range Rover Sport" },
+  { size: "XL", examples: "Vans, 7-seat SUVs, long-wheelbase vehicles" },
+];
 
 export const packagesData: PackageData[] = [
   {
@@ -79,9 +104,10 @@ export const packagesData: PackageData[] = [
       "Vehicles needing a visual refresh",
       "Owners wanting high gloss without full correction",
     ],
-    priceDisplay: "Starts from £275",
+    priceDisplay: "From £275 to £350 (XL: Quote)",
     durationDisplay: "Approx. 7–8 hours",
     imageUrl: "/packages/snow-time-to-die.jpeg",
+    pricingBySize: { small: "£275", medium: "£310", large: "£350", xl: "Quote" },
   },
   {
     id: "casino-royale",
@@ -130,9 +156,19 @@ export const packagesData: PackageData[] = [
       "3-Year Ceramic Coating (Unit Only) – Starts from £450 (Approx. 1.5–2 days, cure time required)",
       "Wheels-Off Ceramic Protection (Unit Only) – Starts from £125",
     ],
-    priceDisplay: "Starts from £375 / £450",
+    priceDisplay: "From £375 to £625+",
     durationDisplay: "Approx. 1 full day – 2 days (3-year unit)",
     imageUrl: "/packages/casino-royale-cover.jpeg",
+    pricingTiers: [
+      {
+        label: "2-Year Ceramic Coating",
+        prices: { small: "£375", medium: "£425", large: "£475", xl: "£550+" },
+      },
+      {
+        label: "3-Year Ceramic Coating (Unit Only)",
+        prices: { small: "£450", medium: "£500", large: "£550", xl: "£625+" },
+      },
+    ],
   },
   {
     id: "shaken-not-stirred",
@@ -181,9 +217,10 @@ export const packagesData: PackageData[] = [
         "Excessive Pet Hair Removal – POA",
       ],
     },
-    priceDisplay: "Starts from £170",
+    priceDisplay: "From £170 to £230",
     durationDisplay: "Approx. from 4 hours",
     imageUrl: "/packages/shaken-not-stirred.png",
+    pricingBySize: { small: "£170", medium: "£185", large: "£200", xl: "£230" },
   },
   {
     id: "spectre",
@@ -222,9 +259,10 @@ export const packagesData: PackageData[] = [
     ],
     note:
       "Vehicle must have received a Deep Clean, Maintenance Detail, or Paint Enhancement package within the last 2–8 weeks.",
-    priceDisplay: "Starts from £90",
+    priceDisplay: "From £90 to £120",
     durationDisplay: "Approx. 2.5–3 hours",
     imageUrl: "/packages/spectre.png",
+    pricingBySize: { small: "£90", medium: "£95", large: "£100", xl: "£120" },
   },
   {
     id: "007",
@@ -252,9 +290,10 @@ export const packagesData: PackageData[] = [
       "Weekly, fortnightly or monthly upkeep",
       "Enthusiast-maintained cars",
     ],
-    priceDisplay: "Starts from £50",
+    priceDisplay: "From £50 to £75",
     durationDisplay: "Approx. 1.5–2 hours",
     imageUrl: "/packages/exterior-wash.png",
+    pricingBySize: { small: "£50", medium: "£55", large: "£60", xl: "£75" },
   },
 ];
 
@@ -269,4 +308,21 @@ export function getPackageByCategoryAndId(
   id: string
 ): PackageData | undefined {
   return packagesData.find((p) => p.category === category && p.id === id);
+}
+
+/** Flattens a package's pricing into labelled rows for a Small/Medium/Large/XL table */
+export function getPricingRows(
+  pkg: PackageData
+): { label: string; prices: SizePricing }[] {
+  const name = pkg.tagline ?? pkg.title;
+  if (pkg.pricingTiers) {
+    return pkg.pricingTiers.map((tier) => ({
+      label: `${name} (${tier.label})`,
+      prices: tier.prices,
+    }));
+  }
+  if (pkg.pricingBySize) {
+    return [{ label: name, prices: pkg.pricingBySize }];
+  }
+  return [];
 }

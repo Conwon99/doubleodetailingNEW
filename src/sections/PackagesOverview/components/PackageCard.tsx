@@ -1,5 +1,6 @@
 import type { PackageData } from "../../../data/packages";
-import { PRICE_DISCLAIMER_TEXT } from "../../../data/packages";
+import { PRICE_DISCLAIMER_TEXT, getPricingRows } from "../../../data/packages";
+import { PriceSizeTable } from "./PriceSizeTable";
 
 type PackageCardProps = { package: PackageData };
 
@@ -10,6 +11,7 @@ export const PackageCard = ({ package: pkg }: PackageCardProps) => {
     "/packages/casino-royale-gallery-2.jpeg",
     "/packages/casino-royale-gallery-3.jpeg",
   ];
+  const pricingRows = getPricingRows(pkg);
 
   return (
     <article className="rounded-xl overflow-hidden bg-black text-white border border-neutral-800 shadow-lg">
@@ -127,6 +129,19 @@ export const PackageCard = ({ package: pkg }: PackageCardProps) => {
             {PRICE_DISCLAIMER_TEXT}
           </p>
         </div>
+
+        {/* Pricing by vehicle size */}
+        {pricingRows.length > 0 && (
+          <div className="mt-5">
+            <PriceSizeTable rows={pricingRows} dark />
+            <a
+              href="/packages#size-guide"
+              className="mt-2 inline-block font-figtree text-xs text-neutral-400 hover:text-white underline"
+            >
+              Not sure which size your vehicle is? See our vehicle size guide.
+            </a>
+          </div>
+        )}
 
         {/* Book Now - link to contact with package prefill */}
         <div className="mt-5">
