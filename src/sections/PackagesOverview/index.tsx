@@ -178,7 +178,7 @@ export const PackagesOverview = () => {
             </div>
 
             {/* Vehicle size guide */}
-            <div id="size-guide" className="scroll-mt-24 max-w-[860px] mx-auto">
+            <div id="size-guide" className="scroll-mt-[120px] md:scroll-mt-[160px] max-w-[860px] mx-auto">
               <h4 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-4 text-center">
                 Vehicle Size Guide
               </h4>
