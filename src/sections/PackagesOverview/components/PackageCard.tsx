@@ -113,18 +113,13 @@ export const PackageCard = ({ package: pkg }: PackageCardProps) => {
           </div>
         )}
 
-        {/* Price, time & disclaimer */}
+        {/* Time & disclaimer */}
         <div className="mt-6 pt-5 border-t border-neutral-700 flex flex-wrap items-baseline justify-between gap-3">
-          <div className="flex flex-col gap-1">
-            <span className="font-refrigerator uppercase text-lg md:text-xl font-bold">
-              {pkg.priceDisplay}
+          {pkg.durationDisplay && (
+            <span className="font-figtree text-xs md:text-sm text-neutral-300">
+              {pkg.durationDisplay}
             </span>
-            {pkg.durationDisplay && (
-              <span className="font-figtree text-xs md:text-sm text-neutral-300">
-                {pkg.durationDisplay}
-              </span>
-            )}
-          </div>
+          )}
           <p className="font-figtree text-xs text-neutral-500 italic text-right max-w-[280px]">
             {PRICE_DISCLAIMER_TEXT}
           </p>

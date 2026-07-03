@@ -37,8 +37,6 @@ export type PackageData = {
   extras?: PackageSection;
   /** Optional pricing options within the card (e.g. coating choices with prices) */
   priceOptions?: string[];
-  /** Main price display text (e.g. "Starts from £295 or £350") */
-  priceDisplay: string;
   /** Short duration label shown alongside price (e.g. "Typically 10–12 hours") */
   durationDisplay?: string;
   /** Prerequisite note for maintenance packages */
@@ -106,7 +104,6 @@ export const packagesData: PackageData[] = [
       "Vehicles needing a visual refresh",
       "Owners wanting high gloss without full correction",
     ],
-    priceDisplay: "From £275 to £350 (XL: Quote)",
     durationDisplay: "Approx. 7–8 Hours",
     imageUrl: "/packages/snow-time-to-die.jpeg",
     pricingBySize: { small: "£275", medium: "£310", large: "£350", xl: "Quote" },
@@ -158,7 +155,6 @@ export const packagesData: PackageData[] = [
       "3-Year Ceramic Coating (Unit Only) – Starts from £450 (Approx. 1.5–2 days, cure time required)",
       "Wheels-Off Ceramic Protection (Unit Only) – Starts from £125",
     ],
-    priceDisplay: "From £375 to £625+",
     durationDisplay: "Approx. 1 full day – 2 days (3-year unit)",
     imageUrl: "/packages/casino-royale-cover.jpeg",
     pricingTiers: [
@@ -221,7 +217,6 @@ export const packagesData: PackageData[] = [
         "Excessive Pet Hair Removal – POA",
       ],
     },
-    priceDisplay: "From £170 to £230",
     durationDisplay: "Approx. 4–5 Hours",
     imageUrl: "/packages/shaken-not-stirred.png",
     pricingBySize: { small: "£170", medium: "£185", large: "£200", xl: "£230" },
@@ -263,7 +258,6 @@ export const packagesData: PackageData[] = [
     ],
     note:
       "Vehicle must have received a Deep Clean, Maintenance Detail, or Paint Enhancement package within the last 2–8 weeks.",
-    priceDisplay: "From £90 to £120",
     durationDisplay: "Approx. 2.5–3 Hours",
     imageUrl: "/packages/spectre.png",
     pricingBySize: { small: "£90", medium: "£95", large: "£100", xl: "£120" },
@@ -294,7 +288,6 @@ export const packagesData: PackageData[] = [
       "Weekly, fortnightly or monthly upkeep",
       "Enthusiast-maintained cars",
     ],
-    priceDisplay: "From £50 to £75",
     durationDisplay: "Approx. 1.5–2 Hours",
     imageUrl: "/packages/exterior-wash.png",
     pricingBySize: { small: "£50", medium: "£55", large: "£60", xl: "£75" },
