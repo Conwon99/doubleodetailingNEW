@@ -19,14 +19,19 @@ export const QuoteForm = () => {
     description: "",
   });
 
-  // Prefill package from ?package=category/id when coming from a package "Book Now" link
+  // Prefill package (and optional notes) from ?package=category/id&notes=... when coming
+  // from a package "Book Now" link or the package finder tool
   useEffect(() => {
     if (typeof window === "undefined") return;
     const params = new URLSearchParams(window.location.search);
     const packageParam = params.get("package");
-    if (packageParam && validPackageValues.has(packageParam)) {
-      setFormData((prev) => ({ ...prev, package: packageParam }));
-    }
+    const notesParam = params.get("notes");
+    setFormData((prev) => ({
+      ...prev,
+      package:
+        packageParam && validPackageValues.has(packageParam) ? packageParam : prev.package,
+      description: notesParam || prev.description,
+    }));
   }, []);
 
   const [imageFile, setImageFile] = useState<File | null>(null);
