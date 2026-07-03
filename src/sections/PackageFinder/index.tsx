@@ -272,7 +272,7 @@ export const PackageFinder = () => {
                     )}&notes=${encodeURIComponent(quoteNotes)}`}
                     className="inline-block text-center text-white font-figtree text-sm font-medium py-3 px-4 rounded-lg bg-cta hover:bg-cta-dark border border-transparent transition w-full"
                   >
-                    Get a Quote for This Package
+                    Book Now
                   </a>
                   <a
                     href={`/packages/${pkg.category}/${pkg.id}`}
