@@ -97,9 +97,23 @@ export const PackageFinder = () => {
 
   const quoteNotes =
     pkg && size
-      ? `Vehicle size: ${sizeLabel}. Package: ${pkg.tagline ?? pkg.title}${
-          selectedTier ? ` (${selectedTier.label})` : ""
-        }. Estimated price: ${price ?? "Quote"}.`
+      ? [
+          `Package: ${pkg.title}${pkg.tagline ? ` ("${pkg.tagline}")` : ""}${
+            selectedTier ? ` — ${selectedTier.label}` : ""
+          }`,
+          `Vehicle size: ${sizeLabel}`,
+          `Price: ${price === "Quote" ? "Custom quote required" : price}`,
+          duration ? `Approx. duration: ${duration}` : null,
+          "",
+          "Package includes:",
+          ...pkg.sections.map(
+            (section) => `- ${section.heading}: ${section.items.join("; ")}`
+          ),
+          pkg.extras ? `- ${pkg.extras.heading}: ${pkg.extras.items.join("; ")}` : null,
+          pkg.note ? `\nNote: ${pkg.note}` : null,
+        ]
+          .filter((line): line is string => line !== null)
+          .join("\n")
       : "";
 
   const cardBase =
