@@ -120,20 +120,27 @@ export const PackagesOverview = () => {
                           {pkg.summary}
                         </p>
                         <div className="mt-4 flex flex-col gap-1">
-                          <p className="font-refrigerator uppercase text-lg font-bold text-black">
-                            {pkg.priceDisplay}
-                          </p>
-                          {pkg.durationDisplay && (
-                            <p className="font-figtree text-xs md:text-sm text-gray-600">
-                              {pkg.durationDisplay}
-                            </p>
-                          )}
+                          {pkg.pricingTiers
+                            ? pkg.pricingTiers.map((tier) => (
+                                <p
+                                  key={tier.label}
+                                  className="font-figtree text-xs md:text-sm text-gray-600"
+                                >
+                                  <span className="font-semibold text-black">{tier.label}:</span>{" "}
+                                  {tier.duration}
+                                </p>
+                              ))
+                            : pkg.durationDisplay && (
+                                <p className="font-figtree text-xs md:text-sm text-gray-600">
+                                  {pkg.durationDisplay}
+                                </p>
+                              )}
                         </div>
                         <a
                           href={`/packages/${categoryId}/${pkg.id}`}
                           className="mt-4 inline-block text-center text-white font-figtree text-sm font-medium py-2.5 px-4 rounded-lg bg-cta hover:bg-cta-dark border border-transparent transition w-full"
                         >
-                          View details
+                          View Our Pricing and Size Guide
                         </a>
                       </div>
                     </div>

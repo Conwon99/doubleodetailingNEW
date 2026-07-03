@@ -20,6 +20,8 @@ export type SizePricing = {
 export type PricingTier = {
   label: string;
   prices: SizePricing;
+  /** Approx. labour time for this tier (e.g. "Approx. 9–10 Hours") */
+  duration?: string;
 };
 
 export type PackageData = {
@@ -105,7 +107,7 @@ export const packagesData: PackageData[] = [
       "Owners wanting high gloss without full correction",
     ],
     priceDisplay: "From £275 to £350 (XL: Quote)",
-    durationDisplay: "Approx. 7–8 hours",
+    durationDisplay: "Approx. 7–8 Hours",
     imageUrl: "/packages/snow-time-to-die.jpeg",
     pricingBySize: { small: "£275", medium: "£310", large: "£350", xl: "Quote" },
   },
@@ -163,10 +165,12 @@ export const packagesData: PackageData[] = [
       {
         label: "2-Year Ceramic Coating",
         prices: { small: "£375", medium: "£425", large: "£475", xl: "£550+" },
+        duration: "Approx. 9–10 Hours",
       },
       {
         label: "3-Year Ceramic Coating (Unit Only)",
         prices: { small: "£450", medium: "£500", large: "£550", xl: "£625+" },
+        duration: "Approx. 10–12 Hours",
       },
     ],
   },
@@ -218,7 +222,7 @@ export const packagesData: PackageData[] = [
       ],
     },
     priceDisplay: "From £170 to £230",
-    durationDisplay: "Approx. from 4 hours",
+    durationDisplay: "Approx. 4–5 Hours",
     imageUrl: "/packages/shaken-not-stirred.png",
     pricingBySize: { small: "£170", medium: "£185", large: "£200", xl: "£230" },
   },
@@ -260,7 +264,7 @@ export const packagesData: PackageData[] = [
     note:
       "Vehicle must have received a Deep Clean, Maintenance Detail, or Paint Enhancement package within the last 2–8 weeks.",
     priceDisplay: "From £90 to £120",
-    durationDisplay: "Approx. 2.5–3 hours",
+    durationDisplay: "Approx. 2.5–3 Hours",
     imageUrl: "/packages/spectre.png",
     pricingBySize: { small: "£90", medium: "£95", large: "£100", xl: "£120" },
   },
@@ -291,7 +295,7 @@ export const packagesData: PackageData[] = [
       "Enthusiast-maintained cars",
     ],
     priceDisplay: "From £50 to £75",
-    durationDisplay: "Approx. 1.5–2 hours",
+    durationDisplay: "Approx. 1.5–2 Hours",
     imageUrl: "/packages/exterior-wash.png",
     pricingBySize: { small: "£50", medium: "£55", large: "£60", xl: "£75" },
   },
