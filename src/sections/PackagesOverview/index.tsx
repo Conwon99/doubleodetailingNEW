@@ -49,6 +49,12 @@ export const PackagesOverview = () => {
           <h2 className="text-3xl font-bold tracking-[-0.52px] leading-tight md:text-5xl md:leading-tight font-refrigerator uppercase text-white">
             Packages Overview
           </h2>
+          <a
+            href="/packages/find-my-package"
+            className="mt-6 inline-block text-center text-white font-figtree text-sm md:text-base font-medium py-3 px-6 rounded-lg bg-cta hover:bg-cta-dark border border-transparent transition"
+          >
+            Find Which Package Is Best For Me
+          </a>
         </div>
       </section>
 

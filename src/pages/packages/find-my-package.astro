@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Navbar } from '../../sections/Navbar';
+import { PackageFinder } from '../../sections/PackageFinder';
+import { QuoteSection } from '../../sections/QuoteSection';
+import { FooterSection } from '../../sections/FooterSection';
+---
+
+<Layout
+  title="Find Which Package Is Best For Me - Double O Detailing | Glasgow"
+  description="Answer a couple of quick questions about your vehicle to find the right detailing package and get an instant price estimate based on your vehicle size."
+  canonical="https://doubleodetailing.co.uk/packages/find-my-package"
+>
+  <div class="min-h-screen bg-neutral-100 font-figtree text-black text-sm leading-5 antialiased">
+    <Navbar client:load />
+    <main class="pt-0">
+      <PackageFinder client:load />
+      <QuoteSection client:load showTerms={false} />
+      <FooterSection client:load />
+    </main>
+  </div>
+</Layout>
