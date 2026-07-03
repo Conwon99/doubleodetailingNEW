@@ -177,10 +177,10 @@ export const packagesData: PackageData[] = [
   {
     id: "shaken-not-stirred",
     category: "deep-clean",
-    title: "DEEP CLEAN DETAIL",
+    title: "FULL DETAIL",
     tagline: "SHAKEN, NOT STIRRED",
     summary:
-      "A comprehensive interior and exterior transformation designed to restore heavily used or neglected vehicles back to a high standard. Typical duration from 4 hours.",
+      "A comprehensive interior and exterior detail designed to safely restore cleanliness, remove contamination, add 6 months paint protection, and prepare your vehicle for ongoing maintenance or protection.",
     sections: [
       {
         heading: "EXTERIOR",
@@ -303,7 +303,7 @@ export const packagesData: PackageData[] = [
 
 export const categoryLabels: Record<PackageData["category"], string> = {
   "machine-polishing": "Machine Polishing & Coatings",
-  "deep-clean": "Deep Clean Detailing",
+  "deep-clean": "Premium Detailing*",
   maintenance: "Maintenance",
 };
 
