@@ -236,17 +236,6 @@ export const PackagesOverview = () => {
                 </li>
                 <li>
                   <span className="font-refrigerator uppercase text-base md:text-lg font-bold text-black">
-                    <a href="/jet-ski-detailing" className="hover:text-cta-dark hover:underline">
-                      Jet Ski and Boat Detailing
-                    </a>
-                  </span>
-                  <span className="font-figtree text-[15px] text-gray-700 leading-6">
-                    {" "}
-                    — Specialist jet ski and boat detailing and protection at our Killearn workshop (unit-based, year-round).
-                  </span>
-                </li>
-                <li>
-                  <span className="font-refrigerator uppercase text-base md:text-lg font-bold text-black">
                     Fabric Coating (Interior){" "}
                     <span className="font-normal normal-case text-[13px] md:text-sm text-gray-600">
                       (Starts from £75)
