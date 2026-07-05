@@ -95,17 +95,6 @@ export const ServicePageServices = () => {
                     — Thorough cleaning and dressing of the engine bay. Safe, professional treatment to showcase and protect under-bonnet areas.
                   </span>
                 </li>
-                <li>
-                  <span className="font-refrigerator uppercase text-base md:text-lg font-bold text-black">
-                    <a href="/jet-ski-detailing" className="hover:text-cta-dark hover:underline">
-                      Jet Ski and Boat Detailing
-                    </a>
-                  </span>
-                  <span className="font-figtree text-[15px] text-gray-700 leading-6">
-                    {" "}
-                    — Specialist jet ski and boat detailing and protection at our Killearn workshop. Unit-based service available year-round.
-                  </span>
-                </li>
               </ul>
             </div>
           </div>
