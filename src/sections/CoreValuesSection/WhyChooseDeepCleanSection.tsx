@@ -8,7 +8,7 @@ export const WhyChooseDeepCleanSection = () => {
               <img
                 src="/Deep clean detailing.png"
                 sizes="(max-width: 767px) 100vw, 700px"
-                alt="Double O Detailing - Deep Cleans and Valets"
+                alt="Double O Detailing - Full Detail & Protection"
                 className="box-border caret-transparent inline-block h-full max-w-full object-cover w-full"
               />
             </div>

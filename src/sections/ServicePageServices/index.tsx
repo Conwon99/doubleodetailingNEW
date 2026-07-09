@@ -21,8 +21,8 @@ export const ServicePageServices = () => {
                 href="/machine-polishing"
                 imageUrl="/Machine polishing.png"
                 imageSizes="(max-width: 767px) 100vw, 740px"
-                title="Machine Polishing"
-                description="Professional machine polishing to restore your vehicle's paintwork to showroom condition. We use premium products and proven techniques."
+                title="Paint Correction and Gloss Enhancements"
+                description="Professional paint correction and gloss enhancement to restore your vehicle's paintwork to showroom condition. We use premium products and proven techniques."
                 iconUrl="https://c.animaapp.com/mkllold3CHU3xz/assets/icon-5.svg"
                 iconAlt="Icon"
               />
@@ -39,8 +39,8 @@ export const ServicePageServices = () => {
                 href="/deep-cleans"
                 imageUrl="/Deep clean detailing.png"
                 imageSizes="(max-width: 767px) 100vw, 740px"
-                title="Deep Cleans and Valets"
-                description="Comprehensive deep cleaning and valeting services to keep your vehicle looking immaculate inside and out. Attention to every detail."
+                title="Full Detail & Protection"
+                description="Our most comprehensive deep clean. A thorough interior and exterior detail with decontamination and long-lasting protection to restore your vehicle's appearance inside and out."
                 iconUrl="https://c.animaapp.com/mkllold3CHU3xz/assets/icon-5.svg"
                 iconAlt="Icon"
               />

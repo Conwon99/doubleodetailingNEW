@@ -295,8 +295,8 @@ export const packagesData: PackageData[] = [
 ];
 
 export const categoryLabels: Record<PackageData["category"], string> = {
-  "machine-polishing": "Machine Polishing & Coatings",
-  "deep-clean": "Premium Detailing*",
+  "machine-polishing": "Paint Correction and Gloss Enhancements",
+  "deep-clean": "Premium Detailing",
   maintenance: "Maintenance",
 };
 
