@@ -10,7 +10,7 @@ export const FooterContact = () => {
           onClick={(e) => e.preventDefault()}
           className="text-[15px] box-border caret-transparent leading-6 text-white/80 hover:text-white md:text-base cursor-not-allowed opacity-70"
         >
-          Machine Polishing
+          Paint Correction and Gloss Enhancements
         </a>
         <a
           href="#"
@@ -24,7 +24,7 @@ export const FooterContact = () => {
           onClick={(e) => e.preventDefault()}
           className="text-[15px] box-border caret-transparent leading-6 text-white/80 hover:text-white md:text-base cursor-not-allowed opacity-70"
         >
-          Deep Cleans and Valets
+          Full Detail & Protection
         </a>
         <a
           href="#"

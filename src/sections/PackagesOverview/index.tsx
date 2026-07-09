@@ -283,7 +283,7 @@ export const PackagesOverview = () => {
 
                 <div>
                   <h4 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-2">
-                    Premium Detailing*
+                    Premium Detailing
                   </h4>
                   <p className="font-figtree text-[15px] text-gray-700 leading-6">
                     A comprehensive interior and exterior detail designed to safely restore cleanliness, remove
@@ -294,7 +294,7 @@ export const PackagesOverview = () => {
 
                 <div>
                   <h4 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-2">
-                    Machine Polishing & Ceramic Protection
+                    Paint Correction and Gloss Enhancements
                   </h4>
                   <p className="font-figtree text-[15px] text-gray-700 leading-6">
                     Focused on gloss, clarity, defect reduction, and durable protection for owners who value the finish and

@@ -9,7 +9,7 @@ export const WhyChooseMachinePolishingSection = () => {
               <img
                 src="/Machine polishing.png"
                 sizes="(max-width: 767px) 100vw, 700px"
-                alt="Double O Detailing - Machine Polishing"
+                alt="Double O Detailing - Paint Correction and Gloss Enhancements"
                 className="box-border caret-transparent inline-block h-full max-w-full object-cover w-full"
               />
             </div>

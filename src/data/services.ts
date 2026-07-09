@@ -12,9 +12,9 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "machine-polishing",
-    title: "Machine Polishing",
+    title: "Paint Correction and Gloss Enhancements",
     shortDescription:
-      "Professional machine polishing to restore your vehicle's paintwork to showroom condition. We use premium products and proven techniques.",
+      "Professional paint correction and gloss enhancement to restore your vehicle's paintwork to showroom condition. We use premium products and proven techniques.",
     imageUrl: "/Machine polishing.png",
   },
   {
@@ -26,9 +26,9 @@ export const services: Service[] = [
   },
   {
     slug: "deep-cleans",
-    title: "Deep Cleans and Valets",
+    title: "Full Detail & Protection",
     shortDescription:
-      "Comprehensive deep cleaning and valeting services to keep your vehicle looking immaculate inside and out. Attention to every detail.",
+      "Our most comprehensive deep clean. A thorough interior and exterior detail with decontamination and long-lasting protection to restore your vehicle's appearance inside and out.",
     imageUrl: "/Deep clean detailing.png",
   },
   {
