@@ -72,7 +72,7 @@ export const WhyChooseMaintenanceSection = () => {
               </div>
               <div className="box-border caret-transparent flex flex-wrap gap-3">
                 <a
-                  href="/contact"
+                  href="https://clienthub.getjobber.com/hubs/a44bef51-533c-4e99-b56c-1a3b824ae502/public/requests/4921090/new" target="_blank" rel="noopener noreferrer"
                   className="text-white items-center bg-cta-dark box-border caret-transparent gap-x-3 flex max-w-full gap-y-3 text-center border border-cta-dark px-6 py-4 rounded-[100px] border-solid hover:text-cta-dark hover:bg-white"
                 >
                   <span className="relative text-sm font-medium z-[2] md:text-base md:leading-6">BOOK NOW</span>

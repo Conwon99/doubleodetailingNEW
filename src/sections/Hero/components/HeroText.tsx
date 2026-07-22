@@ -14,7 +14,7 @@ export const HeroText = () => {
       <div className="items-center box-border caret-transparent gap-x-5 flex blur-0 flex-wrap gap-y-5 mt-6 md:gap-x-6 md:gap-y-6 md:mt-7">
         <div className="box-border caret-transparent flex">
           <a
-            href="/contact"
+            href="https://clienthub.getjobber.com/hubs/a44bef51-533c-4e99-b56c-1a3b824ae502/public/requests/4921090/new" target="_blank" rel="noopener noreferrer"
             onClick={() => {
               if (typeof window !== 'undefined' && (window as any).gtag) {
                 (window as any).gtag('event', 'quoteButton_hero', {

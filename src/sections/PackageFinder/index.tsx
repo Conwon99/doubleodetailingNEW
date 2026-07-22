@@ -95,27 +95,6 @@ export const PackageFinder = () => {
     setTierLabel(null);
   };
 
-  const quoteNotes =
-    pkg && size
-      ? [
-          `Package: ${pkg.title}${pkg.tagline ? ` ("${pkg.tagline}")` : ""}${
-            selectedTier ? ` — ${selectedTier.label}` : ""
-          }`,
-          `Vehicle size: ${sizeLabel}`,
-          `Price: ${price === "Quote" ? "Custom quote required" : price}`,
-          duration ? `Approx. duration: ${duration}` : null,
-          "",
-          "Package includes:",
-          ...pkg.sections.map(
-            (section) => `- ${section.heading}: ${section.items.join("; ")}`
-          ),
-          pkg.extras ? `- ${pkg.extras.heading}: ${pkg.extras.items.join("; ")}` : null,
-          pkg.note ? `\nNote: ${pkg.note}` : null,
-        ]
-          .filter((line): line is string => line !== null)
-          .join("\n")
-      : "";
-
   const cardBase =
     "text-left rounded-xl border border-neutral-200 bg-white p-4 md:p-5 hover:border-cta hover:shadow-sm transition w-full";
 
@@ -281,9 +260,9 @@ export const PackageFinder = () => {
 
                 <div className="mt-6 flex flex-col gap-3">
                   <a
-                    href={`/contact?package=${encodeURIComponent(
-                      `${pkg.category}/${pkg.id}`
-                    )}&notes=${encodeURIComponent(quoteNotes)}`}
+                    href="https://clienthub.getjobber.com/hubs/a44bef51-533c-4e99-b56c-1a3b824ae502/public/requests/4921090/new"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-block text-center text-white font-figtree text-sm font-medium py-3 px-4 rounded-lg bg-cta hover:bg-cta-dark border border-transparent transition w-full"
                   >
                     Book Now
