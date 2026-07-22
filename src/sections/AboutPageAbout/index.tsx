@@ -46,10 +46,10 @@ export const AboutPageAbout = () => {
                     </div>
                     <div className="rounded-xl border border-neutral-200 bg-neutral-50/50 p-4 md:p-5 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
                       <div className="order-2 sm:order-none flex-1 min-w-0">
-                        <span className="text-[15px] leading-6 text-gray-700 md:text-base">Paint Correction, Sanding + Coating Business Skills</span>
+                        <span className="text-[15px] leading-6 text-gray-700 md:text-base">Paint Correction, Coating and Business Skills Trained</span>
                       </div>
                       <div className="order-1 sm:order-none w-12 h-12 sm:w-14 sm:h-14 shrink-0 flex items-center justify-center sm:self-start">
-                        <img src="/certs/cmpristine.jpg" alt="Paint Correction, Sanding + Coating Business Skills certification" className="w-full h-full object-contain" />
+                        <img src="/certs/cmpristine.jpg" alt="Paint Correction, Coating and Business Skills Trained certification" className="w-full h-full object-contain" />
                       </div>
                     </div>
                     <div className="rounded-xl border border-neutral-200 bg-neutral-50/50 p-4 md:p-5 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
