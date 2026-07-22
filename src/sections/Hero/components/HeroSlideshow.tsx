@@ -7,6 +7,7 @@ export const HeroSlideshow = () => {
     '/hero/WhatsApp Image 2026-02-02 at 11.18.23 PM (2).jpeg',
     '/hero/WhatsApp Image 2026-02-02 at 11.18.23 PM (3).jpeg',
     '/hero/WhatsApp Image 2026-02-02 at 11.18.23 PM (4).jpeg',
+    '/hero/ferrari-hood-detail.jpeg',
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
