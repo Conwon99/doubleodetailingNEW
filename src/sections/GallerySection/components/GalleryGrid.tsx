@@ -1,10 +1,14 @@
 export const GalleryGrid = () => {
   const images = [
-    { src: "/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM.jpeg", alt: "Double O Detailing Gallery 1" },
-    { src: "/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM (1).jpeg", alt: "Double O Detailing Gallery 2" },
-    { src: "/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM (2).jpeg", alt: "Double O Detailing Gallery 3" },
-    { src: "/gallery/landrover.jpeg", alt: "Double O Detailing Gallery 4 - Land Rover" },
-    { src: "/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM (4).jpeg", alt: "Double O Detailing Gallery 5" },
+    { src: "/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM.jpeg", alt: "Double O Detailing Gallery - classic Mercedes" },
+    { src: "/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM (2).jpeg", alt: "Double O Detailing Gallery - BMW M4" },
+    { src: "/gallery/WhatsApp Image 2026-02-02 at 11.18.23 PM (4).jpeg", alt: "Double O Detailing Gallery - Mercedes GLE" },
+    { src: "/gallery/aston-martin-2.jpeg", alt: "Double O Detailing Gallery - Aston Martin" },
+    { src: "/gallery/porsche-macan-exterior.jpeg", alt: "Double O Detailing Gallery - Porsche Macan exterior" },
+    { src: "/gallery/porsche-macan-interior.jpeg", alt: "Double O Detailing Gallery - Porsche Macan interior" },
+    { src: "/gallery/bmw-engine-bay.jpeg", alt: "Double O Detailing Gallery - BMW engine bay detailing" },
+    { src: "/gallery/ferrari-hood.jpeg", alt: "Double O Detailing Gallery - Ferrari" },
+    { src: "/gallery/bmw-x1-black.jpeg", alt: "Double O Detailing Gallery - BMW X1" },
   ];
 
   return (
