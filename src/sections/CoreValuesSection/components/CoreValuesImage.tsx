@@ -6,7 +6,7 @@ export const CoreValuesImage = () => {
           src="/gordie-with-vehicle.jpg"
           sizes="(max-width: 767px) 100vw, 700px"
           alt="Gordie presenting a freshly detailed vehicle"
-          className="box-border caret-transparent inline-block h-full max-w-full object-cover w-full"
+          className="box-border caret-transparent inline-block h-full max-w-full object-cover object-top w-full"
         />
       </div>
     </div>
