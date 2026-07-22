@@ -8,12 +8,18 @@ export const CoreValuesContent = () => {
       </div>
       <div className="box-border caret-transparent mt-[18px] mb-4 md:mt-5">
         <h2 className="text-3xl font-bold box-border caret-transparent tracking-[-0.52px] leading-[35px] md:text-[52px] md:leading-[62px] font-refrigerator uppercase">
-          <span className="text-3xl box-border caret-transparent leading-[35px] font-refrigerator uppercase md:text-[52px] md:leading-[62px]">Why</span> <span className="font-refrigerator uppercase">Choose Double O Detailing?</span>
+          Why Owners Trust Double O Detailing
         </h2>
       </div>
       <div className="text-gray-700 box-border caret-transparent">
         <p className="text-[15px] box-border caret-transparent leading-6 md:text-base">
-          At Double-O Detailing, we're passionate about restoring and protecting vehicles to the highest standard. With our workshop in Killearn, we provide mobile detailing across Loch Lomond, Glasgow West End and surrounding areas, plus unit-based services for paint correction, ceramic coatings, and specialist detailing. Mobile appointments are available seasonally and weather permitting; advanced correction and long-term ceramic packages are carried out year-round in our private detailing unit.
+          Exceptional detailing is about more than making a vehicle look clean—it's about preserving its condition, protecting its finish and taking pride in every detail. At Double O Detailing, every service is carried out using safe, professional methods and premium products to deliver results that not only look outstanding on the day but continue to perform long after you drive away.
+        </p>
+        <h3 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mt-6 mb-2">
+          Meet Gordie
+        </h3>
+        <p className="text-[15px] box-border caret-transparent leading-6 md:text-base">
+          Double O Detailing is a business built on craftsmanship rather than volume. Every vehicle that enters the workshop is personally detailed by me, ensuring the same high standards are maintained from the initial inspection to the final finishing touches. I believe quality comes from taking the time to do things properly, using the right techniques, and treating every vehicle with the care and respect it deserves.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-3 mt-5">
           <div className="flex items-center gap-2">
@@ -22,15 +28,7 @@ export const CoreValuesContent = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
               </svg>
             </span>
-            <span className="text-[15px] font-medium text-black md:text-base">Mobile Service</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600" aria-hidden>
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-            </span>
-            <span className="text-[15px] font-medium text-black md:text-base">Killearn Workshop</span>
+            <span className="text-[15px] font-medium text-black md:text-base">Mobile and Unit Service</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600" aria-hidden>
@@ -46,7 +44,7 @@ export const CoreValuesContent = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
               </svg>
             </span>
-            <span className="text-[15px] font-medium text-black md:text-base">Quality Guaranteed</span>
+            <span className="text-[15px] font-medium text-black md:text-base">Premium Products Used</span>
           </div>
         </div>
       </div>
