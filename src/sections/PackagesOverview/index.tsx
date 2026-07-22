@@ -100,29 +100,11 @@ export const PackagesOverview = () => {
                     >
                       {pkg.imageUrl && (
                         <div className="relative w-full md:w-[320px] lg:w-[380px] md:min-h-[200px] md:shrink-0 aspect-[4/3] md:aspect-auto bg-neutral-100 overflow-hidden">
-                          {pkg.id === "casino-royale" ? (
-                            <div className="grid grid-cols-3 gap-1 h-full w-full p-1 bg-black">
-                              {[
-                                "/packages/casino-royale-gallery-1.jpeg",
-                                "/packages/casino-royale-gallery-2.jpeg",
-                                "/packages/casino-royale-gallery-3.jpeg",
-                              ].map((src, index) => (
-                                <img
-                                  key={src}
-                                  src={src}
-                                  alt={`Casino Royale image ${index + 1}`}
-                                  className="w-full h-full object-cover rounded-sm"
-                                  loading="lazy"
-                                />
-                              ))}
-                            </div>
-                          ) : (
-                            <img
-                              src={pkg.imageUrl}
-                              alt=""
-                              className="w-full h-full object-cover"
-                            />
-                          )}
+                          <img
+                            src={pkg.imageUrl}
+                            alt=""
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                       )}
                       <div className="p-5 md:p-6 flex-1 flex flex-col min-w-0">

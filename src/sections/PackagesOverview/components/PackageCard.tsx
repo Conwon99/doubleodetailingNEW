@@ -5,37 +5,17 @@ import { PriceSizeTable } from "./PriceSizeTable";
 type PackageCardProps = { package: PackageData };
 
 export const PackageCard = ({ package: pkg }: PackageCardProps) => {
-  const isCasinoRoyale = pkg.id === "casino-royale";
-  const casinoRoyaleImages = [
-    "/packages/casino-royale-gallery-1.jpeg",
-    "/packages/casino-royale-gallery-2.jpeg",
-    "/packages/casino-royale-gallery-3.jpeg",
-  ];
   const pricingRows = getPricingRows(pkg);
 
   return (
     <article className="rounded-xl overflow-hidden bg-black text-white border border-neutral-800 shadow-lg">
       {pkg.imageUrl && (
         <div className="relative w-full aspect-[4/3] bg-neutral-900 overflow-hidden">
-          {isCasinoRoyale ? (
-            <div className="grid grid-cols-3 gap-1 h-full w-full p-1 bg-black">
-              {casinoRoyaleImages.map((src, index) => (
-                <img
-                  key={src}
-                  src={src}
-                  alt={`Casino Royale image ${index + 1}`}
-                  className="w-full h-full object-cover rounded-sm"
-                  loading="lazy"
-                />
-              ))}
-            </div>
-          ) : (
-            <img
-              src={pkg.imageUrl}
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          )}
+          <img
+            src={pkg.imageUrl}
+            alt=""
+            className="w-full h-full object-cover"
+          />
         </div>
       )}
       <div className="relative p-6 md:p-8">
