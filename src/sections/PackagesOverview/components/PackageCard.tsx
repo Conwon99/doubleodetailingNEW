@@ -121,7 +121,7 @@ export const PackageCard = ({ package: pkg }: PackageCardProps) => {
         {/* Book Now - link to external Jobber booking request form */}
         <div className="mt-5">
           <a
-            href="https://clienthub.getjobber.com/hubs/a44bef51-533c-4e99-b56c-1a3b824ae502/public/requests/4921090/new"
+            href="https://clienthub.getjobber.com/hubs/a44bef51-533c-4e99-b56c-1a3b824ae502/public/requests/5099095/new"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full text-center text-white font-figtree text-sm font-medium py-3 px-4 rounded-lg bg-cta hover:bg-cta-dark border border-transparent transition"
