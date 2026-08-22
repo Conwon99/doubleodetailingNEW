@@ -1,7 +1,7 @@
 import { TermsAndConditions } from "./components/TermsAndConditions";
 
 const JOBBER_BOOKING_URL =
-  "https://clienthub.getjobber.com/hubs/a44bef51-533c-4e99-b56c-1a3b824ae502/public/requests/4921090/new";
+  "https://clienthub.getjobber.com/hubs/a44bef51-533c-4e99-b56c-1a3b824ae502/public/requests/5099095/new";
 
 export type QuoteSectionProps = {
   showTerms?: boolean;
