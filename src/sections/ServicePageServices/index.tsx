@@ -70,11 +70,11 @@ export const ServicePageServices = () => {
                 </li>
                 <li>
                   <span className="font-refrigerator uppercase text-base md:text-lg font-bold text-black">
-                    Soft Top Coating <span className="font-normal normal-case text-[13px] md:text-sm text-gray-600">(Starts from £140)</span>
+                    Soft Top Clean & Protection <span className="font-normal normal-case text-[13px] md:text-sm text-gray-600">(Starts from £140)</span>
                   </span>
                   <span className="font-figtree text-[15px] text-gray-700 leading-6">
                     {" "}
-                    — Revive and protect convertible and soft tops with specialist cleaning, restoration, and durable coating for lasting finish.
+                    — Specialist cleaning and protective treatment for convertible fabric roofs, helping remove built-up dirt, refresh the appearance and improve water repellency. Recolouring is not included.
                   </span>
                 </li>
                 <li>
