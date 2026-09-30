@@ -117,7 +117,7 @@ export const packagesData: PackageData[] = [
       "Owners wanting a visual refresh without heavier correction",
     ],
     durationDisplay: "Full Day Service",
-    imageUrl: "/packages/snow-time-to-die.jpeg",
+    imageUrl: "/packages/gloss-enhancement.jpeg",
     pricingTiers: [
       {
         label: "12 Month",

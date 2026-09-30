@@ -100,7 +100,7 @@ export const PackagesOverview = () => {
                           <img
                             src={pkg.imageUrl}
                             alt=""
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover md:absolute md:inset-0"
                           />
                         </div>
                       )}
