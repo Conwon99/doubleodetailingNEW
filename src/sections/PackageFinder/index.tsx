@@ -23,25 +23,25 @@ const needOptions: NeedOption[] = [
     packageId: "spectre",
     label: "Deeper refresh for a well-kept vehicle",
     description:
-      "A more thorough interior & exterior reset. Only suitable if your vehicle has had a Full Detail, Maintenance Detail, or Paint Enhancement within the last 2–8 weeks.",
+      "A more thorough interior and exterior reset. Suitable for vehicles already brought up to standard and maintained regularly.",
   },
   {
     packageId: "shaken-not-stirred",
     label: "Neglected vehicle needing a full reset",
     description:
-      "Heavily used, dirty, or overdue for attention — a full interior & exterior detail with 6 months paint protection.",
+      "Your vehicle is heavily used, dirty or overdue for attention and requires a comprehensive interior and exterior detail with six months of paint protection.",
   },
   {
     packageId: "no-time-to-die",
-    label: "Improve gloss & shine, plus protection",
+    label: "Improve gloss and protect the paintwork",
     description:
-      "Paintwork looks dull or lightly swirled and you want a visual refresh with 12 months of protection.",
+      "Your paintwork is newer, dull or lightly swirled and would benefit from improved gloss, depth and clarity without heavier defect correction.",
   },
   {
     packageId: "casino-royale",
-    label: "Paint correction + long-term ceramic protection",
+    label: "Reduce visible swirls and paint defects",
     description:
-      "You want defect correction paired with a durable 2-year or 3-year ceramic coating.",
+      "Your paintwork has noticeable swirls, wash marring, oxidation or lighter defects and requires a stronger single-stage correction.",
   },
 ];
 
@@ -192,10 +192,10 @@ export const PackageFinder = () => {
                 ← Back
               </button>
               <h2 className="font-refrigerator uppercase text-xl md:text-2xl font-bold text-black mb-2 text-center">
-                2-Year or 3-Year Ceramic Coating?
+                Choose Your Protection Level
               </h2>
               <p className="font-figtree text-[15px] text-gray-600 text-center mb-6">
-                The 3-Year option is unit-only and includes an upgraded, longer-lasting coating.
+                12-month ceramic protection is included as standard. Three-year ceramic coatings are carried out at our unit and require overnight curing.
               </p>
               <div className="flex flex-col gap-3">
                 {pkg.pricingTiers.map((tier) => (
@@ -207,6 +207,7 @@ export const PackageFinder = () => {
                   >
                     <p className="font-figtree font-semibold text-[15px] text-black">
                       {tier.label}
+                      {tier.unitOnly ? " (Unit Only)" : ""}
                     </p>
                     {tier.duration && (
                       <p className="font-figtree text-sm text-gray-600 mt-1">{tier.duration}</p>
@@ -233,7 +234,10 @@ export const PackageFinder = () => {
                 </h2>
                 {pkg.tagline && (
                   <p className="font-refrigerator uppercase text-base text-gray-600 mt-1">
-                    &ldquo;{pkg.tagline}&rdquo;{selectedTier ? ` — ${selectedTier.label}` : ""}
+                    &ldquo;{pkg.tagline}&rdquo;
+                    {selectedTier
+                      ? ` — ${selectedTier.label}${selectedTier.unitOnly ? " (Unit Only)" : ""}`
+                      : ""}
                   </p>
                 )}
 

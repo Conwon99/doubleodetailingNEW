@@ -3,10 +3,9 @@ import {
   categoryLabels,
   PRICE_DISCLAIMER_TEXT,
   vehicleSizeGuide,
-  getPricingRows,
 } from "../../data/packages";
 import type { PackageData } from "../../data/packages";
-import { PriceSizeTable } from "./components/PriceSizeTable";
+import { PricingTables } from "./components/PricingTables";
 
 const categoryOrder: PackageData["category"][] = [
   "machine-polishing",
@@ -31,8 +30,6 @@ export const PackagesOverview = () => {
     packages: packagesData.filter((p) => p.category === cat),
     imageUrl: categoryImages[cat],
   }));
-
-  const allPricingRows = packagesData.flatMap(getPricingRows);
 
   return (
     <>
@@ -118,31 +115,40 @@ export const PackagesOverview = () => {
                             </p>
                           )}
                         </div>
-                        <p className="font-figtree text-[15px] text-gray-700 leading-6 flex-1">
-                          {pkg.summary}
-                        </p>
-                        <div className="mt-4 flex flex-col gap-1">
-                          {pkg.pricingTiers
-                            ? pkg.pricingTiers.map((tier) => (
-                                <p
-                                  key={tier.label}
-                                  className="font-figtree text-xs md:text-sm text-gray-600"
-                                >
-                                  <span className="font-semibold text-black">{tier.label}:</span>{" "}
-                                  {tier.duration}
-                                </p>
-                              ))
-                            : pkg.durationDisplay && (
-                                <p className="font-figtree text-xs md:text-sm text-gray-600">
-                                  {pkg.durationDisplay}
-                                </p>
-                              )}
+                        <div className="flex-1 flex flex-col gap-3">
+                          {pkg.summary.split("\n\n").map((paragraph, i) => (
+                            <p key={i} className="font-figtree text-[15px] text-gray-700 leading-6">
+                              {paragraph}
+                            </p>
+                          ))}
                         </div>
+                        {pkg.bestSuitedTo || pkg.serviceTime ? (
+                          <div className="mt-4 flex flex-col gap-2">
+                            {pkg.bestSuitedTo && (
+                              <p className="font-figtree text-xs md:text-sm text-gray-600">
+                                <span className="font-semibold text-black">Best suited to:</span>{" "}
+                                {pkg.bestSuitedTo}
+                              </p>
+                            )}
+                            {pkg.serviceTime && (
+                              <p className="font-figtree text-xs md:text-sm text-gray-600">
+                                <span className="font-semibold text-black">Service time:</span>{" "}
+                                {pkg.serviceTime}
+                              </p>
+                            )}
+                          </div>
+                        ) : (
+                          pkg.durationDisplay && (
+                            <p className="mt-4 font-figtree text-xs md:text-sm text-gray-600">
+                              {pkg.durationDisplay}
+                            </p>
+                          )
+                        )}
                         <a
                           href={`/packages/${categoryId}/${pkg.id}`}
                           className="mt-4 inline-block text-center text-white font-figtree text-sm font-medium py-2.5 px-4 rounded-lg bg-cta hover:bg-cta-dark border border-transparent transition w-full"
                         >
-                          View Our Pricing and Size Guide
+                          View Pricing and Size Guide
                         </a>
                       </div>
                     </div>
@@ -151,12 +157,12 @@ export const PackagesOverview = () => {
               </div>
             ))}
 
-            {/* Pricing table */}
+            {/* Pricing tables */}
             <div>
               <h3 className="font-refrigerator uppercase text-xl md:text-2xl font-bold text-black mb-6 text-center">
                 Pricing
               </h3>
-              <PriceSizeTable rows={allPricingRows} />
+              <PricingTables packages={packagesData} />
             </div>
 
             {/* Vehicle size guide */}
@@ -231,35 +237,19 @@ export const PackagesOverview = () => {
               </ul>
             </div>
 
-            <div className="mt-10 md:mt-14 text-center max-w-[720px] mx-auto">
-              <h3 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-4">
-                WHICH PACKAGE IS RIGHT FOR YOU?
-              </h3>
-              <img
-                src="/packageoverview.png"
-                alt="Which package is right for you"
-                className="mx-auto mb-4 max-w-[680px] w-full h-auto rounded-lg border border-neutral-200 bg-white"
-                loading="lazy"
-              />
-              <p className="font-figtree text-[15px] text-gray-600 md:text-base leading-6">
-                We know choosing a package isn't the easiest for most to decipher, so we have created a section to know what is best
-                for your vehicle. Explore our detailing packages to find the right level of protection and finish for your vehicle,
-                with a clear price list and package breakdown to help you choose confidently. Below is a summary of main packages,
-                but be sure to check out our special services as well.
-              </p>
-            </div>
-
             <div className="mt-10 md:mt-14 max-w-[860px] mx-auto">
-              <h4 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-4">
-                Here is a summary of our services:
-              </h4>
+              <p className="font-figtree text-[15px] md:text-base text-gray-700 leading-6 mb-6">
+                Choosing a detailing package should be straightforward. Start with your vehicle's current condition and
+                the result you want to achieve. We can then recommend the appropriate level of cleaning, paint improvement
+                and protection.
+              </p>
               <div className="flex flex-col gap-6">
                 <div>
                   <h4 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-2">
                     Maintenance
                   </h4>
                   <p className="font-figtree text-[15px] text-gray-700 leading-6">
-                    Designed for clients who want their vehicle consistently presented to a high standard without compromise.
+                    Designed for vehicles already brought up to a high standard and requiring safe, regular upkeep.
                   </p>
                 </div>
 
@@ -268,19 +258,16 @@ export const PackagesOverview = () => {
                     Premium Detailing
                   </h4>
                   <p className="font-figtree text-[15px] text-gray-700 leading-6">
-                    A comprehensive interior and exterior detail designed to safely restore cleanliness, remove
-                    contamination, add 6 months paint protection, and prepare your vehicle for ongoing maintenance or
-                    protection.
+                    A comprehensive interior and exterior reset designed to restore cleanliness, remove contamination and add six months of paint protection.
                   </p>
                 </div>
 
                 <div>
                   <h4 className="font-refrigerator uppercase text-lg md:text-xl font-bold text-black mb-2">
-                    Paint Correction and Gloss Enhancements
+                    Paint Enhancement & Correction
                   </h4>
                   <p className="font-figtree text-[15px] text-gray-700 leading-6">
-                    Focused on gloss, clarity, defect reduction, and durable protection for owners who value the finish and
-                    long-term condition of their vehicle.
+                    Two levels of machine polishing focused on gloss, clarity and defect reduction, with a choice of 12-month, 2-year or 3-year protection.
                   </p>
                 </div>
 
@@ -289,14 +276,13 @@ export const PackagesOverview = () => {
                     Unit & Mobile Services
                   </h4>
                   <p className="font-figtree text-[15px] text-gray-700 leading-6">
-                    Select services are available both mobile and from our private detailing unit, with advanced correction and
-                    long-term ceramic packages carried out in controlled indoor conditions for optimal results.
+                    Selected services are available mobile or from our private detailing unit. Three-year ceramic coatings are completed at the unit and require overnight curing.
                   </p>
                 </div>
               </div>
             </div>
 
-            <p className="mt-10 md:mt-14 font-figtree text-[14px] text-gray-600 md:text-[15px] leading-6 text-center max-w-[860px] mx-auto">
+            <p className="mt-10 md:mt-14 font-figtree text-[14px] text-gray-600 md:text-[15px] leading-6 text-center max-w-[860px] w-full mx-auto bg-neutral-200/60 px-6 py-8">
               {PRICE_DISCLAIMER_TEXT}
             </p>
           </div>
