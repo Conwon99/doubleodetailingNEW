@@ -27,9 +27,9 @@ const needOptions: NeedOption[] = [
   },
   {
     packageId: "shaken-not-stirred",
-    label: "Neglected vehicle needing a full reset",
+    label: "Your vehicle needs a seasonal reset",
     description:
-      "Your vehicle is heavily used, dirty or overdue for attention and requires a comprehensive interior and exterior detail with six months of paint protection.",
+      "A comprehensive interior and exterior detail designed to safely restore cleanliness, remove built-up contamination and add six months of paint protection—ideal for refreshing your vehicle and preparing it for ongoing maintenance.",
   },
   {
     packageId: "no-time-to-die",
