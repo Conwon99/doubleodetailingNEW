@@ -1,37 +1,19 @@
 import { useState, useEffect } from "react";
-import { packagesData, categoryLabels } from "../../../data/packages";
-import type { PackageData } from "../../../data/packages";
-
-const categoryOrder: PackageData["category"][] = [
-  "machine-polishing",
-  "deep-clean",
-  "maintenance",
-];
-
-const validPackageValues = new Set(packagesData.map((p) => `${p.category}/${p.id}`));
 
 export const QuoteForm = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
-    package: "",
     description: "",
   });
 
-  // Prefill package (and optional notes) from ?package=category/id&notes=... when coming
-  // from a package "Book Now" link or the package finder tool
+  // Prefill notes from ?notes=... when provided
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const params = new URLSearchParams(window.location.search);
-    const packageParam = params.get("package");
-    const notesParam = params.get("notes");
-    setFormData((prev) => ({
-      ...prev,
-      package:
-        packageParam && validPackageValues.has(packageParam) ? packageParam : prev.package,
-      description: notesParam || prev.description,
-    }));
+    const notesParam = new URLSearchParams(window.location.search).get("notes");
+    if (notesParam) {
+      setFormData((prev) => ({ ...prev, description: notesParam }));
+    }
   }, []);
 
   const [imageFile, setImageFile] = useState<File | null>(null);
@@ -104,11 +86,7 @@ export const QuoteForm = () => {
       // Use FormData to support file uploads
       const formDataToSend = new FormData();
       formDataToSend.append("name", formData.name);
-      formDataToSend.append("email", formData.email);
       formDataToSend.append("phone", formData.phone);
-      if (formData.package) {
-        formDataToSend.append("package", formData.package);
-      }
       formDataToSend.append("description", formData.description);
       formDataToSend.append("website", "https://doubleodetailing.co.uk/");
       
@@ -166,24 +144,7 @@ export const QuoteForm = () => {
             />
           </div>
 
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
-              Email Address *
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              onFocus={trackFormStart}
-              className="w-full px-4 py-3 bg-white border border-neutral-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-cta focus:border-cta outline-none transition placeholder:text-gray-400"
-              placeholder="john@example.com"
-            />
-          </div>
-
-          <div>
+          <div className="md:col-span-2">
             <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-2">
               Phone Number *
             </label>
@@ -197,33 +158,6 @@ export const QuoteForm = () => {
               className="w-full px-4 py-3 bg-white border border-neutral-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-cta focus:border-cta outline-none transition placeholder:text-gray-400"
               placeholder="+44 123 456 7890"
             />
-          </div>
-
-          <div className="md:col-span-2">
-            <label htmlFor="package" className="block text-sm font-medium text-gray-900 mb-2">
-              Package (Optional)
-            </label>
-            <select
-              id="package"
-              name="package"
-              value={formData.package}
-              onChange={handleChange}
-              className="w-full px-4 py-3 bg-white border border-neutral-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-cta focus:border-cta outline-none transition"
-            >
-              <option value="">Select a package...</option>
-              {categoryOrder.map((cat) => {
-                const packagesInCategory = packagesData.filter((p) => p.category === cat);
-                return (
-                  <optgroup key={cat} label={categoryLabels[cat]}>
-                    {packagesInCategory.map((pkg) => (
-                      <option key={pkg.id} value={`${pkg.category}/${pkg.id}`}>
-                        {pkg.tagline ? `${pkg.title} – "${pkg.tagline}"` : pkg.title}
-                      </option>
-                    ))}
-                  </optgroup>
-                );
-              })}
-            </select>
           </div>
 
           <div className="md:col-span-2">
