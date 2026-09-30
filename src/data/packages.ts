@@ -193,7 +193,7 @@ export const packagesData: PackageData[] = [
       "Wheels-Off Ceramic Protection (Unit Only) – Starts from £125",
     ],
     durationDisplay: "Full Day Service",
-    imageUrl: "/packages/casino-royale-cover.jpeg",
+    imageUrl: "/packages/single-stage-paint-correction.jpeg",
     pricingTiers: [
       {
         label: "12 Month",
