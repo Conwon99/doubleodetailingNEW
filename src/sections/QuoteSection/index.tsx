@@ -1,7 +1,5 @@
+import { QuoteForm } from "./components/QuoteForm";
 import { TermsAndConditions } from "./components/TermsAndConditions";
-
-const JOBBER_BOOKING_URL =
-  "https://clienthub.getjobber.com/hubs/a44bef51-533c-4e99-b56c-1a3b824ae502/public/requests/5099095/new";
 
 export type QuoteSectionProps = {
   showTerms?: boolean;
@@ -16,27 +14,20 @@ export const QuoteSection = ({ showTerms = true }: QuoteSectionProps) => {
           <div className="text-center">
             <div className="inline-block border border-white/30 px-3 py-1 rounded-[1000px] mb-4">
               <div className="font-medium text-white leading-[22px]">
-                Book Now
+                Get a Quote
               </div>
             </div>
             <h2 className="text-[44px] font-bold text-white tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase">
-              Ready To{" "}
+              Request a{" "}
               <span className="text-[44px] leading-[52px] font-refrigerator uppercase md:text-7xl md:leading-[80px]">
-                Book?
+                Free Quote
               </span>
             </h2>
             <p className="text-white/90 text-[15px] leading-6 mt-4 max-w-[600px] mx-auto md:text-base">
-              Book online in a couple of minutes and we'll be in touch to confirm the details and provide a personalized quote.
+              Fill out the form below and we'll get back to you with a personalized quote for your car detailing or valeting needs.
             </p>
           </div>
-          <a
-            href={JOBBER_BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-white text-center font-medium text-base md:text-lg px-10 py-4 rounded-[100px] bg-cta-dark border border-cta-dark hover:bg-white hover:text-cta-dark transition"
-          >
-            BOOK NOW
-          </a>
+          <QuoteForm />
           <div className="w-full max-w-[700px] bg-black/40 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/20">
             <div className="text-center">
               <div className="text-lg font-medium text-white mb-4 md:text-xl">
