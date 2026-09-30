@@ -22,6 +22,8 @@ export type PricingTier = {
   prices: SizePricing;
   /** Approx. labour time for this tier (e.g. "Approx. 9–10 Hours") */
   duration?: string;
+  /** Carried out at the private unit only (overnight curing) */
+  unitOnly?: boolean;
 };
 
 export type PackageData = {
@@ -30,8 +32,12 @@ export type PackageData = {
   title: string;
   tagline?: string;
   subtitle?: string;
-  /** Short summary for the packages overview page */
+  /** Short summary for the packages overview page (paragraphs separated by a blank line) */
   summary: string;
+  /** "Best suited to" line shown on the packages overview card */
+  bestSuitedTo?: string;
+  /** "Service time" line shown on the packages overview card */
+  serviceTime?: string;
   sections: PackageSection[];
   /** Optional extras section (e.g. Upgraded Coating, Engine Bay) */
   extras?: PackageSection;
@@ -54,6 +60,9 @@ export type PackageData = {
 export const PRICE_DISCLAIMER_TEXT =
   "Prices shown are for vehicles in average condition. Heavily contaminated, neglected or oversized vehicles may require additional time and will be quoted accordingly.";
 
+export const PRICING_NOTE_TEXT =
+  "Prices shown apply to vehicles in average condition. Final recommendations are based on the condition of the paintwork, the level of improvement required and the vehicle's size. Heavily contaminated, neglected or unusually large vehicles may require additional time and will be quoted accordingly.";
+
 export const vehicleSizeGuide: { size: string; examples: string }[] = [
   { size: "Small", examples: "Fiat 500, MINI, VW Polo, VW Golf" },
   { size: "Medium", examples: "BMW 3 Series, Audi A4, Range Rover Evoque, Audi Q3" },
@@ -65,10 +74,12 @@ export const packagesData: PackageData[] = [
   {
     id: "no-time-to-die",
     category: "machine-polishing",
-    title: "GLOSS ENHANCEMENT + 12 MONTH PROTECTION",
+    title: "GLOSS ENHANCEMENT",
     tagline: "NO TIME TO DIE",
     summary:
-      "A machine polishing package designed to dramatically improve gloss, depth and paint clarity while adding durable long-term protection. Ideal for dull or lightly swirled paintwork needing a visual refresh without full correction.",
+      "A light machine-polishing service designed to noticeably improve gloss, depth and paint clarity while reducing very light swirling and surface haze. Ideal for newer, well-maintained or lightly marked paintwork that would benefit from a visual refresh without requiring heavier correction.\n\nIncludes full paint preparation and 12-month ceramic protection as standard, with 2-year and 3-year ceramic coating upgrades available.",
+    bestSuitedTo: "newer vehicles and paintwork with only minor imperfections.",
+    serviceTime: "Full day. Three-year coatings require overnight curing at our unit.",
     sections: [
       {
         heading: "EXTERIOR PREPARATION",
@@ -83,8 +94,8 @@ export const packagesData: PackageData[] = [
       {
         heading: "ENHANCEMENT",
         items: [
-          "Single-stage machine polish",
-          "Oxidation & haze reduction",
+          "Light machine polish",
+          "Very light swirling & surface haze reduced",
           "Increased gloss, clarity & depth",
           "Paintwork refined for a sharper finish",
         ],
@@ -92,51 +103,76 @@ export const packagesData: PackageData[] = [
       {
         heading: "PROTECTION",
         items: [
-          "12-month ceramic paint protection",
+          "12-month ceramic protection as standard",
+          "2-year or 3-year ceramic coating upgrades available (3-year at our unit only)",
           "Glass sealed",
           "Tyres & trims dressed",
         ],
       },
     ],
     idealFor: [
-      "Dull or lightly swirled paintwork",
-      "Enthusiast vehicles",
-      "Vehicles needing a visual refresh",
-      "Owners wanting high gloss without full correction",
+      "Newer vehicles",
+      "Well-maintained or lightly marked paintwork",
+      "Paintwork with only minor imperfections",
+      "Owners wanting a visual refresh without heavier correction",
     ],
     durationDisplay: "Full Day Service",
     imageUrl: "/packages/snow-time-to-die.jpeg",
-    pricingBySize: { small: "£295", medium: "£335", large: "£375", xl: "Quote" },
+    pricingTiers: [
+      {
+        label: "12 Month",
+        prices: { small: "£295", medium: "£335", large: "£375", xl: "Quote" },
+        duration: "Full Day Service",
+      },
+      {
+        label: "2 Year Ceramic",
+        prices: { small: "£370", medium: "£410", large: "£450", xl: "Quote" },
+        duration: "Full Day Service",
+      },
+      {
+        label: "3 Year Ceramic",
+        prices: { small: "£445", medium: "£485", large: "£525", xl: "Quote" },
+        duration: "Full Day Service + Overnight Curing",
+        unitOnly: true,
+      },
+    ],
   },
   {
     id: "casino-royale",
     category: "machine-polishing",
-    title: "STAGE 1 PAINT CORRECTION + CERAMIC COATING",
+    title: "SINGLE-STAGE PAINT CORRECTION",
     tagline: "CASINO ROYALE",
     summary:
-      "Professional paint correction paired with durable ceramic protection for maximum gloss, easier maintenance, and long-lasting results. Available as 2-year ceramic coating or upgraded 3-year unit-only package.",
+      "A more intensive single-stage machine-polishing service designed to achieve a significant improvement in visible swirls, oxidation, wash marring and lighter paint defects. The polishing combination is selected following a paint inspection and test section to achieve the strongest safe result while maintaining a high-quality finish.\n\nIncludes full paint preparation and 12-month ceramic protection as standard, with 2-year and 3-year ceramic coating upgrades available.",
+    bestSuitedTo: "visibly swirled, dull or weathered paintwork requiring greater defect reduction.",
+    serviceTime:
+      "Full day, subject to vehicle size and condition. Three-year coatings require overnight curing at our unit.",
     sections: [
       {
-        heading: "2-YEAR CERAMIC COATING",
+        heading: "EXTERIOR PREPARATION",
         items: [
           "Full safe wash & decontamination",
           "Clay bar treatment",
-          "Stage 1 machine correction",
-          "Swirl mark reduction",
-          "Increased gloss & paint clarity",
-          "Ceramic coating applied to paintwork",
-          "Glass cleaned & protected",
-          "Tyres & trims dressed",
+          "Paint inspection & test section",
         ],
       },
       {
-        heading: "3-YEAR CERAMIC COATING (UNIT ONLY)",
+        heading: "CORRECTION",
         items: [
-          "Everything included in the 2-Year Ceramic Package",
-          "Upgraded long-term ceramic coating",
-          "Enhanced chemical & environmental resistance",
-          "Additional durability & gloss retention",
-          "Unit only – optimal coating conditions and curing time",
+          "Single-stage machine correction",
+          "Visible swirls, oxidation & wash marring reduced",
+          "Lighter paint defects reduced",
+          "Increased gloss & paint clarity",
+        ],
+      },
+      {
+        heading: "PROTECTION",
+        items: [
+          "12-month ceramic protection as standard",
+          "2-year ceramic coating upgrade available",
+          "3-year ceramic coating upgrade available (unit only – optimal coating conditions and overnight curing)",
+          "Glass cleaned & protected",
+          "Tyres & trims dressed",
         ],
       },
       {
@@ -151,6 +187,7 @@ export const packagesData: PackageData[] = [
       },
     ],
     priceOptions: [
+      "12-Month Protection – Starts from £350 (Full Day Service)",
       "2-Year Ceramic Coating – Starts from £425 (Full Day Service)",
       "3-Year Ceramic Coating (Unit Only) – Starts from £500 (Full Day Service + Overnight Curing)",
       "Wheels-Off Ceramic Protection (Unit Only) – Starts from £125",
@@ -159,14 +196,20 @@ export const packagesData: PackageData[] = [
     imageUrl: "/packages/casino-royale-cover.jpeg",
     pricingTiers: [
       {
-        label: "2-Year Ceramic Coating",
+        label: "12 Month",
+        prices: { small: "£350", medium: "£400", large: "£450", xl: "£525+" },
+        duration: "Full Day Service",
+      },
+      {
+        label: "2 Year Ceramic",
         prices: { small: "£425", medium: "£475", large: "£525", xl: "£600+" },
         duration: "Full Day Service",
       },
       {
-        label: "3-Year Ceramic Coating (Unit Only)",
+        label: "3 Year Ceramic",
         prices: { small: "£500", medium: "£550", large: "£600", xl: "£675+" },
         duration: "Full Day Service + Overnight Curing",
+        unitOnly: true,
       },
     ],
   },
@@ -314,7 +357,7 @@ export function getPricingRows(
   const name = pkg.tagline ?? pkg.title;
   if (pkg.pricingTiers) {
     return pkg.pricingTiers.map((tier) => ({
-      label: `${name} (${tier.label})`,
+      label: `${name} (${tier.label}${tier.unitOnly ? " – Unit Only" : ""})`,
       prices: tier.prices,
     }));
   }
