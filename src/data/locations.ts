@@ -15,6 +15,21 @@ export type Location = {
   region?: string;
 };
 
+/**
+ * Towns that keep their own landing page. Every other town is still listed as
+ * part of the service area, but no longer has a page of its own.
+ */
+const TOWNS_WITH_PAGES = [
+  "killearn",
+  "drymen",
+  "balloch",
+  "dumbarton",
+  "helensburgh",
+  "balfron",
+  "bearsden",
+  "milngavie",
+];
+
 export const WORKSHOP_BASE = "Killearn";
 
 export const COVERAGE_HEADLINE =
@@ -204,8 +219,13 @@ export const locations: Location[] = [
   },
 ];
 
-/** All location slugs for getStaticPaths and sitemap */
-export const locationSlugs = locations.map((loc) => loc.slug);
+/** Whether a town has its own landing page */
+export function hasLocationPage(slug: string): boolean {
+  return TOWNS_WITH_PAGES.includes(slug);
+}
+
+/** Slugs of towns with their own landing page, for getStaticPaths and sitemap */
+export const locationSlugs = locations.map((loc) => loc.slug).filter(hasLocationPage);
 
 export function getLocationBySlug(slug: string): Location | undefined {
   return locations.find((loc) => loc.slug === slug);

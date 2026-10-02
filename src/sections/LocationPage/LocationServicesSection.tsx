@@ -29,7 +29,7 @@ export const LocationServicesSection = ({
             {services.map((service) => (
               <ServiceCard
                 key={service.slug}
-                href={`/${location.slug}/${service.slug}`}
+                href={`/${service.slug}`}
                 imageUrl={service.imageUrl}
                 imageSizes="(max-width: 767px) 100vw, 740px"
                 title={service.title}

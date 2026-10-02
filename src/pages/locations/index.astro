@@ -1,8 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { Navbar } from "../../sections/Navbar";
-import { locations } from "../../data/locations";
+import { locations, hasLocationPage } from "../../data/locations";
 import { FooterSection } from "../../sections/FooterSection";
+
+const townsWithPages = locations.filter((loc) => hasLocationPage(loc.slug));
+const otherTowns = locations.filter((loc) => !hasLocationPage(loc.slug));
 ---
 
 <Layout
@@ -22,7 +25,7 @@ import { FooterSection } from "../../sections/FooterSection";
             Workshop based in Killearn, covering Loch Lomond, Glasgow West End & surrounding premium areas. Select your area to see our services and book.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {locations.map((loc) => (
+            {townsWithPages.map((loc) => (
               <a
                 href={`/${loc.slug}`}
                 class="block p-6 rounded-lg border border-neutral-200 bg-white hover:border-cta hover:shadow-md transition-all"
@@ -40,6 +43,12 @@ import { FooterSection } from "../../sections/FooterSection";
               </a>
             ))}
           </div>
+          {otherTowns.length > 0 && (
+            <p class="text-gray-700 text-base md:text-lg max-w-[720px] mt-12">
+              We also cover {otherTowns.map((loc) => loc.name).join(", ")} and the surrounding areas.
+              <a href="/contact" class="text-cta-dark hover:underline">Get in touch</a> and we'll confirm we can reach you.
+            </p>
+          )}
         </div>
       </section>
       <FooterSection client:load />
