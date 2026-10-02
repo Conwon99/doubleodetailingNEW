@@ -1,4 +1,4 @@
-import { locations } from "@/data/locations";
+import { locations, hasLocationPage } from "@/data/locations";
 import { services } from "@/data/services";
 
 export const FooterLinks = () => {
@@ -62,7 +62,7 @@ export const FooterLinks = () => {
           >
             All areas
           </a>
-          {locations.map((loc) => (
+          {locations.filter((loc) => hasLocationPage(loc.slug)).map((loc) => (
             <a
               key={loc.slug}
               href={`/${loc.slug}`}

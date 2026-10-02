@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { locationRegions, locations, COVERAGE_HEADLINE } from "../../data/locations";
+import { locationRegions, locations, COVERAGE_HEADLINE, hasLocationPage } from "../../data/locations";
 import { ServiceAreaMap } from "./ServiceAreaMap";
 
 const DESKTOP_BREAKPOINT = 1024;
@@ -51,12 +51,16 @@ export const ServiceAreasSection = () => {
                             <span className="text-cta-dark shrink-0" aria-hidden>
                               •
                             </span>
-                            <a
-                              href={`/${slug}`}
-                              className="hover:text-cta-dark hover:underline transition-colors"
-                            >
-                              {name}
-                            </a>
+                            {hasLocationPage(slug) ? (
+                              <a
+                                href={`/${slug}`}
+                                className="hover:text-cta-dark hover:underline transition-colors"
+                              >
+                                {name}
+                              </a>
+                            ) : (
+                              <span>{name}</span>
+                            )}
                           </li>
                         );
                       })}

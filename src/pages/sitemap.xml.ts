@@ -1,6 +1,5 @@
 import type { APIRoute } from "astro";
 import { locationSlugs } from "../data/locations";
-import { serviceSlugs } from "../data/services";
 import { packagesData } from "../data/packages";
 
 const siteUrl = "https://doubleodetailing.co.uk";
@@ -34,9 +33,6 @@ function buildLocationPaths(): string[] {
   const paths: string[] = ["locations"];
   for (const loc of locationSlugs) {
     paths.push(loc);
-    for (const svc of serviceSlugs) {
-      paths.push(`${loc}/${svc}`);
-    }
   }
   return paths;
 }
@@ -51,7 +47,6 @@ function getPriority(path: string): string {
   if (path === "locations" || locationSlugs.includes(path)) return "0.85";
   if (path.startsWith("packages/") && !path.includes("/", 9)) return "0.85"; // category
   if (path.startsWith("packages/")) return "0.8"; // package detail
-  if (locationPaths.includes(path) && path.includes("/")) return "0.8"; // location-service
   if (
     [
       "ceramic-coatings",
