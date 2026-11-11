@@ -1,4 +1,5 @@
 import type { Location } from "@/data/locations";
+import { getLocationContent } from "@/data/locationContent";
 import { services } from "@/data/services";
 
 export type LocationContentSectionProps = {
@@ -8,37 +9,66 @@ export type LocationContentSectionProps = {
 export const LocationContentSection = ({
   location,
 }: LocationContentSectionProps) => {
-  const { name, neighborhoods = [] } = location;
-  const areaList =
-    neighborhoods.length > 0
-      ? neighborhoods.join(", ")
-      : name;
+  const content = getLocationContent(location.slug);
+  if (!content) return null;
+
+  const focus = content.focusServices
+    .map((slug) => services.find((s) => s.slug === slug))
+    .filter((s): s is (typeof services)[number] => Boolean(s));
 
   return (
     <section className="bg-white box-border py-[60px] md:py-[100px]">
       <div className="box-border max-w-[1204px] mx-auto px-5 md:px-8">
         <div className="max-w-[800px] prose prose-neutral">
-          <p className="text-[15px] text-gray-700 leading-6 md:text-base mb-8">
-            Cars in {name} face the same challenges as elsewhere in the west of Scotland: rain, road grit, and pollen. Keeping your paint and interior protected makes a real difference to resale value and day-to-day enjoyment. We bring our equipment and products to you, so you don’t have to drive to a unit or wait around—ideal for families and anyone short on time.
-          </p>
-
-          {services.map((service) => (
-            <div key={service.slug} className="mb-10">
-              <h2 className="text-2xl font-bold tracking-tight text-black mb-3 font-refrigerator uppercase">
-                {service.title} in {name}
-              </h2>
-              <p className="text-[15px] text-gray-700 leading-6 md:text-base">
-                Our {service.title.toLowerCase()} service is popular with customers in {name} and the surrounding areas. We use the same premium methods and products as on our main service pages—the only difference is we come to you. Book a slot that suits you and we’ll bring our mobile setup to your door.
-              </p>
-            </div>
+          <h2 className="text-2xl font-bold tracking-tight text-black mb-3 font-refrigerator uppercase">
+            {content.heading}
+          </h2>
+          {content.paragraphs.map((p, i) => (
+            <p key={i} className="text-[15px] text-gray-700 leading-6 md:text-base mb-6">
+              {p}
+            </p>
           ))}
 
-          <h2 className="text-2xl font-bold tracking-tight text-black mt-12 mb-3 font-refrigerator uppercase">
-            Why detailing matters in {name}
-          </h2>
-          <p className="text-[15px] text-gray-700 leading-6 md:text-base">
-            We cover {areaList} and the wider area. Properties range from driveways and private parking to streets with easy access—we work around your setup. Good transport links and a mix of family homes and commuters mean cars get plenty of use; regular detailing helps protect paint and interiors from wear and the local climate. Get in touch to confirm we cover your postcode and to book a visit.
-          </p>
+          {focus.length > 0 && (
+            <>
+              <h2 className="text-2xl font-bold tracking-tight text-black mt-12 mb-3 font-refrigerator uppercase">
+                Most useful for {location.name} cars
+              </h2>
+              <ul className="list-disc pl-5 text-[15px] text-gray-700 leading-6 md:text-base">
+                {focus.map((s) => (
+                  <li key={s.slug} className="mb-2">
+                    <a href={`/${s.slug}/`} className="underline font-medium text-black">
+                      {s.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          {content.recentJobs.length > 0 && (
+            <>
+              <h2 className="text-2xl font-bold tracking-tight text-black mt-12 mb-3 font-refrigerator uppercase">
+                Recent jobs in {location.name}
+              </h2>
+              {content.recentJobs.map((job, i) => (
+                <div key={i} className="mb-8">
+                  {job.image && (
+                    <img
+                      src={job.image}
+                      alt={`${job.car} – ${job.service} in ${location.name}`}
+                      className="rounded-lg mb-3 w-full"
+                      loading="lazy"
+                    />
+                  )}
+                  <h3 className="text-lg font-semibold text-black mb-1">
+                    {job.car} – {job.service}
+                  </h3>
+                  <p className="text-[15px] text-gray-700 leading-6 md:text-base">{job.summary}</p>
+                </div>
+              ))}
+            </>
+          )}
         </div>
       </div>
     </section>

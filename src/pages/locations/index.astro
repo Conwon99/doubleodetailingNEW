@@ -27,7 +27,7 @@ const otherTowns = locations.filter((loc) => !hasLocationPage(loc.slug));
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {townsWithPages.map((loc) => (
               <a
-                href={`/${loc.slug}`}
+                href={`/${loc.slug}/`}
                 class="block p-6 rounded-lg border border-neutral-200 bg-white hover:border-cta hover:shadow-md transition-all"
               >
                 <h2 class="text-xl font-bold font-refrigerator uppercase text-black mb-2">
@@ -46,7 +46,7 @@ const otherTowns = locations.filter((loc) => !hasLocationPage(loc.slug));
           {otherTowns.length > 0 && (
             <p class="text-gray-700 text-base md:text-lg max-w-[720px] mt-12">
               We also cover {otherTowns.map((loc) => loc.name).join(", ")} and the surrounding areas.
-              <a href="/contact" class="text-cta-dark hover:underline">Get in touch</a> and we'll confirm we can reach you.
+              <a href="/contact/" class="text-cta-dark hover:underline">Get in touch</a> and we'll confirm we can reach you.
             </p>
           )}
         </div>

@@ -20,7 +20,7 @@ export const DesktopNav = () => {
         </li>
         <li className="box-border caret-transparent min-h-0 min-w-0 bg-[position:0px_0px] mx-0 md:min-h-[auto] md:min-w-[auto] md:mx-4">
           <a
-            href="/about"
+            href="/about/"
             className="text-slate-900 box-border caret-transparent flex justify-center max-w-full text-center md:text-white hover:text-yellow-700 hover:border-yellow-700"
           >
             <div className="text-slate-900 text-[15px] box-border caret-transparent leading-6 min-h-0 min-w-0 md:text-white md:text-base md:min-h-[auto] md:min-w-[auto]">
@@ -30,7 +30,7 @@ export const DesktopNav = () => {
         </li>
         <li className="box-border caret-transparent min-h-0 min-w-0 bg-[position:0px_0px] mx-0 md:min-h-[auto] md:min-w-[auto] md:mx-4">
           <a
-            href="/packages"
+            href="/packages/"
             className="text-slate-900 box-border caret-transparent flex justify-center max-w-full text-center md:text-white hover:text-yellow-700 hover:border-yellow-700"
           >
             <div className="text-slate-900 text-[15px] box-border caret-transparent leading-6 min-h-0 min-w-0 whitespace-nowrap md:text-white md:text-base md:min-h-[auto] md:min-w-[auto]">
@@ -40,7 +40,7 @@ export const DesktopNav = () => {
         </li>
         <li className="box-border caret-transparent min-h-0 min-w-0 bg-[position:0px_0px] mx-0 md:min-h-[auto] md:min-w-[auto] md:mx-4">
           <a
-            href="/gallery"
+            href="/gallery/"
             className="text-slate-900 box-border caret-transparent flex justify-center max-w-full text-center md:text-white hover:text-yellow-700 hover:border-yellow-700"
           >
             <div className="text-slate-900 text-[15px] box-border caret-transparent leading-6 min-h-0 min-w-0 md:text-white md:text-base md:min-h-[auto] md:min-w-[auto]">
@@ -50,7 +50,7 @@ export const DesktopNav = () => {
         </li>
         <li className="box-border caret-transparent min-h-0 min-w-0 bg-[position:0px_0px] mx-0 md:min-h-[auto] md:min-w-[auto] md:mx-4">
           <a
-            href="/terms"
+            href="/terms/"
             className="text-slate-900 box-border caret-transparent flex justify-center max-w-full text-center md:text-white hover:text-yellow-700 hover:border-yellow-700"
           >
             <div className="text-slate-900 text-[15px] box-border caret-transparent leading-6 min-h-0 min-w-0 md:text-white md:text-base md:min-h-[auto] md:min-w-[auto]">
@@ -60,7 +60,7 @@ export const DesktopNav = () => {
         </li>
         <li className="box-border caret-transparent min-h-0 min-w-0 bg-[position:0px_0px] mx-0 md:min-h-[auto] md:min-w-[auto] md:mx-4">
           <a
-            href="/contact"
+            href="/contact/"
             className="text-slate-900 box-border caret-transparent flex justify-center max-w-full text-center md:text-white hover:text-yellow-700 hover:border-yellow-700"
           >
             <div className="text-slate-900 text-[15px] box-border caret-transparent leading-6 min-h-0 min-w-0 md:text-white md:text-base md:min-h-[auto] md:min-w-[auto]">

@@ -5,7 +5,7 @@ export const NavActions = () => {
         <div className="box-border caret-transparent hidden">
           <div className="box-border caret-transparent flex">
             <a
-              href="/contact"
+              href="/contact/"
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).gtag) {
                   (window as any).gtag('event', 'quoteButton_nav', {
@@ -88,7 +88,7 @@ export const NavActions = () => {
               </svg>
             </a>
             <a
-              href="/contact"
+              href="/contact/"
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).gtag) {
                   (window as any).gtag('event', 'quoteButton_nav', {

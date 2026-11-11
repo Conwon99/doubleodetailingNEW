@@ -53,7 +53,7 @@ export const ServiceAreasSection = () => {
                             </span>
                             {hasLocationPage(slug) ? (
                               <a
-                                href={`/${slug}`}
+                                href={`/${slug}/`}
                                 className="hover:text-cta-dark hover:underline transition-colors"
                               >
                                 {name}

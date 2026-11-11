@@ -107,7 +107,7 @@ export const PackageFinder = () => {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-5">
           <a
-            href="/packages"
+            href="/packages/"
             className="inline-block text-sm font-figtree text-white/90 hover:text-white mb-4"
           >
             ← Back to Packages
@@ -272,7 +272,7 @@ export const PackageFinder = () => {
                     Book Now
                   </a>
                   <a
-                    href={`/packages/${pkg.category}/${pkg.id}`}
+                    href={`/packages/${pkg.category}/${pkg.id}/`}
                     className="inline-block text-center text-black font-figtree text-sm font-medium py-3 px-4 rounded-lg border border-neutral-300 hover:border-black transition w-full"
                   >
                     View Full Package Details

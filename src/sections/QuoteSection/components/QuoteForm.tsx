@@ -105,7 +105,7 @@ export const QuoteForm = () => {
       // Formspree returns 200 OK with JSON on success
       if (response.ok) {
         // Redirect to thank you page on success
-        window.location.href = "/thank-you";
+        window.location.href = "/thank-you/";
       } else {
         // Try to get error message from response
         try {
