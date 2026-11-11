@@ -47,7 +47,7 @@ export const PackagesOverview = () => {
             Packages Overview
           </h2>
           <a
-            href="/packages/find-my-package"
+            href="/packages/find-my-package/"
             className="mt-6 inline-flex items-center gap-2 text-center text-black font-refrigerator uppercase text-sm md:text-base font-bold py-4 px-8 rounded-full bg-white hover:bg-cta hover:text-white shadow-lg shadow-black/40 transition hover:scale-105"
           >
             <svg
@@ -145,7 +145,7 @@ export const PackagesOverview = () => {
                           )
                         )}
                         <a
-                          href={`/packages/${categoryId}/${pkg.id}`}
+                          href={`/packages/${categoryId}/${pkg.id}/`}
                           className="mt-4 inline-block text-center text-white font-figtree text-sm font-medium py-2.5 px-4 rounded-lg bg-cta hover:bg-cta-dark border border-transparent transition w-full"
                         >
                           View Pricing and Size Guide

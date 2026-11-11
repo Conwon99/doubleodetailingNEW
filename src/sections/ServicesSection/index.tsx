@@ -38,7 +38,7 @@ export const ServicesSection = () => {
           <div className="box-border caret-transparent flex justify-center mt-8">
             <div className="box-border caret-transparent flex">
               <a
-                href="/contact"
+                href="/contact/"
                 className="text-white items-center bg-cta-dark box-border caret-transparent gap-x-3 flex max-w-full gap-y-3 text-center border border-cta-dark px-6 py-4 rounded-[100px] border-solid hover:text-cta-dark hover:bg-white"
               >
                 <div className="relative box-border caret-transparent overflow-hidden">

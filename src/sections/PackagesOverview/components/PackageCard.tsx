@@ -110,7 +110,7 @@ export const PackageCard = ({ package: pkg }: PackageCardProps) => {
           <div className="mt-5">
             <PriceSizeTable rows={pricingRows} dark />
             <a
-              href="/packages#size-guide"
+              href="/packages/#size-guide"
               className="mt-2 inline-block font-figtree text-xs text-neutral-400 hover:text-white underline"
             >
               Not sure which size your vehicle is? See our vehicle size guide.

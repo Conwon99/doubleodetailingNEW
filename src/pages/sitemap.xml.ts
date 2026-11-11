@@ -80,7 +80,7 @@ export const GET: APIRoute = () => {
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 ${allPaths
   .map((path) => {
-    const loc = path ? `${siteUrl}/${path}` : siteUrl + "/";
+    const loc = path ? `${siteUrl}/${path}/` : siteUrl + "/";
     return `  <url>
     <loc>${loc}</loc>
     <lastmod>${lastmod}</lastmod>

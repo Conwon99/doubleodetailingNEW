@@ -25,7 +25,7 @@ const categoryLabel = categoryLabels[categoryId];
 const title = pkg.tagline ? `${pkg.title} – "${pkg.tagline}"` : pkg.title;
 const description =
   pkg.summary.slice(0, 155) + (pkg.summary.length > 155 ? "…" : "");
-const canonical = `https://doubleodetailing.co.uk/packages/${categoryId}/${pkg.id}`;
+const canonical = `https://doubleodetailing.co.uk/packages/${categoryId}/${pkg.id}/`;
 const casinoRoyaleGallery =
   pkg.id === "casino-royale"
     ? [
@@ -48,14 +48,14 @@ const casinoRoyaleGallery =
         <div class="box-border max-w-[1204px] mx-auto px-5 md:px-8">
           <nav class="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4 text-[15px]">
             <a
-              href="/packages"
+              href="/packages/"
               class="text-gray-600 hover:text-black"
             >
               ← Packages
             </a>
             <span class="text-gray-400 hidden sm:inline" aria-hidden="true">/</span>
             <a
-              href={`/packages/${categoryId}`}
+              href={`/packages/${categoryId}/`}
               class="text-gray-600 hover:text-black"
             >
               {categoryLabel}
@@ -81,7 +81,7 @@ const casinoRoyaleGallery =
             </div>
           )}
           <p class="mt-8 text-[15px] text-gray-600 md:text-base text-center max-w-[720px] mx-auto">
-            {PRICE_DISCLAIMER_TEXT} <a href="/contact" class="text-cta hover:underline">Get a quote</a> for your vehicle.
+            {PRICE_DISCLAIMER_TEXT} <a href="/contact/" class="text-cta hover:underline">Get a quote</a> for your vehicle.
           </p>
         </div>
       </section>

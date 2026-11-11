@@ -65,7 +65,7 @@ export const HeroText = () => {
         </div>
         <div className="box-border caret-transparent flex">
           <a
-            href="/packages"
+            href="/packages/"
             className="relative items-center box-border caret-transparent gap-x-2 flex max-w-full gap-y-2 overflow-hidden"
           >
             <div className="text-[15px] font-medium box-border caret-transparent leading-6 md:text-base">

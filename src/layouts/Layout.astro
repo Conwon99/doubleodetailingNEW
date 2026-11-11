@@ -25,12 +25,15 @@ const {
   description = "Workshop based in Killearn, covering Loch Lomond, Glasgow West End & surrounding premium areas. Machine polishing, ceramic coatings, deep cleans, and maintenance.",
   image = "https://doubleodetailing.co.uk/double-o-logo.png",
   type = "website",
-  canonical = Astro.url.pathname === '/' ? 'https://doubleodetailing.co.uk/' : `https://doubleodetailing.co.uk${Astro.url.pathname}`,
+  canonical: canonicalProp = `https://doubleodetailing.co.uk${Astro.url.pathname}`,
   noindex = false,
   locationSchema,
 } = Astro.props;
 
 const siteUrl = "https://doubleodetailing.co.uk";
+// Netlify serves every page from a folder, so the trailing-slash URL is the one
+// that returns 200. Keep canonicals on that version to stop redirect/canonical clashes.
+const canonical = canonicalProp.endsWith('/') ? canonicalProp : `${canonicalProp}/`;
 const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
 const defaultAreaServed = [
@@ -178,32 +181,24 @@ const defaultAreaServed = [
     {locationSchema && (
       <script type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": `Double O Detailing – ${locationSchema.name}`,
-        "description": "Professional mobile car detailing and valeting service. We bring premium car care directly to your doorstep.",
-        "url": `${siteUrl}/${locationSchema.slug}`,
-        "telephone": "+447768243728",
-        "email": "doubleodetailing@icloud.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": locationSchema.addressLocality,
-          "addressRegion": "Scotland",
-          "addressCountry": "GB"
+        "@type": "Service",
+        "name": `Mobile car detailing in ${locationSchema.name}`,
+        "serviceType": "Mobile Car Detailing",
+        "url": `${siteUrl}/${locationSchema.slug}/`,
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Double O Detailing",
+          "url": `${siteUrl}/`,
+          "telephone": "+447768243728"
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": locationSchema.latitude,
-          "longitude": locationSchema.longitude
-        },
-        "areaServed": { "@type": "City", "name": locationSchema.addressLocality },
-        "serviceType": ["Car Detailing", "Mobile Car Detailing", "Vehicle Valeting", "Ceramic Coating", "Paint Correction and Gloss Enhancements", "Deep Cleaning", "Car Maintenance"],
-        "priceRange": "$$",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5",
-          "reviewCount": "23",
-          "bestRating": "5",
-          "worstRating": "1"
+        "areaServed": {
+          "@type": "Place",
+          "name": `${locationSchema.name}, ${locationSchema.addressLocality}`,
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": locationSchema.latitude,
+            "longitude": locationSchema.longitude
+          }
         }
       })} />
     )}
@@ -232,7 +227,7 @@ const defaultAreaServed = [
     <slot />
     <!-- Mobile message widget - bottom right, visible on small screens only -->
     <a
-      href="/contact"
+      href="/contact/"
       class="fixed bottom-5 right-5 z-50 flex md:hidden items-center gap-2 bg-cta-dark text-white px-4 py-3 rounded-full shadow-lg hover:bg-cta focus:outline-none focus:ring-2 focus:ring-cta-dark focus:ring-offset-2"
       aria-label="Message us / Get a quote"
     >

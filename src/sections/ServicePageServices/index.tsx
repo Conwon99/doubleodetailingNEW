@@ -18,7 +18,7 @@ export const ServicePageServices = () => {
               className="box-border caret-transparent gap-x-4 grid auto-cols-[1fr] grid-cols-[1fr] grid-rows-[auto] gap-y-7 mt-10 md:grid-cols-[1fr_1fr_1fr] md:gap-y-4 md:mt-14"
             >
               <ServiceCard
-                href="/machine-polishing"
+                href="/machine-polishing/"
                 imageUrl="/Machine polishing.png"
                 imageSizes="(max-width: 767px) 100vw, 740px"
                 title="Paint Correction and Gloss Enhancements"
@@ -27,7 +27,7 @@ export const ServicePageServices = () => {
                 iconAlt="Icon"
               />
               <ServiceCard
-                href="/ceramic-coatings"
+                href="/ceramic-coatings/"
                 imageUrl="/Ceramic coating.png"
                 imageSizes="(max-width: 767px) 100vw, 740px"
                 title="Ceramic Coatings"
@@ -36,7 +36,7 @@ export const ServicePageServices = () => {
                 iconAlt="Icon"
               />
               <ServiceCard
-                href="/deep-cleans"
+                href="/deep-cleans/"
                 imageUrl="/Deep clean detailing.png"
                 imageSizes="(max-width: 767px) 100vw, 740px"
                 title="Full Detail & Protection"
@@ -45,7 +45,7 @@ export const ServicePageServices = () => {
                 iconAlt="Icon"
               />
               <ServiceCard
-                href="/maintenance"
+                href="/maintenance/"
                 imageUrl="/Maintenance.png"
                 imageSizes="(max-width: 767px) 100vw, 740px"
                 title="Maintenance"
