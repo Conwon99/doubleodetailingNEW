@@ -20,7 +20,7 @@ export const LocationHero = ({ location }: LocationHeroProps) => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/hero/hero-background.png')`,
+            backgroundImage: `url('/hero/hero-background.webp')`,
             backgroundPosition: "40% center",
           }}
         />
@@ -38,7 +38,7 @@ export const LocationHero = ({ location }: LocationHeroProps) => {
                 </div>
               </h1>
               <p className="text-base leading-[26px] md:text-lg font-figtree">
-                Professional mobile car detailing and valeting{areas}. Scottish weather and road salt can take a toll—we bring premium car care to your doorstep so your vehicle stays protected and looking its best.
+                Paint correction, ceramic coatings and full details{areas}. Scottish weather and road salt can take a toll—we bring premium car care to your doorstep so your vehicle stays protected and looking its best.
               </p>
             </div>
             <div className="items-center box-border gap-x-5 flex flex-wrap gap-y-5 mt-6 md:gap-x-6 md:gap-y-6 md:mt-7">

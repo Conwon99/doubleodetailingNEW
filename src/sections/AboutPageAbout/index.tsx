@@ -14,10 +14,10 @@ export const AboutPageAbout = () => {
             <div className="box-border caret-transparent gap-x-[18px] flex blur-0 flex-col max-w-[488px] gap-y-[18px] md:gap-x-5 md:gap-y-5">
               <div className="text-gray-700 box-border caret-transparent space-y-4">
                 <div className="text-[15px] box-border caret-transparent leading-6 md:text-base">
-                  At Double-O Detailing, we're passionate about restoring and protecting vehicles to the highest standard. Based in the north of Glasgow, we provide professional mobile detailing and valeting services across Central Scotland, including Glasgow and the surrounding areas. As a small, independent business, we pride ourselves on quality, attention to detail, and customer satisfaction.
+                  At Double-O Detailing, we're passionate about restoring and protecting vehicles to the highest standard. Based at our private unit in Killearn, we provide paint correction, ceramic coatings and full details across Loch Lomond, Bearsden, Milngavie and Glasgow North, with mobile appointments available seasonally. As a small, independent business, we pride ourselves on quality, attention to detail, and customer satisfaction.
                 </div>
                 <div className="text-[15px] box-border caret-transparent leading-6 md:text-base">
-                  Every car we work on receives the same level of care and precision—whether it's a quick valet or a full ceramic coating. Our fully equipped mobile unit means we bring the service to you. With our own water and power supply, we make the process convenient and hassle-free, saving you time while ensuring your vehicle looks its absolute best.
+                  Every car we work on receives the same level of care and precision—whether it's a maintenance wash or a full paint correction and ceramic coating. Our fully equipped mobile unit means we bring the service to you. With our own water and power supply, we make the process convenient and hassle-free, saving you time while ensuring your vehicle looks its absolute best.
                 </div>
                 <div className="text-[15px] box-border caret-transparent leading-6 md:text-base">
                   From exterior polishing to deep interior cleaning, we use premium products and proven techniques to deliver lasting results. At Double-O Detailing, your car is our mission—and your satisfaction is our guarantee.

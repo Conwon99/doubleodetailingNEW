@@ -1,6 +1,7 @@
 ---
 import '../styles/tailwind.css';
 import { locations } from '../data/locations';
+import { GOOGLE_REVIEW_COUNT } from '../data/business';
 
 interface LocationSchemaProp {
   name: string;
@@ -54,7 +55,7 @@ const defaultAreaServed = [
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="keywords" content="car detailing, mobile car detailing, Loch Lomond, Killearn, Glasgow West End, ceramic coating, paint correction and gloss enhancements, car valeting" />
+    <meta name="keywords" content="car detailing, mobile car detailing, Loch Lomond, Killearn, Glasgow West End, ceramic coating, paint correction and gloss enhancements" />
     <meta name="author" content="Double O Detailing" />
     <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
     <meta name="language" content="English" />
@@ -95,6 +96,13 @@ const defaultAreaServed = [
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      // Consent mode: analytics storage stays off until the visitor accepts.
+      var ddConsent = null;
+      try { ddConsent = localStorage.getItem('dd-consent'); } catch (e) {}
+      gtag('consent', 'default', {
+        ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+        analytics_storage: ddConsent === 'granted' ? 'granted' : 'denied'
+      });
       gtag('js', new Date());
       gtag('config', 'G-ZVTPX27J1H');
     </script>
@@ -114,26 +122,25 @@ const defaultAreaServed = [
       "email": "doubleodetailing@icloud.com",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Glasgow",
-        "addressRegion": "Scotland",
+        "addressLocality": "Killearn",
+        "addressRegion": "Stirlingshire",
         "addressCountry": "GB"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "55.8642",
-        "longitude": "-4.2518"
+        "latitude": "56.0392",
+        "longitude": "-4.3686"
       },
       "areaServed": defaultAreaServed,
       "serviceType": [
         "Car Detailing",
         "Mobile Car Detailing",
-        "Vehicle Valeting",
         "Ceramic Coating",
         "Paint Correction and Gloss Enhancements",
         "Deep Cleaning",
         "Car Maintenance"
       ],
-      "priceRange": "$$",
+      "priceRange": "££",
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": [
@@ -154,7 +161,7 @@ const defaultAreaServed = [
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
-        "reviewCount": "23",
+        "reviewCount": String(GOOGLE_REVIEW_COUNT),
         "bestRating": "5",
         "worstRating": "1"
       }
@@ -165,17 +172,9 @@ const defaultAreaServed = [
       "@id": "https://doubleodetailing.co.uk/#website",
       "name": "Double O Detailing",
       "url": "https://doubleodetailing.co.uk",
-      "description": "Professional mobile car detailing and valeting in Glasgow and Central Scotland. Ceramic coatings, paint correction and gloss enhancements, deep cleans, and maintenance.",
+      "description": "Paint correction, ceramic coatings and full details from our Killearn unit, covering Loch Lomond, Bearsden, Milngavie and Glasgow North.",
       "publisher": { "@id": "https://doubleodetailing.co.uk/#organization" },
-      "inLanguage": "en-GB",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://doubleodetailing.co.uk/contact?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
+      "inLanguage": "en-GB"
     })} />
     
     {locationSchema && (
@@ -236,5 +235,29 @@ const defaultAreaServed = [
       </svg>
       <span class="font-medium text-sm">Message</span>
     </a>
+
+    <div id="dd-consent" hidden style="position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:#111;color:#fff;border-radius:14px;padding:16px 18px;font:14px/1.45 Figtree,system-ui,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.3)">
+      <p style="margin:0 0 12px">We'd like to use analytics cookies to see how the site is used. <a href="/privacy-policy/" style="color:#fff;text-decoration:underline">Privacy policy</a></p>
+      <div style="display:flex;gap:8px;justify-content:flex-end">
+        <button type="button" data-consent="denied" style="background:transparent;color:#fff;border:1px solid #fff;border-radius:999px;padding:8px 16px;cursor:pointer">Decline</button>
+        <button type="button" data-consent="granted" style="background:#fff;color:#111;border:0;border-radius:999px;padding:8px 16px;cursor:pointer">Accept</button>
+      </div>
+    </div>
+    <script is:inline>
+      (function () {
+        var box = document.getElementById('dd-consent');
+        var saved = null;
+        try { saved = localStorage.getItem('dd-consent'); } catch (e) {}
+        if (!saved) box.hidden = false;
+        box.addEventListener('click', function (e) {
+          var v = e.target && e.target.getAttribute('data-consent');
+          if (!v) return;
+          try { localStorage.setItem('dd-consent', v); } catch (e) {}
+          if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: v });
+          box.hidden = true;
+        });
+        window.ddCookieSettings = function () { box.hidden = false; };
+      })();
+    </script>
   </body>
 </html>

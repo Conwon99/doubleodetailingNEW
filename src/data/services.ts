@@ -15,39 +15,39 @@ export const services: Service[] = [
     title: "Paint Correction and Gloss Enhancements",
     shortDescription:
       "Professional paint correction and gloss enhancement to restore your vehicle's paintwork to showroom condition. We use premium products and proven techniques.",
-    imageUrl: "/Machine polishing.png",
+    imageUrl: "/Machine polishing.webp",
   },
   {
     slug: "ceramic-coatings",
     title: "Ceramic Coatings",
     shortDescription:
       "Long-lasting ceramic coating protection for your vehicle. Provides superior protection against UV rays, chemicals, and environmental damage.",
-    imageUrl: "/Ceramic coating.png",
+    imageUrl: "/Ceramic coating.webp",
   },
   {
     slug: "deep-cleans",
     title: "Full Detail & Protection",
     shortDescription:
       "Our most comprehensive deep clean. A thorough interior and exterior detail with decontamination and long-lasting protection to restore your vehicle's appearance inside and out.",
-    imageUrl: "/Deep clean detailing.png",
+    imageUrl: "/Deep clean detailing.webp",
   },
   {
     slug: "maintenance",
     title: "Maintenance",
     shortDescription:
       "Regular maintenance packages to keep your vehicle in pristine condition. Protect your investment with our ongoing care programs.",
-    imageUrl: "/Maintenance.png",
+    imageUrl: "/Maintenance.webp",
   },
   {
     slug: "headlight-restoration",
     title: "Headlight Restoration",
     shortDescription:
       "Restore cloudy or yellowed headlights for improved visibility and a like-new appearance. Professional polishing and UV protection.",
-    imageUrl: "/Headlights restoration.png",
+    imageUrl: "/Headlights restoration.webp",
   },
   {
     slug: "soft-top-restoration",
-    title: "Soft Top Restoration and Coating",
+    title: "Soft Top Clean & Protection",
     shortDescription:
       "Revive and protect convertible and soft tops with specialist cleaning, restoration, and durable coating for lasting finish.",
     imageUrl: "/Soft top restoration.jpg",
@@ -57,14 +57,14 @@ export const services: Service[] = [
     title: "Interior Fabric Coating",
     shortDescription:
       "Protect upholstery, carpets, and mats with fabric coating. Repels stains and moisture while keeping interiors looking fresh.",
-    imageUrl: "/Interior fabric coating.png",
+    imageUrl: "/Interior fabric coating.webp",
   },
   {
     slug: "engine-bay-detailing",
     title: "Engine Bay Detailing",
     shortDescription:
       "Thorough cleaning and dressing of the engine bay. Safe, professional treatment to showcase and protect under-bonnet areas.",
-    imageUrl: "/Engine detailing.png",
+    imageUrl: "/Engine detailing.webp",
   },
 ];
 

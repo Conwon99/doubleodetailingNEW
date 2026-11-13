@@ -5,7 +5,7 @@ export const HeroText = () => {
         <h1 className="text-[44px] font-bold box-border caret-transparent blur-0 tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase">
           <div>Premium Vehicle</div>
           <div>Detailing</div>
-          <div><span className="text-gray-400">in Glasgow</span></div>
+          <div><span className="text-gray-400">Killearn &amp; Glasgow North</span></div>
         </h1>
         <div className="text-base box-border caret-transparent blur-0 leading-[26px] md:text-lg font-figtree">
           Professional vehicle detailing - mobile services covering Loch Lomond, Glasgow West End & surrounding areas. Workshop based in Killearn.

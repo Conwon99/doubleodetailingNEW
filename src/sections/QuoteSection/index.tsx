@@ -24,7 +24,7 @@ export const QuoteSection = ({ showTerms = true }: QuoteSectionProps) => {
               </span>
             </h2>
             <p className="text-white/90 text-[15px] leading-6 mt-4 max-w-[600px] mx-auto md:text-base">
-              Fill out the form below and we'll get back to you with a personalized quote for your car detailing or valeting needs.
+              Fill out the form below and we'll get back to you with a personalized quote for your car. Tell us which service you're interested in and add photos if you can.
             </p>
           </div>
           <QuoteForm />

@@ -6,7 +6,7 @@ export const WhyChooseCeramicCoatingsSection = () => {
           <div className="box-border caret-transparent gap-y-4 flex flex-col w-full max-w-full md:max-w-none md:w-auto md:max-w-[700px]">
             <div className="box-border caret-transparent blur-0 h-[300px] w-full overflow-hidden rounded-2xl md:h-[600px] md:w-full">
               <img
-                src="/Ceramic coating.png"
+                src="/Ceramic coating.webp"
                 sizes="(max-width: 767px) 100vw, 700px"
                 alt="Double O Detailing - Ceramic Coatings"
                 className="box-border caret-transparent inline-block h-full max-w-full object-cover w-full"
@@ -26,7 +26,7 @@ export const WhyChooseCeramicCoatingsSection = () => {
             </div>
             <div className="text-gray-700 box-border caret-transparent space-y-4">
               <div className="text-[15px] box-border caret-transparent leading-6 md:text-base">
-                Ceramic coatings create a durable, hydrophobic layer that protects your paint from UV, chemicals, and environmental damage. We offer 1-year and 2-year coating options that lock in the finish after correction and make washing and maintenance easier.
+                Ceramic coatings create a durable, hydrophobic layer that protects your paint from UV, chemicals, and environmental damage. We include 12-month ceramic protection with every polishing package, with 2-year and 3-year coating upgrades, that lock in the finish after correction and make washing and maintenance easier.
               </div>
               <div className="text-[15px] box-border caret-transparent leading-6 md:text-base">
                 We apply coatings only on properly prepared paint—whether that’s after a full machine polish or a thorough decontamination and prep. Every job is assessed so you get the right level of preparation and protection for your vehicle.
@@ -55,7 +55,7 @@ export const WhyChooseCeramicCoatingsSection = () => {
                     </div>
                   </div>
                   <div className="text-[15px] box-border caret-transparent leading-6 text-gray-700 md:text-base">
-                    Mobile Service - We come to you with everything needed to apply your coating
+                    Mobile or unit - 12-month and 2-year coatings can be applied at your home in season; 3-year coatings at our Killearn unit
                   </div>
                 </div>
                 <div className="box-border caret-transparent gap-x-3 flex items-start gap-y-2">

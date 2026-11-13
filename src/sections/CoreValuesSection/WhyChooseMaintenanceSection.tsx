@@ -6,7 +6,7 @@ export const WhyChooseMaintenanceSection = () => {
           <div className="box-border caret-transparent gap-y-4 flex flex-col w-full max-w-full md:max-w-none md:w-auto md:max-w-[700px]">
             <div className="box-border caret-transparent blur-0 h-[300px] w-full overflow-hidden rounded-2xl md:h-[600px] md:w-full">
               <img
-                src="/Maintenance.png"
+                src="/Maintenance.webp"
                 sizes="(max-width: 767px) 100vw, 700px"
                 alt="Double O Detailing - Maintenance"
                 className="box-border caret-transparent inline-block h-full max-w-full object-cover w-full"
@@ -54,7 +54,7 @@ export const WhyChooseMaintenanceSection = () => {
                     </div>
                   </div>
                   <div className="text-[15px] box-border caret-transparent leading-6 text-gray-700 md:text-base">
-                    Mobile Service - We come to you so maintenance fits your schedule
+                    Mobile or unit - At your home in season (own power and water) or at our Killearn unit
                   </div>
                 </div>
                 <div className="box-border caret-transparent gap-x-3 flex items-start gap-y-2">

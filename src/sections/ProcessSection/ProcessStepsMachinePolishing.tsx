@@ -19,7 +19,7 @@ export const ProcessStepsMachinePolishing = () => {
         imageUrl=""
         imageAlt="Correction"
         title="03. Correction."
-        description="We use a dual-action or rotary polisher with the right pads and compounds to remove light defects, swirls, and restore clarity. Single-stage or multi-stage depending on your paint condition and goals."
+        description="We use a dual-action polisher with the right pads and compounds to remove light defects and swirls and restore clarity: a gloss enhancement or a single-stage correction, depending on your paint and goals."
       />
       <ProcessCard
         imageUrl=""

@@ -111,13 +111,13 @@ export const MobileNav = () => {
               </li>
               <li>
                 <a
-                  href="/terms/"
+                  href="/services/"
                   onClick={closeMenu}
                   className="text-slate-900 box-border caret-transparent flex justify-center max-w-full text-center hover:text-cta"
                 >
                   <div className="text-slate-900 text-[15px] box-border caret-transparent leading-6">
-                    Terms
-                  </div>
+              Services
+            </div>
                 </a>
               </li>
               <li>

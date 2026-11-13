@@ -4,9 +4,9 @@ import { PackageCard } from "../PackagesOverview/components/PackageCard";
 
 /** Category hero background images (same as overview card headers) */
 const categoryHeroImages: Record<PackageData["category"], string> = {
-  "machine-polishing": "/Machine polishing.png",
-  "deep-clean": "/Deep clean detailing.png",
-  maintenance: "/Maintenance.png",
+  "machine-polishing": "/Machine polishing.webp",
+  "deep-clean": "/Deep clean detailing.webp",
+  maintenance: "/Maintenance.webp",
 };
 
 type PackageCategorySectionProps = {

@@ -19,7 +19,7 @@ export const ProcessStepsMaintenance = () => {
         imageUrl=""
         imageAlt="Protection"
         title="03. Protection top-up."
-        description="We apply a sealant or quick wax to boost protection and gloss. This helps maintain the look and durability of any existing coating or previous detail."
+        description="We apply a protection top-up to boost gloss and protection. This helps maintain the look and durability of any existing coating or previous detail."
       />
       <ProcessCard
         imageUrl=""

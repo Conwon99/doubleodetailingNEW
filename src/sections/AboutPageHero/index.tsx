@@ -5,9 +5,9 @@ export const AboutPageHero = () => {
         <div className="box-border caret-transparent pb-[60px] md:pb-[100px]">
           <div className="items-start box-border caret-transparent gap-x-7 flex flex-col justify-between gap-y-7 md:items-end md:gap-x-10 md:flex-row md:gap-y-10">
             <div className="items-start box-border caret-transparent gap-x-4 flex blur-0 flex-col max-w-[740px] gap-y-4">
-              <h2 className="text-[44px] font-bold box-border caret-transparent tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase">
+              <h1 className="text-[44px] font-bold box-border caret-transparent tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase">
                 About Us
-              </h2>
+              </h1>
             </div>
             <div className="box-border caret-transparent gap-x-[18px] flex blur-0 flex-col max-w-[340px] gap-y-[18px] md:gap-x-5 md:gap-y-5">
               <div className="box-border caret-transparent flex">

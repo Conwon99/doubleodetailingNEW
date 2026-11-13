@@ -9,6 +9,7 @@ import { ServiceAreasSection } from '../sections/ServiceAreasSection';
 import ReviewsSection from '../sections/ReviewsSection.astro';
 import { QuoteSection } from '../sections/QuoteSection';
 import { FooterSection } from '../sections/FooterSection';
+import { CrossSell } from '../sections/CrossSell';
 ---
 
 <Layout title="Headlight Restoration - Double O Detailing | Glasgow" description="Restore cloudy or yellowed headlights for improved visibility and a like-new appearance. Professional polishing and UV protection. Glasgow and Central Scotland." canonical="https://doubleodetailing.co.uk/headlight-restoration">
@@ -16,7 +17,7 @@ import { FooterSection } from '../sections/FooterSection';
     <Navbar client:load />
     <main class="pt-0">
       <section class="relative text-white overflow-hidden min-h-screen">
-        <div class="absolute inset-0"><div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url(&quot;/Headlights restoration.png&quot;);" /></div>
+        <div class="absolute inset-0"><div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url(&quot;/Headlights restoration.webp&quot;);" /></div>
         <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
         <div class="relative mx-auto flex min-h-screen w-full max-w-[1204px] flex-col justify-end px-5 pb-8 pt-32 md:px-8 md:pb-12 md:pt-28 supports-[min-height:100dvh]:min-h-[100dvh]">
           <div class="items-start box-border gap-x-10 flex flex-col justify-between gap-y-10 md:items-end md:gap-x-[60px] md:flex-row md:gap-y-[60px] w-full">
@@ -42,6 +43,7 @@ import { FooterSection } from '../sections/FooterSection';
       </section>
       <WhyChooseHeadlightRestorationSection client:load />
       <ProcessSectionHeadlightRestoration client:load />
+      <CrossSell heading="Paint looking as tired as the lights?" intro="Headlights that have gone cloudy usually mean the paint has dulled too. Headlight restoration (from £80) can be added to any of these." />
       <HeadlightRestorationFAQ client:load />
       <ServiceAreasSection client:load />
       <ReviewsSection title="Reviews" />

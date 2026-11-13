@@ -5,7 +5,7 @@ export const WhyChooseSoftTopSection = () => {
         <div className="box-border caret-transparent gap-x-7 flex flex-col justify-between gap-y-7 md:gap-x-10 md:flex-row md:gap-y-10">
           <div className="box-border caret-transparent gap-y-4 flex flex-col w-full max-w-full md:max-w-none md:w-auto md:max-w-[700px]">
             <div className="box-border caret-transparent blur-0 h-[300px] w-full overflow-hidden rounded-2xl md:h-[600px] md:w-full">
-              <img src="/Soft top restoration.jpg" sizes="(max-width: 767px) 100vw, 700px" alt="Double O Detailing - Soft Top Restoration" className="box-border caret-transparent inline-block h-full max-w-full object-cover w-full" />
+              <img src="/Soft top restoration.jpg" sizes="(max-width: 767px) 100vw, 700px" alt="Double O Detailing - soft top clean and protection" className="box-border caret-transparent inline-block h-full max-w-full object-cover w-full" />
             </div>
           </div>
           <div className="box-border caret-transparent blur-0 basis-[0%] grow max-w-none md:max-w-[544px]">
@@ -13,7 +13,7 @@ export const WhyChooseSoftTopSection = () => {
             <div className="box-border caret-transparent mt-[18px] mb-4 md:mt-5">
               <h2 className="text-3xl font-bold box-border caret-transparent tracking-[-0.52px] leading-[35px] md:text-[52px] md:leading-[62px] font-refrigerator uppercase">
                 <span className="text-3xl box-border caret-transparent leading-[35px] font-refrigerator uppercase md:text-[52px] md:leading-[62px]">Why</span>{" "}
-                <span className="font-refrigerator uppercase">Choose Our Soft Top Restoration?</span>
+                <span className="font-refrigerator uppercase">Choose Our Soft Top Clean & Protection?</span>
               </h2>
             </div>
             <div className="text-gray-700 box-border caret-transparent space-y-4">
