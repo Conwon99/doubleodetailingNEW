@@ -6,30 +6,26 @@ export const FooterContact = () => {
       </div>
       <nav className="box-border caret-transparent gap-x-0 flex flex-col gap-y-3">
         <a
-          href="#"
-          onClick={(e) => e.preventDefault()}
-          className="text-[15px] box-border caret-transparent leading-6 text-white/80 hover:text-white md:text-base cursor-not-allowed opacity-70"
+          href="/machine-polishing/"
+          className="text-[15px] box-border caret-transparent leading-6 text-white/80 hover:text-white md:text-base"
         >
-          Paint Correction and Gloss Enhancements
+          Paint Correction & Gloss Enhancement
         </a>
         <a
-          href="#"
-          onClick={(e) => e.preventDefault()}
-          className="text-[15px] box-border caret-transparent leading-6 text-white/80 hover:text-white md:text-base cursor-not-allowed opacity-70"
+          href="/ceramic-coatings/"
+          className="text-[15px] box-border caret-transparent leading-6 text-white/80 hover:text-white md:text-base"
         >
           Ceramic Coatings
         </a>
         <a
-          href="#"
-          onClick={(e) => e.preventDefault()}
-          className="text-[15px] box-border caret-transparent leading-6 text-white/80 hover:text-white md:text-base cursor-not-allowed opacity-70"
+          href="/deep-cleans/"
+          className="text-[15px] box-border caret-transparent leading-6 text-white/80 hover:text-white md:text-base"
         >
           Full Detail & Protection
         </a>
         <a
-          href="#"
-          onClick={(e) => e.preventDefault()}
-          className="text-[15px] box-border caret-transparent leading-6 text-white/80 hover:text-white md:text-base cursor-not-allowed opacity-70"
+          href="/maintenance/"
+          className="text-[15px] box-border caret-transparent leading-6 text-white/80 hover:text-white md:text-base"
         >
           Maintenance
         </a>

@@ -9,6 +9,7 @@ import {
   categoryLabels,
   getPackageByCategoryAndId,
   PRICE_DISCLAIMER_TEXT,
+  getPricingRows,
 } from "../../../data/packages";
 import type { PackageData } from "../../../data/packages";
 
@@ -22,7 +23,13 @@ export async function getStaticPaths() {
 const { package: pkg } = Astro.props;
 const categoryId = pkg.category;
 const categoryLabel = categoryLabels[categoryId];
-const title = pkg.tagline ? `${pkg.title} – "${pkg.tagline}"` : pkg.title;
+const sentence = (t: string) => t.charAt(0) + t.slice(1).toLowerCase();
+const serviceName = sentence(pkg.title);
+const fromPrice = getPricingRows(pkg)[0]?.prices.small;
+const title = [
+  pkg.tagline ? `${serviceName} (${pkg.tagline.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase())})` : serviceName,
+  fromPrice && fromPrice.startsWith("£") ? `from ${fromPrice}` : "",
+].filter(Boolean).join(" – ");
 const description =
   pkg.summary.slice(0, 155) + (pkg.summary.length > 155 ? "…" : "");
 const canonical = `https://doubleodetailing.co.uk/packages/${categoryId}/${pkg.id}/`;
@@ -37,7 +44,7 @@ const casinoRoyaleGallery =
 ---
 
 <Layout
-  title={`${title} | Packages - Double O Detailing`}
+  title={`${title} | Double O Detailing`}
   description={description}
   canonical={canonical}
 >
@@ -61,6 +68,7 @@ const casinoRoyaleGallery =
               {categoryLabel}
             </a>
           </nav>
+          <h1 class="max-w-[640px] mx-auto mb-6 text-3xl md:text-4xl font-medium">{serviceName}</h1>
           <div class="max-w-[640px] mx-auto">
             <PackageCard package={pkg} client:load />
           </div>

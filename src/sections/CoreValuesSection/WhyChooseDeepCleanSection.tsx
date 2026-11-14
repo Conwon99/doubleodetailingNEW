@@ -6,7 +6,7 @@ export const WhyChooseDeepCleanSection = () => {
           <div className="box-border caret-transparent gap-y-4 flex flex-col w-full max-w-full md:max-w-none md:w-auto md:max-w-[700px]">
             <div className="box-border caret-transparent blur-0 h-[300px] w-full overflow-hidden rounded-2xl md:h-[600px] md:w-full">
               <img
-                src="/Deep clean detailing.png"
+                src="/Deep clean detailing.webp"
                 sizes="(max-width: 767px) 100vw, 700px"
                 alt="Double O Detailing - Full Detail & Protection"
                 className="box-border caret-transparent inline-block h-full max-w-full object-cover w-full"
@@ -25,10 +25,10 @@ export const WhyChooseDeepCleanSection = () => {
             </div>
             <div className="text-gray-700 box-border caret-transparent space-y-4">
               <div className="text-[15px] box-border caret-transparent leading-6 md:text-base">
-                Our deep cleans and valets give your vehicle a thorough refresh inside and out. We use safe methods and quality products to clean every area—from paint and wheels to interior upholstery, dash, and glass—so your car looks and feels immaculate.
+                Our full detail gives your vehicle a thorough refresh inside and out. We use safe methods and quality products to clean every area—from paint and wheels to interior upholstery, dash, and glass—so your car looks and feels immaculate.
               </div>
               <div className="text-[15px] box-border caret-transparent leading-6 md:text-base">
-                Whether you need a one-off deep clean or a regular valet, we tailor the service to your vehicle and schedule. We come to you with our own water and power, so you can get on with your day while we take care of the rest.
+                Whether you need a one-off full detail or regular maintenance, we tailor the service to your vehicle and schedule. Mobile appointments are available in season with our own water and power, or bring the car to our Killearn unit, so you can get on with your day while we take care of the rest.
               </div>
             </div>
             <div className="box-border caret-transparent mt-7 md:mt-10">

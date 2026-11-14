@@ -7,7 +7,7 @@ export const WhyChooseMachinePolishingSection = () => {
           <div className="box-border caret-transparent gap-y-4 flex flex-col w-full max-w-full md:max-w-none md:w-auto md:max-w-[700px]">
             <div className="box-border caret-transparent blur-0 h-[300px] w-full overflow-hidden rounded-2xl md:h-[600px] md:w-full">
               <img
-                src="/Machine polishing.png"
+                src="/Machine polishing.webp"
                 sizes="(max-width: 767px) 100vw, 700px"
                 alt="Double O Detailing - Paint Correction and Gloss Enhancements"
                 className="box-border caret-transparent inline-block h-full max-w-full object-cover w-full"
@@ -28,7 +28,7 @@ export const WhyChooseMachinePolishingSection = () => {
             </div>
             <div className="text-gray-700 box-border caret-transparent space-y-4">
               <div className="text-[15px] box-border caret-transparent leading-6 md:text-base">
-                Our machine polishing service removes light defects, oxidation, and swirl marks to restore clarity and depth to your paintwork. We use premium compounds, pads, and proven techniques—whether you need a single-stage enhancement or a multi-stage correction for deeper defects.
+                Our machine polishing service removes light defects, oxidation, and swirl marks to restore clarity and depth to your paintwork. We use premium compounds, pads, and proven techniques—whether you need a gloss enhancement or a single-stage correction.
               </div>
               <div className="text-[15px] box-border caret-transparent leading-6 md:text-base">
                 We work on all paint types and can pair the correction with a ceramic coating or sealant so the results last. Every job is assessed individually so you get the right level of work for your vehicle and goals.
@@ -57,7 +57,7 @@ export const WhyChooseMachinePolishingSection = () => {
                     </div>
                   </div>
                   <div className="text-[15px] box-border caret-transparent leading-6 text-gray-700 md:text-base">
-                    Mobile Service - We come to you with our full polishing setup
+                    Mobile or unit - At your home in season (own power and water) or at our Killearn unit
                   </div>
                 </div>
                 <div className="box-border caret-transparent gap-x-3 flex items-start gap-y-2">

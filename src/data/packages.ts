@@ -261,7 +261,7 @@ export const packagesData: PackageData[] = [
       ],
     },
     durationDisplay: "Approx. 4–5 Hours",
-    imageUrl: "/packages/shaken-not-stirred.png",
+    imageUrl: "/packages/shaken-not-stirred.webp",
     pricingBySize: { small: "£170", medium: "£185", large: "£200", xl: "£230" },
   },
   {
@@ -302,7 +302,7 @@ export const packagesData: PackageData[] = [
     note:
       "Vehicle must have received a Deep Clean, Maintenance Detail, or Paint Enhancement package within the last 2–8 weeks.",
     durationDisplay: "Approx. 2.5–3 Hours",
-    imageUrl: "/packages/spectre.png",
+    imageUrl: "/packages/spectre.webp",
     pricingBySize: { small: "£90", medium: "£95", large: "£100", xl: "£120" },
   },
   {
@@ -332,7 +332,7 @@ export const packagesData: PackageData[] = [
       "Enthusiast-maintained cars",
     ],
     durationDisplay: "Approx. 1.5–2 Hours",
-    imageUrl: "/packages/exterior-wash.png",
+    imageUrl: "/packages/exterior-wash.webp",
     pricingBySize: { small: "£50", medium: "£55", large: "£60", xl: "£75" },
   },
 ];

@@ -27,6 +27,7 @@ const staticPages: string[] = [
   "services",
   "soft-top-restoration",
   "terms",
+  "privacy-policy",
 ];
 
 function buildLocationPaths(): string[] {
@@ -60,13 +61,13 @@ function getPriority(path: string): string {
     ].includes(path)
   )
     return "0.85";
-  if (path === "terms") return "0.3";
+  if (path === "terms" || path === "privacy-policy") return "0.3";
   return "0.7";
 }
 
 function getChangefreq(path: string): string {
   if (path === "" || path === "packages" || path === "gallery") return "weekly";
-  if (path === "terms") return "yearly";
+  if (path === "terms" || path === "privacy-policy") return "yearly";
   if (locationSlugs.includes(path) || locationPaths.includes(path)) return "weekly";
   return "monthly";
 }

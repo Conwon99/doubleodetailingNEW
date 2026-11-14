@@ -19,7 +19,7 @@ export const ServicePageServices = () => {
             >
               <ServiceCard
                 href="/machine-polishing/"
-                imageUrl="/Machine polishing.png"
+                imageUrl="/Machine polishing.webp"
                 imageSizes="(max-width: 767px) 100vw, 740px"
                 title="Paint Correction and Gloss Enhancements"
                 description="Professional paint correction and gloss enhancement to restore your vehicle's paintwork to showroom condition. We use premium products and proven techniques."
@@ -28,7 +28,7 @@ export const ServicePageServices = () => {
               />
               <ServiceCard
                 href="/ceramic-coatings/"
-                imageUrl="/Ceramic coating.png"
+                imageUrl="/Ceramic coating.webp"
                 imageSizes="(max-width: 767px) 100vw, 740px"
                 title="Ceramic Coatings"
                 description="Long-lasting ceramic coating protection for your vehicle. Provides superior protection against UV rays, chemicals, and environmental damage."
@@ -37,7 +37,7 @@ export const ServicePageServices = () => {
               />
               <ServiceCard
                 href="/deep-cleans/"
-                imageUrl="/Deep clean detailing.png"
+                imageUrl="/Deep clean detailing.webp"
                 imageSizes="(max-width: 767px) 100vw, 740px"
                 title="Full Detail & Protection"
                 description="Our most comprehensive deep clean. A thorough interior and exterior detail with decontamination and long-lasting protection to restore your vehicle's appearance inside and out."
@@ -46,7 +46,7 @@ export const ServicePageServices = () => {
               />
               <ServiceCard
                 href="/maintenance/"
-                imageUrl="/Maintenance.png"
+                imageUrl="/Maintenance.webp"
                 imageSizes="(max-width: 767px) 100vw, 740px"
                 title="Maintenance"
                 description="Regular maintenance packages to keep your vehicle in pristine condition. Protect your investment with our ongoing care programs."

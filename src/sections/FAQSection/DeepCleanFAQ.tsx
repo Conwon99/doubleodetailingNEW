@@ -14,7 +14,7 @@ const faqs: { question: string; answer: string }[] = [
   {
     question: "Do you come to me?",
     answer:
-      "Yes. We're a mobile service and bring our equipment to you. We need a suitable space (e.g. driveway) and access to power. We cover Glasgow and the surrounding areas—get in touch to confirm we can reach you.",
+      "Yes. Mobile appointments are available seasonally, weather permitting, and we bring our own power and water. We're based in Killearn and cover Loch Lomond, Bearsden, Milngavie and Glasgow North. Get in touch to confirm we can reach you.",
   },
   {
     question: "Can you clean leather and fabric interiors?",

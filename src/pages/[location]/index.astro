@@ -28,7 +28,7 @@ if (!location) {
 
 const siteUrl = "https://doubleodetailing.co.uk";
 const canonical = `${siteUrl}/${location.slug}/`;
-const title = `Car Detailing ${location.name} | Mobile Valeting & Ceramic Coating | Double O Detailing`;
+const title = `Car Detailing ${location.name} | Paint Correction & Ceramic Coating`;
 const localCopy = getLocationContent(location.slug)?.paragraphs[1] ?? "";
 const firstSentence = localCopy.split(/(?<=\.)\s/)[0];
 const description = firstSentence

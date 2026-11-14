@@ -15,7 +15,7 @@ export const SoftTopFAQ = () => {
       <div className="box-border max-w-[1204px] mx-auto px-5 md:px-8">
         <div className="box-border flex flex-col gap-y-8 md:gap-y-10">
           <div className="box-border inline-block border border-neutral-200 px-3 py-1 rounded-[1000px] border-solid w-fit"><span className="font-medium leading-[22px]">FAQ</span></div>
-          <h2 className="text-3xl font-bold tracking-[-0.52px] leading-[35px] md:text-[52px] md:leading-[62px] font-refrigerator uppercase">Soft Top Restoration FAQs</h2>
+          <h2 className="text-3xl font-bold tracking-[-0.52px] leading-[35px] md:text-[52px] md:leading-[62px] font-refrigerator uppercase">Soft Top Clean & Protection FAQs</h2>
           <div className="box-border flex flex-col gap-y-0 border border-neutral-200 rounded-xl overflow-hidden">
             {faqs.map((faq, index) => (
               <div key={index} className="border-b border-neutral-200 last:border-b-0">

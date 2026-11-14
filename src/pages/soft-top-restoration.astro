@@ -9,9 +9,10 @@ import { ServiceAreasSection } from '../sections/ServiceAreasSection';
 import ReviewsSection from '../sections/ReviewsSection.astro';
 import { QuoteSection } from '../sections/QuoteSection';
 import { FooterSection } from '../sections/FooterSection';
+import { CrossSell } from '../sections/CrossSell';
 ---
 
-<Layout title="Soft Top Restoration and Coating - Double O Detailing | Glasgow" description="Revive and protect convertible and soft tops with specialist cleaning, restoration, and durable coating. Glasgow and Central Scotland." canonical="https://doubleodetailing.co.uk/soft-top-restoration">
+<Layout title="Soft Top Cleaning & Protection | Double O Detailing, Killearn" description="Convertible soft top deep clean and re-proofing from our Killearn unit, covering Loch Lomond, Bearsden, Milngavie and Glasgow North. Recolouring is not included." canonical="https://doubleodetailing.co.uk/soft-top-restoration">
   <div class="min-h-screen bg-neutral-100 font-figtree text-black text-sm leading-5 antialiased">
     <Navbar client:load />
     <main class="pt-0">
@@ -22,8 +23,8 @@ import { FooterSection } from '../sections/FooterSection';
           <div class="items-start box-border gap-x-10 flex flex-col justify-between gap-y-10 md:items-end md:gap-x-[60px] md:flex-row md:gap-y-[60px] w-full">
             <div class="box-border basis-[0%] grow max-w-[650px] pt-24 md:pt-32">
               <div class="box-border gap-x-4 flex flex-col gap-y-4">
-                <h1 class="text-[44px] font-bold box-border tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase"><div>Soft Top</div><div>Restoration & Coating</div></h1>
-                <p class="text-base leading-[26px] md:text-lg font-figtree">Revive and protect convertible and soft tops with specialist cleaning, restoration, and durable coating for a lasting finish.</p>
+                <h1 class="text-[44px] font-bold box-border tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase"><div>Soft Top</div><div>Clean & Protection</div></h1>
+                <p class="text-base leading-[26px] md:text-lg font-figtree">Deep clean and re-proof your convertible roof to lift dirt and staining and keep the weather out. Recolouring is not included.</p>
               </div>
               <div class="items-center box-border gap-x-5 flex flex-wrap gap-y-5 mt-6 md:gap-x-6 md:gap-y-6 md:mt-7">
                 <a href="https://clienthub.getjobber.com/hubs/a44bef51-533c-4e99-b56c-1a3b824ae502/public/requests/5099095/new" target="_blank" rel="noopener noreferrer" class="text-black items-center bg-cta box-border gap-x-5 flex max-w-full gap-y-5 text-center border pl-6 pr-1 py-1 rounded-[100px] border-solid border-transparent hover:bg-white hover:border-cta-dark">
@@ -42,6 +43,7 @@ import { FooterSection } from '../sections/FooterSection';
       </section>
       <WhyChooseSoftTopSection client:load />
       <ProcessSectionSoftTop client:load />
+      <CrossSell heading="Bring the paintwork up to match" intro="A clean roof shows up tired paint. Pair your soft top clean with a gloss enhancement, coating or full detail." />
       <SoftTopFAQ client:load />
       <ServiceAreasSection client:load />
       <ReviewsSection title="Reviews" />

@@ -18,9 +18,9 @@ const PACKAGES_HERO_IMAGE = "/landrover.jpeg";
 
 /** Service section images from home page - used as section headers */
 const categoryImages: Record<PackageData["category"], string> = {
-  "machine-polishing": "/Machine polishing.png",
-  "deep-clean": "/Deep clean detailing.png",
-  maintenance: "/Maintenance.png",
+  "machine-polishing": "/Machine polishing.webp",
+  "deep-clean": "/Deep clean detailing.webp",
+  maintenance: "/Maintenance.webp",
 };
 
 export const PackagesOverview = () => {
@@ -43,9 +43,9 @@ export const PackagesOverview = () => {
           <div className="inline-block border border-white/80 px-3 py-1 rounded-[1000px] mb-4">
             <span className="font-medium leading-[22px] text-white">Packages & Pricing</span>
           </div>
-          <h2 className="text-3xl font-bold tracking-[-0.52px] leading-tight md:text-5xl md:leading-tight font-refrigerator uppercase text-white">
-            Packages Overview
-          </h2>
+          <h1 className="text-3xl font-bold tracking-[-0.52px] leading-tight md:text-5xl md:leading-tight font-refrigerator uppercase text-white">
+            Car Detailing Packages &amp; Prices
+          </h1>
           <a
             href="/packages/find-my-package/"
             className="mt-6 inline-flex items-center gap-2 text-center text-black font-refrigerator uppercase text-sm md:text-base font-bold py-4 px-8 rounded-full bg-white hover:bg-cta hover:text-white shadow-lg shadow-black/40 transition hover:scale-105"

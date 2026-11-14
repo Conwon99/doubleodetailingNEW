@@ -4,7 +4,7 @@ const faqs: { question: string; answer: string }[] = [
   {
     question: "What is a ceramic coating?",
     answer:
-      "A ceramic coating is a liquid polymer that bonds to your paint and cures to form a hard, hydrophobic layer. It protects against UV, chemicals, and light contamination, and makes washing easier because water and dirt bead off. We offer 1-year and 2-year coatings.",
+      "A ceramic coating is a liquid polymer that bonds to your paint and cures to form a hard, hydrophobic layer. It protects against UV, chemicals, and light contamination, and makes washing easier because water and dirt bead off. Every polishing package includes 12-month ceramic protection, with 2-year and 3-year coating upgrades.",
   },
   {
     question: "Do I need machine polishing before a ceramic coating?",
@@ -14,17 +14,17 @@ const faqs: { question: string; answer: string }[] = [
   {
     question: "How long does ceramic coating last?",
     answer:
-      "Our packages include 1-year and 2-year ceramic coating options. How long they look their best depends on how the car is washed and maintained. We’ll give you aftercare advice so you get the full benefit of the protection.",
+      "Our packages include 12-month ceramic protection as standard, with 2-year and 3-year coating upgrades. How long they look their best depends on how the car is washed and maintained. We’ll give you aftercare advice so you get the full benefit of the protection.",
   },
   {
     question: "Can you apply ceramic coating at my home?",
     answer:
-      "Yes. We’re a mobile service and bring everything needed to prep and apply the coating to you. We need a suitable space (e.g. driveway or garage) and access to power. Get in touch with your location and we can confirm we cover you.",
+      "12-month and 2-year coatings can be applied at your home. Mobile appointments are available seasonally, weather permitting, and we bring our own power and water. Three-year ceramic coatings are carried out at our Killearn unit because they need overnight curing.",
   },
   {
-    question: "What’s the difference between 1-year and 2-year coating?",
+    question: "What’s the difference between the 12-month, 2-year and 3-year options?",
     answer:
-      "The 2-year coating typically offers longer durability and may have slightly better resistance to contaminants and washing. We can talk through the options and pricing when you get a quote.",
+      "They differ in how long the protection lasts with correct maintenance. The 12-month protection is included with every polishing package; the 2-year and 3-year coatings are paid upgrades, and the 3-year coating is applied at our unit only. Prices for each are on our packages page.",
   },
   {
     question: "What areas do you cover?",

@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../sections/Navbar';
+import { FooterSection } from '../sections/FooterSection';
+---
+
+<Layout
+  title="Privacy Policy | Double O Detailing"
+  description="How Double O Detailing collects, uses and stores your personal information when you request a quote, book or visit our website."
+  canonical="https://doubleodetailing.co.uk/privacy-policy/"
+>
+  <div class="min-h-screen bg-neutral-100 font-figtree text-black text-sm leading-5 antialiased">
+    <Navbar client:load />
+    <main class="pt-0">
+      <section class="py-[60px] md:py-[100px]">
+        <div class="max-w-[800px] mx-auto px-5 md:px-8 text-[15px] leading-6 text-gray-800 md:text-base space-y-4">
+          <h1 class="text-3xl font-medium md:text-5xl text-black">Privacy policy</h1>
+          <p>Last updated: 13 November 2026</p>
+
+          <h2 class="text-xl font-medium text-black pt-4">Who we are</h2>
+          <p>Double O Detailing is a car detailing business based in Killearn, Stirlingshire. We are responsible for the personal information described in this policy. You can contact us on <a class="underline" href="tel:07768243728">07768 243728</a> or <a class="underline" href="mailto:doubleodetailing@icloud.com">doubleodetailing@icloud.com</a>.</p>
+
+          <h2 class="text-xl font-medium text-black pt-4">What we collect and why</h2>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Quote requests.</strong> When you use the quote form we collect your name, phone number, the details you give us about your vehicle and any photos you upload. We use these only to reply to you and prepare a quote. The form is processed by Formspree on our behalf.</li>
+            <li><strong>Bookings.</strong> When you book through our online booking form we collect your contact details, address and job details so we can arrange and carry out the work. Bookings are managed in Jobber.</li>
+            <li><strong>Website analytics.</strong> If you accept analytics cookies, Google Analytics records how the site is used (pages viewed, device type, approximate location). We use this to improve the website. If you decline, analytics cookies are not set.</li>
+          </ul>
+
+          <h2 class="text-xl font-medium text-black pt-4">Legal basis</h2>
+          <p>We use quote and booking details because you have asked us to provide a service (taking steps to enter into a contract). We use analytics only with your consent.</p>
+
+          <h2 class="text-xl font-medium text-black pt-4">How long we keep it</h2>
+          <p>We keep quote requests that don't go ahead for up to 12 months. We keep customer and job records for as long as we need them for the service and for our legal and accounting obligations.</p>
+
+          <h2 class="text-xl font-medium text-black pt-4">Who we share it with</h2>
+          <p>We don't sell your information. We share it only with the services we use to run the business (Formspree, Jobber and Google Analytics), and only so they can provide those services to us.</p>
+
+          <h2 class="text-xl font-medium text-black pt-4">Your rights</h2>
+          <p>You can ask to see, correct or delete the information we hold about you, or withdraw consent for analytics at any time using the cookie settings link in the footer. If you're unhappy with how we've handled your information, you can complain to the Information Commissioner's Office (ico.org.uk).</p>
+        </div>
+      </section>
+      <FooterSection client:load />
+    </main>
+  </div>
+</Layout>

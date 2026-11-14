@@ -19,7 +19,7 @@ const faqs: { question: string; answer: string }[] = [
   {
     question: "Do you come to my location?",
     answer:
-      "Yes. We're mobile and come to you. We need a suitable space (e.g. driveway) and access to power. We cover Glasgow and the surrounding areas—contact us to confirm we can reach you.",
+      "Yes. Mobile appointments are available seasonally, weather permitting, and we bring our own power and water. We're based in Killearn and cover Loch Lomond, Bearsden, Milngavie and Glasgow North. Contact us to confirm we can reach you.",
   },
   {
     question: "What areas do you cover?",

@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_COUNT } from "@/data/business";
 const GOOGLE_PROFILE_URL = "https://share.google/WHM6HVMqy1SvwnkkX";
 
 export const HeroStats = () => {
@@ -28,7 +29,7 @@ export const HeroStats = () => {
         </div>
       </div>
       <div className="text-white/90 text-xs md:text-sm text-center">
-        Based on 37 reviews
+        Based on {GOOGLE_REVIEW_COUNT} Google reviews
       </div>
     </a>
   );

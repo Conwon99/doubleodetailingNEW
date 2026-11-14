@@ -11,9 +11,9 @@ export const ProcessSteps = () => {
       />
       <ProcessCard
         imageUrl="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop"
-        imageAlt="We come to you"
-        title="02. We come to you."
-        description="Our fully equipped mobile unit comes to your location. We have our own power and water supply, so we can operate anywhere that's convenient for you. Please remove any belongings from your vehicle before we begin."
+        imageAlt="At your home or our unit"
+        title="02. Your place or ours."
+        description="In season (weather permitting) we come to you with our own power and water. Otherwise, and for 3-year ceramic coatings, the work is done at our private unit in Killearn. Please remove any belongings from your vehicle before we begin."
       />
       <ProcessCard
         imageUrl="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop"

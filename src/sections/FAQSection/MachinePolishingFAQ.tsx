@@ -4,17 +4,17 @@ const faqs: { question: string; answer: string }[] = [
   {
     question: "What is machine polishing?",
     answer:
-      "Machine polishing uses a dual-action or rotary polisher with pads and compounds to remove light defects, swirl marks, and oxidation from your paintwork. It restores clarity and gloss and can be done in one stage (single-stage) for enhancement or multiple stages (multi-stage) for deeper correction.",
+      "Machine polishing uses a dual-action polisher with pads and compounds to remove light defects, swirl marks and oxidation from your paintwork. We offer two levels: a gloss enhancement for lightly marked paint, and a single-stage paint correction for heavier swirls and marring.",
   },
   {
     question: "How long does machine polishing take?",
     answer:
-      "It depends on the vehicle size, condition, and the level of correction. A single-stage polish might take a day, while a full multi-stage correction with coating can take several days. We'll give you a clearer timeframe when we assess your vehicle.",
+      "It depends on the vehicle size, condition, and the level of correction. Both our gloss enhancement and single-stage correction are full-day services. Three-year coatings add overnight curing at our unit. We'll give you a clearer timeframe when we assess your vehicle.",
   },
   {
     question: "Can you polish my car at my home or workplace?",
     answer:
-      "Yes. We're a mobile service and bring our equipment to you. We need a suitable space (driveway, garage, or similar) with access to power. We can discuss your location when you book.",
+      "Often, yes. Mobile appointments are available seasonally, weather permitting, and we bring our own power and water. Three-year ceramic coatings are carried out at our Killearn unit because they need overnight curing.",
   },
   {
     question: "Do I need a ceramic coating after polishing?",

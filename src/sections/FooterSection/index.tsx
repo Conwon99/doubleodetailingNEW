@@ -28,19 +28,24 @@ export const FooterSection = () => {
               </div>
               <div className="box-border caret-transparent gap-x-6 flex gap-y-0">
                 <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="text-[15px] box-border caret-transparent leading-6 text-white/60 hover:text-white md:text-base cursor-not-allowed opacity-70"
+                  href="/privacy-policy/"
+                  className="text-[15px] box-border caret-transparent leading-6 text-white/60 hover:text-white md:text-base"
                 >
                   Privacy Policy
                 </a>
                 <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="text-[15px] box-border caret-transparent leading-6 text-white/60 hover:text-white md:text-base cursor-not-allowed opacity-70"
+                  href="/terms/"
+                  className="text-[15px] box-border caret-transparent leading-6 text-white/60 hover:text-white md:text-base"
                 >
                   Terms of Service
                 </a>
+                <button
+                  type="button"
+                  onClick={() => (window as any).ddCookieSettings?.()}
+                  className="text-[15px] box-border caret-transparent leading-6 text-white/60 hover:text-white md:text-base"
+                >
+                  Cookie settings
+                </button>
               </div>
             </div>
           </div>
