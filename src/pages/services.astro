@@ -1,46 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Navbar } from '../sections/Navbar';
+import { ServicePageServices } from '../sections/ServicePageServices';
+import ReviewsSection from '../sections/ReviewsSection.astro';
 import { QuoteSection } from '../sections/QuoteSection';
 import { FooterSection } from '../sections/FooterSection';
-
-// Prices are "from" (small car) and come from src/data/packages.ts – keep in step.
-const premium = [
-  {
-    href: '/machine-polishing/',
-    title: 'Paint correction & gloss enhancement',
-    from: '£295',
-    text: 'Machine polishing to remove swirls, haze and oxidation and bring back depth and gloss. Gloss enhancement for lightly marked paint, single-stage correction for heavier defects. 12-month ceramic protection included.',
-  },
-  {
-    href: '/ceramic-coatings/',
-    title: 'Ceramic coatings',
-    from: '£295',
-    text: '12-month ceramic protection comes with every polishing package, with 2-year and 3-year coating upgrades. Three-year coatings are applied and cured overnight at our Killearn unit.',
-  },
-  {
-    href: '/deep-cleans/',
-    title: 'Full detail',
-    from: '£170',
-    text: 'A complete interior and exterior detail with decontamination and 6-month paint protection. The best starting point before correction, coating or a maintenance plan.',
-  },
-];
-
-const ongoing = [
-  {
-    href: '/maintenance/',
-    title: 'Maintenance',
-    from: '£50',
-    text: 'Exterior safe wash and maintenance details to keep a detailed or coated car looking its best.',
-  },
-];
-
-const addOns = [
-  { href: '/headlight-restoration/', title: 'Headlight restoration', text: 'Cloudy, yellowed lenses restored and sealed. From £80.' },
-  { href: '/soft-top-restoration/', title: 'Soft top clean & protection', text: 'Deep clean and re-proof for fabric convertible roofs. Recolouring is not included.' },
-  { href: '/engine-bay-detailing/', title: 'Engine bay detailing', text: 'Safe cleaning and dressing of the engine bay.' },
-  { href: '/interior-fabric-coating/', title: 'Interior fabric coating', text: 'Stain-resistant protection for seats and carpets.' },
-];
 ---
 
 <Layout
@@ -48,54 +12,46 @@ const addOns = [
   description="Paint correction, ceramic coatings and full details from our Killearn unit, covering Loch Lomond, Bearsden, Milngavie and Glasgow North. Prices from £170."
   canonical="https://doubleodetailing.co.uk/services/"
 >
-  <div class="min-h-screen bg-neutral-100 font-figtree text-black text-sm leading-5 antialiased">
+  <div class="min-h-screen bg-white font-figtree text-black text-sm leading-5 antialiased">
     <Navbar client:load />
     <main class="pt-0">
-      <section class="py-[60px] md:py-[100px]">
-        <div class="max-w-[1204px] mx-auto px-5 md:px-8">
-          <h1 class="text-3xl font-medium tracking-[-0.52px] leading-[35px] md:text-[52px] md:leading-[62px] text-center">
-            Car detailing services
+      <section class="box-border overflow-hidden pt-[120px] md:pt-[150px] pb-10 md:pb-14">
+        <div class="box-border max-w-[1204px] mx-auto px-5 md:px-8">
+          <h1 class="text-[44px] font-bold tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase">
+            Our Services
           </h1>
-          <p class="text-[15px] leading-6 text-gray-700 mt-3 md:text-base text-center max-w-[680px] mx-auto">
-            Paint correction, ceramic coating and full details from our unit in Killearn. Not sure which you need?
+          <p class="text-[15px] leading-6 text-gray-700 mt-4 md:text-base max-w-[680px]">
+            Paint correction, ceramic coatings and full details from our unit in Killearn, covering Loch Lomond, Bearsden, Milngavie and Glasgow North. Not sure which you need?
             <a href="/packages/find-my-package/" class="underline">Find your package</a>.
           </p>
-
-          <h2 class="text-2xl font-medium mt-12 mb-4">Our main services</h2>
-          <div class="grid gap-4 md:grid-cols-3">
-            {premium.map((s) => (
-              <a href={s.href} class="block bg-white rounded-2xl p-6 border border-neutral-200 hover:border-black">
-                <h3 class="text-xl font-medium">{s.title}</h3>
-                <p class="text-gray-700 mt-2 text-[15px] leading-6">{s.text}</p>
-                <p class="font-medium mt-4">From {s.from}</p>
-              </a>
-            ))}
-          </div>
-
-          <h2 class="text-2xl font-medium mt-12 mb-4">Keep it looking right</h2>
-          <div class="grid gap-4 md:grid-cols-3">
-            {ongoing.map((s) => (
-              <a href={s.href} class="block bg-white rounded-2xl p-6 border border-neutral-200 hover:border-black">
-                <h3 class="text-xl font-medium">{s.title}</h3>
-                <p class="text-gray-700 mt-2 text-[15px] leading-6">{s.text}</p>
-                <p class="font-medium mt-4">From {s.from}</p>
-              </a>
-            ))}
-          </div>
-
-          <h2 class="text-2xl font-medium mt-12 mb-4">Specialist add-ons</h2>
-          <ul class="grid gap-3 md:grid-cols-2">
-            {addOns.map((s) => (
-              <li class="bg-white rounded-xl p-4 border border-neutral-200">
-                <a href={s.href} class="font-medium underline">{s.title}</a>
-                <span class="text-gray-700"> – {s.text}</span>
-              </li>
-            ))}
-          </ul>
-
-          <p class="mt-8 text-center"><a href="/packages/" class="underline font-medium">See all packages and prices</a></p>
         </div>
       </section>
+      <ServicePageServices client:load heading="What we do." />
+      <section class="bg-white box-border pb-[60px] md:pb-[100px]">
+        <div class="box-border max-w-[1204px] mx-auto px-5 md:px-8">
+          <div class="box-border flex flex-wrap justify-center gap-3">
+            <a
+              href="https://clienthub.getjobber.com/hubs/a44bef51-533c-4e99-b56c-1a3b824ae502/public/requests/5099095/new" target="_blank" rel="noopener noreferrer"
+              class="text-white items-center bg-cta-dark box-border gap-x-3 flex max-w-full gap-y-3 text-center border border-cta-dark px-6 py-4 rounded-[100px] border-solid hover:text-cta-dark hover:bg-white transition"
+            >
+              <span class="relative text-sm font-medium z-[2] md:text-base md:leading-6">BOOK NOW</span>
+              <span class="box-border">
+                <svg class="h-2 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+              </span>
+            </a>
+            <a
+              href="/packages/"
+              class="text-cta-dark items-center box-border gap-x-3 flex max-w-full gap-y-3 text-center border border-cta-dark px-6 py-4 rounded-[100px] border-solid hover:bg-cta-dark hover:text-white transition"
+            >
+              <span class="relative text-sm font-medium z-[2] md:text-base md:leading-6">View Packages &amp; Prices</span>
+              <span class="box-border">
+                <svg class="h-2 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <ReviewsSection title="Reviews" />
       <QuoteSection client:load showTerms={false} />
       <FooterSection client:load />
     </main>

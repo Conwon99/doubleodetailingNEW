@@ -1,6 +1,8 @@
 import { ServiceCard } from "./components/ServiceCard";
 
-export const ServicePageServices = () => {
+type ServicePageServicesProps = { heading?: string };
+
+export const ServicePageServices = ({ heading = "Browse our services." }: ServicePageServicesProps) => {
   return (
     <section className="bg-white box-border caret-transparent pb-[60px] md:pb-[100px]">
       <div className="box-border caret-transparent max-w-[1204px] mx-auto px-5 md:px-8">
@@ -8,7 +10,7 @@ export const ServicePageServices = () => {
           <div className="items-start box-border caret-transparent gap-x-7 flex flex-col justify-between gap-y-7 md:items-end md:gap-x-10 md:flex-row md:gap-y-10">
             <div className="items-start box-border caret-transparent gap-x-4 flex blur-0 flex-col max-w-[740px] gap-y-4">
               <h2 className="text-3xl font-bold box-border caret-transparent tracking-[-0.52px] leading-[35px] md:text-[52px] md:leading-[62px] font-refrigerator uppercase">
-                Browse our services.
+                {heading}
               </h2>
             </div>
           </div>
