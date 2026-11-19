@@ -88,7 +88,28 @@ export const QuoteForm = () => {
       formDataToSend.append("name", formData.name);
       formDataToSend.append("phone", formData.phone);
       formDataToSend.append("description", formData.description);
-      formDataToSend.append("website", "https://doubleodetailing.co.uk/");
+      formDataToSend.append("submitted_from_page", window.location.pathname);
+      const pageTitle = document.querySelector("h1")?.textContent?.replace(/\s+/g, " ").trim();
+      if (pageTitle) {
+        formDataToSend.append("page_title", pageTitle);
+      }
+
+      // Lead attribution captured on landing by src/scripts/attribution.ts
+      let attribution: Record<string, unknown> = {};
+      try {
+        const raw = sessionStorage.getItem("dd-attribution");
+        if (raw) attribution = JSON.parse(raw) || {};
+      } catch (e) {
+        attribution = {};
+      }
+      const attributionFields = ["source", "landing_page", "referrer", "utm_source", "utm_medium", "utm_campaign"];
+      for (const key of attributionFields) {
+        const value = attribution[key];
+        if (typeof value === "string" && value.trim()) {
+          formDataToSend.append(key, value);
+        }
+      }
+      const leadSource = typeof attribution.source === "string" && attribution.source ? attribution.source : "direct";
       
       if (imageFile) {
         formDataToSend.append("image", imageFile);
@@ -104,6 +125,21 @@ export const QuoteForm = () => {
 
       // Formspree returns 200 OK with JSON on success
       if (response.ok) {
+        // Record the lead in GA, waiting up to 300ms for it to send before redirecting
+        const gtag = (window as any).gtag;
+        if (typeof gtag === "function") {
+          await new Promise<void>((resolve) => {
+            const timer = window.setTimeout(resolve, 300);
+            gtag("event", "generate_lead", {
+              form_page: window.location.pathname,
+              lead_source: leadSource,
+              event_callback: () => {
+                window.clearTimeout(timer);
+                resolve();
+              },
+            });
+          });
+        }
         // Redirect to thank you page on success
         window.location.href = "/thank-you/";
       } else {
