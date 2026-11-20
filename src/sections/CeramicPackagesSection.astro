@@ -1,0 +1,104 @@
+---
+/**
+ * Ceramic coating packages for /ceramic-coatings/.
+ * Ceramic is sold as a tier of the two machine-polishing packages, so the
+ * prices here are read from those packages rather than duplicated.
+ */
+import { packagesData, PRICE_DISCLAIMER_TEXT } from "../data/packages";
+
+const polishing = packagesData.filter((p) => p.category === "machine-polishing" && p.pricingTiers);
+const sentence = (t: string) => t.charAt(0) + t.slice(1).toLowerCase();
+
+const tierInfo: Record<string, { name: string; blurb: string }> = {
+  "12 Month": {
+    name: "12-month ceramic protection",
+    blurb: "Included as standard with every paint correction and gloss enhancement.",
+  },
+  "2 Year Ceramic": {
+    name: "2-year ceramic coating",
+    blurb: "A longer-lasting coating applied after polishing, mobile or at our unit.",
+  },
+  "3 Year Ceramic": {
+    name: "3-year ceramic coating",
+    blurb: "Our longest-lasting coating. Applied at our Killearn unit with overnight curing.",
+  },
+};
+
+const tierLabels = polishing[0]?.pricingTiers?.map((t) => t.label) ?? [];
+const tiers = tierLabels.map((label) => {
+  const options = polishing.map((pkg) => {
+    const tier = pkg.pricingTiers!.find((t) => t.label === label)!;
+    return {
+      pkgName: sentence(pkg.title),
+      tagline: pkg.tagline,
+      href: `/packages/${pkg.category}/${pkg.id}/`,
+      from: tier.prices.small,
+      duration: tier.duration,
+      unitOnly: tier.unitOnly,
+    };
+  });
+  return { label, ...tierInfo[label], unitOnly: options.some((o) => o.unitOnly), options };
+});
+
+const wheels = polishing
+  .flatMap((p) => [...(p.priceOptions ?? []), ...(p.extras?.items ?? [])])
+  .find((t) => /wheels-off/i.test(t));
+---
+
+<section id="packages" class="box-border py-[60px] md:py-[100px] scroll-mt-24">
+  <div class="box-border w-full max-w-[1204px] mx-auto px-5 md:px-8">
+    <div class="text-center mb-10">
+      <div class="inline-block border border-black/20 px-3 py-1 rounded-[1000px] mb-4">
+        <span class="font-medium leading-[22px]">Packages &amp; Pricing</span>
+      </div>
+      <h2 class="font-refrigerator uppercase text-3xl font-bold tracking-[-0.52px] leading-tight md:text-5xl md:leading-tight">
+        Ceramic coating packages
+      </h2>
+      <p class="text-[15px] text-gray-600 md:text-base max-w-[640px] mx-auto mt-4">
+        Every coating is applied after machine polishing, so the paint is corrected before it is protected.
+        Choose the protection level, then the polishing stage that suits your paint.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {tiers.map((tier) => (
+        <div class="bg-white rounded-2xl border border-neutral-200 p-6 flex flex-col gap-4">
+          <div>
+            <h3 class="text-xl font-semibold">{tier.name}</h3>
+            {tier.unitOnly && (
+              <span class="inline-block mt-2 text-xs font-medium bg-neutral-100 border border-neutral-200 rounded-full px-2.5 py-0.5">
+                Unit only
+              </span>
+            )}
+            <p class="text-[15px] text-gray-600 mt-3">{tier.blurb}</p>
+          </div>
+          <ul class="flex flex-col gap-3 mt-auto">
+            {tier.options.map((o) => (
+              <li>
+                <a href={o.href} class="flex items-baseline justify-between gap-3 border-t border-neutral-200 pt-3 hover:text-yellow-700">
+                  <span class="text-[15px]">
+                    With {o.pkgName.toLowerCase()}
+                    {o.tagline && <span class="text-gray-500"> ({o.tagline.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase())})</span>}
+                  </span>
+                  <span class="whitespace-nowrap font-semibold">from {o.from}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          {tier.options[0]?.duration && (
+            <p class="text-sm text-gray-500">{tier.options[0].duration}</p>
+          )}
+        </div>
+      ))}
+    </div>
+
+    {wheels && (
+      <p class="text-[15px] text-center mt-8">
+        <strong>Add-on:</strong> {wheels}
+      </p>
+    )}
+    <p class="text-sm text-gray-600 text-center max-w-[640px] mx-auto mt-4">
+      "From" prices are for small vehicles. {PRICE_DISCLAIMER_TEXT}
+    </p>
+  </div>
+</section>
