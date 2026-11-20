@@ -2,7 +2,8 @@
 # Netlify ignores the trailing slash when matching, so each rule covers /path and /path/.
 
 # Old standalone pages
-/jet-ski-detailing  /  301
+/jet-ski-detailing  /services/  301
+/boat-detailing  /services/  301
 /double-o-detailing-packages-info  /packages/  301
 /double-o-detailing-gallery  /gallery/  301
 
@@ -250,7 +251,15 @@
 /lennoxtown/jet-ski-detailing  /  301
 /lennoxtown/find-my-package  /packages/find-my-package/  301
 
+# Package category pages merged into their service pages (Nov 2026).
+# Exact-path rules: the package detail pages underneath are unaffected.
+/packages/machine-polishing  /machine-polishing/  301
+/packages/deep-clean  /deep-cleans/  301
+/packages/maintenance  /maintenance/  301
+
 # Town pages that no longer exist -> service areas page
+/dullatur  /locations/  301
+/dullatur/*  /locations/  301
 /balmaha  /locations/  301
 /balmaha/*  /locations/  301
 /gartocharn  /locations/  301
