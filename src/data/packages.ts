@@ -1,6 +1,6 @@
 /**
  * Package data for Packages & Pricing page.
- * Sourced from Double O Detailing package cards (SONAX Professional Detailer).
+ * Sourced from Double O Detailing 2027 package cards.
  */
 
 export type PackageSection = {
@@ -77,62 +77,72 @@ export const packagesData: PackageData[] = [
     title: "GLOSS ENHANCEMENT",
     tagline: "NO TIME TO DIE",
     summary:
-      "A light machine-polishing service designed to noticeably improve gloss, depth and paint clarity while reducing very light swirling and surface haze. Ideal for newer, well-maintained or lightly marked paintwork that would benefit from a visual refresh without requiring heavier correction.\n\nIncludes full paint preparation and 12-month ceramic protection as standard, with 2-year and 3-year ceramic coating upgrades available.",
-    bestSuitedTo: "newer vehicles and paintwork with only minor imperfections.",
-    serviceTime: "Full day. Three-year coatings require overnight curing at our unit.",
+      "A single-stage gloss enhancement designed to improve paintwork clarity, depth and overall appearance. Ideal for newer or well-maintained vehicles with minor imperfections.\n\nFinished with your choice of 12-month, 2-year or 3-year CARPRO ceramic paintwork protection, with glass and alloy wheel faces ceramic coated as standard.",
+    bestSuitedTo: "newer vehicles and well-maintained or lightly marked paintwork with minor imperfections.",
+    serviceTime: "Full day, at our unit. Three-year coatings need suitable curing conditions at the unit.",
     sections: [
       {
         heading: "EXTERIOR PREPARATION",
         items: [
-          "Safe wash & decontamination process",
+          "Thorough exterior safe wash & decontamination",
           "Wheels, arches & exhaust tips deep cleaned",
           "Iron, tar & sap removal",
-          "Clay treatment",
+          "Clay bar treatment where necessary",
           "Spot-free drying process",
         ],
       },
       {
         heading: "ENHANCEMENT",
         items: [
-          "Light machine polish",
-          "Very light swirling & surface haze reduced",
-          "Increased gloss, clarity & depth",
+          "Single-stage light machine polish",
+          "Reduction of minor swirling & surface haze",
+          "Improved gloss, clarity & depth",
           "Paintwork refined for a sharper finish",
         ],
       },
       {
         heading: "PROTECTION",
         items: [
-          "12-month ceramic protection as standard",
-          "2-year or 3-year ceramic coating upgrades available (3-year at our unit only)",
-          "Glass sealed",
+          "Choice of 12-month, 2-year or 3-year CARPRO ceramic paintwork protection",
+          "Exterior glass prepared & ceramic coated",
+          "Alloy wheel faces prepared & ceramic coated",
           "Tyres & trims dressed",
+        ],
+      },
+      {
+        heading: "ADDITIONAL SURFACE PROTECTION – £100",
+        items: [
+          "Dedicated CARPRO glass coating for enhanced water repellency & durability",
+          "CARPRO DLUX coating on alloy wheel faces for increased resistance to brake dust & road grime",
+          "Easier ongoing cleaning & maintenance",
         ],
       },
     ],
     idealFor: [
       "Newer vehicles",
       "Well-maintained or lightly marked paintwork",
-      "Paintwork with only minor imperfections",
-      "Owners wanting a visual refresh without heavier correction",
+      "Vehicles with minor paintwork imperfections",
+      "Owners seeking improved gloss and ceramic protection without intensive correction",
     ],
-    durationDisplay: "Full Day Service",
+    note:
+      "Prices assume vehicles in average condition. Neglected, heavily contaminated or oversized vehicles may require a separate quote. Three-year ceramic coatings are unit-only and need suitable curing conditions. Durability depends on usage and maintenance.",
+    durationDisplay: "Full Day Service | Unit Appointment",
     imageUrl: "/packages/gloss-enhancement.jpeg",
     pricingTiers: [
       {
-        label: "12 Month",
-        prices: { small: "£295", medium: "£335", large: "£375", xl: "Quote" },
+        label: "12 Month – CARPRO Aqua",
+        prices: { small: "£320", medium: "£360", large: "£400", xl: "Quote" },
         duration: "Full Day Service",
       },
       {
-        label: "2 Year Ceramic",
-        prices: { small: "£370", medium: "£410", large: "£450", xl: "Quote" },
+        label: "2 Year – CARPRO UK 3.0",
+        prices: { small: "£360", medium: "£400", large: "£440", xl: "Quote" },
         duration: "Full Day Service",
       },
       {
-        label: "3 Year Ceramic",
-        prices: { small: "£445", medium: "£485", large: "£525", xl: "Quote" },
-        duration: "Full Day Service + Overnight Curing",
+        label: "3 Year – CARPRO UK 4.0",
+        prices: { small: "£420", medium: "£460", large: "£500", xl: "Quote" },
+        duration: "Full Day Service + Curing at Unit",
         unitOnly: true,
       },
     ],
@@ -143,72 +153,83 @@ export const packagesData: PackageData[] = [
     title: "SINGLE-STAGE PAINT CORRECTION",
     tagline: "CASINO ROYALE",
     summary:
-      "A more intensive single-stage machine-polishing service designed to achieve a significant improvement in visible swirls, oxidation, wash marring and lighter paint defects. The polishing combination is selected following a paint inspection and test section to achieve the strongest safe result while maintaining a high-quality finish.\n\nIncludes full paint preparation and 12-month ceramic protection as standard, with 2-year and 3-year ceramic coating upgrades available.",
-    bestSuitedTo: "visibly swirled, dull or weathered paintwork requiring greater defect reduction.",
-    serviceTime:
-      "Full day, subject to vehicle size and condition. Three-year coatings require overnight curing at our unit.",
+      "A more intensive single-stage correction designed to improve paintwork affected by visible swirls, wash damage and lighter defects.\n\nFollowing inspection and machine polishing, the vehicle is finished with your choice of 12-month, 2-year or 3-year CARPRO ceramic paintwork protection, with glass and alloy wheel faces ceramic coated as standard.",
+    bestSuitedTo: "vehicles with noticeable swirls, wash damage, light oxidation or surface defects.",
+    serviceTime: "Two to three days, at our unit.",
     sections: [
       {
         heading: "EXTERIOR PREPARATION",
         items: [
-          "Full safe wash & decontamination",
-          "Clay bar treatment",
-          "Paint inspection & test section",
+          "Thorough exterior safe wash & decontamination",
+          "Wheels, arches & exhaust tips deep cleaned",
+          "Iron, tar & sap removal",
+          "Clay bar treatment where necessary",
+          "Paintwork inspection & polishing test section",
         ],
       },
       {
         heading: "CORRECTION",
         items: [
-          "Single-stage machine correction",
-          "Visible swirls, oxidation & wash marring reduced",
-          "Lighter paint defects reduced",
-          "Increased gloss & paint clarity",
+          "Single-stage machine paint correction",
+          "Reduction of visible swirling, oxidation & wash marring",
+          "Reduction of lighter paintwork defects",
+          "Improved paint clarity, gloss & depth",
+          "Paintwork prepared for ceramic protection",
         ],
       },
       {
         heading: "PROTECTION",
         items: [
-          "12-month ceramic protection as standard",
-          "2-year ceramic coating upgrade available",
-          "3-year ceramic coating upgrade available (unit only – optimal coating conditions and overnight curing)",
-          "Glass cleaned & protected",
+          "Choice of 12-month, 2-year or 3-year CARPRO ceramic paintwork protection",
+          "Exterior glass prepared & ceramic coated",
+          "Alloy wheel faces prepared & ceramic coated",
           "Tyres & trims dressed",
         ],
       },
       {
-        heading: "OPTIONAL ADD-ON",
+        heading: "ADDITIONAL SURFACE PROTECTION – £100",
         items: [
-          "Wheels-Off Ceramic Protection (Unit Only) – Starts from £125",
+          "Dedicated CARPRO glass coating for enhanced water repellency & durability",
+          "CARPRO DLUX coating on alloy wheel faces for increased resistance to brake dust & road grime",
+          "Easier ongoing cleaning & maintenance",
+        ],
+      },
+      {
+        heading: "SPECIALIST ADD-ON: WHEELS-OFF CERAMIC PROTECTION – FROM £150 (UNIT ONLY)",
+        items: [
           "Wheels safely removed",
           "Inner barrels deep cleaned & decontaminated",
-          "Ceramic coating applied to wheels & calipers",
-          "Easier maintenance & brake dust removal",
+          "Dedicated ceramic coating applied to wheel faces, barrels & suitable caliper surfaces",
+          "Easier cleaning & brake dust removal",
+          "Replaces standard alloy-face protection; quoted according to wheel condition & access",
         ],
       },
     ],
-    priceOptions: [
-      "12-Month Protection – Starts from £350 (Full Day Service)",
-      "2-Year Ceramic Coating – Starts from £425 (Full Day Service)",
-      "3-Year Ceramic Coating (Unit Only) – Starts from £500 (Full Day Service + Overnight Curing)",
-      "Wheels-Off Ceramic Protection (Unit Only) – Starts from £125",
+    idealFor: [
+      "Vehicles with noticeable swirls and wash damage",
+      "Paintwork affected by light oxidation or surface defects",
+      "Owners seeking a more significant improvement in paint condition",
+      "Vehicles being prepared for longer-term ceramic protection",
     ],
-    durationDisplay: "Full Day Service",
+    note:
+      "Prices assume vehicles in average condition; neglected, heavily contaminated and oversized vehicles may require a separate quote. Correction results depend on defects, paint thickness and condition. Three-year coatings require suitable unit curing. Durability depends on usage and maintenance.",
+    durationDisplay: "Two–Three Days | Unit Appointment",
     imageUrl: "/packages/single-stage-paint-correction.jpeg",
     pricingTiers: [
       {
-        label: "12 Month",
-        prices: { small: "£350", medium: "£400", large: "£450", xl: "£525+" },
-        duration: "Full Day Service",
+        label: "12 Month – CARPRO Lite 2.0",
+        prices: { small: "£470", medium: "£510", large: "£550", xl: "Quote" },
+        duration: "Two–Three Days",
       },
       {
-        label: "2 Year Ceramic",
-        prices: { small: "£425", medium: "£475", large: "£525", xl: "£600+" },
-        duration: "Full Day Service",
+        label: "2 Year – CARPRO UK 3.0",
+        prices: { small: "£520", medium: "£560", large: "£600", xl: "Quote" },
+        duration: "Two–Three Days",
       },
       {
-        label: "3 Year Ceramic",
-        prices: { small: "£500", medium: "£550", large: "£600", xl: "£675+" },
-        duration: "Full Day Service + Overnight Curing",
+        label: "3 Year – CARPRO UK 4.0",
+        prices: { small: "£570", medium: "£620", large: "£670", xl: "Quote" },
+        duration: "Two–Three Days + Curing at Unit",
         unitOnly: true,
       },
     ],
@@ -216,41 +237,41 @@ export const packagesData: PackageData[] = [
   {
     id: "shaken-not-stirred",
     category: "deep-clean",
-    title: "FULL DETAIL",
+    title: "FULL DETAILED VALET",
     tagline: "SHAKEN, NOT STIRRED",
     summary:
-      "A comprehensive interior and exterior detail designed to safely restore cleanliness, remove contamination, add 6 months paint protection, and prepare your vehicle for ongoing maintenance or protection.",
+      "A comprehensive interior and exterior reset for vehicles requiring more than routine maintenance. Thorough cleaning, decontamination and a light hand-applied all-in-one polish help prepare the vehicle for easier ongoing upkeep.",
     sections: [
       {
         heading: "EXTERIOR",
         items: [
-          "Safe multi-stage wash process",
+          "Multi-stage exterior safe wash",
           "Wheels, arches & exhaust tips deep cleaned",
-          "Full chemical decontamination",
-          "Tar, iron & sap removal",
-          "6-month paint protection applied",
-          "Tyres, trims & arches dressed",
-          "Spot-free drying process",
+          "Chemical decontamination including iron, tar & sap removal as required",
+          "Light clay treatment where necessary",
+          "Light hand application of paint protection (3 to 6 months paint, glass & alloy protection)",
+          "Tyres, exterior trims & arches finished",
+          "Spot-free drying",
         ],
       },
       {
         heading: "INTERIOR",
         items: [
-          "Full deep vacuum including boot",
-          "Compressed air dust removal",
-          "Detailed cleaning of all interior surfaces",
-          "Carpets & mats shampooed & extracted",
-          "Seats, vents, switches & consoles detailed",
-          "UV-protective interior dressing applied",
+          "Deep vacuum including boot",
+          "Compressed-air dust removal where appropriate",
+          "Thorough cleaning of interior surfaces, vents, switches & consoles",
+          "Carpets & mats shampooed & extracted as required",
+          "Seats & upholstery detailed",
+          "UV-protective interior dressing where appropriate",
           "Interior & exterior glass cleaned",
           "Door shuts & jambs deep cleaned",
         ],
       },
     ],
     idealFor: [
-      "Neglected vehicles (add-ons recommended)",
-      "Seasonal resets",
-      "End-of-lease returns",
+      "Vehicles needing a comprehensive interior and exterior reset",
+      "Owners preparing to join a regular maintenance schedule",
+      "Cars with contamination and accumulated everyday dirt",
     ],
     extras: {
       heading: "OPTIONAL ADD-ONS",
@@ -260,9 +281,11 @@ export const packagesData: PackageData[] = [
         "Excessive Pet Hair Removal – POA",
       ],
     },
-    durationDisplay: "Approx. 4–5 Hours",
+    note:
+      "Approximately 4–6 hours for vehicles in average condition. This is a light hand-applied gloss and protection treatment, not a machine paint correction. Excessively dirty vehicles or extensive extraction requirements may need an individual quotation.",
+    durationDisplay: "Half Day or Full Day | Mobile or Unit",
     imageUrl: "/packages/shaken-not-stirred.webp",
-    pricingBySize: { small: "£170", medium: "£185", large: "£200", xl: "£230" },
+    pricingBySize: { small: "£180", medium: "£200", large: "£220", xl: "£250" },
   },
   {
     id: "spectre",
@@ -270,40 +293,39 @@ export const packagesData: PackageData[] = [
     title: "MAINTENANCE DETAIL",
     tagline: "SPECTRE",
     summary:
-      "A more thorough interior and exterior reset designed to keep your vehicle consistently clean, protected, and easy to maintain. Typical duration 2.5–3 hours.",
+      "A regular interior and exterior detail designed to maintain a high standard of cleanliness and protection after an initial preparation service. Typical duration 2.5–3 hours.",
     sections: [
       {
         heading: "EXTERIOR",
         items: [
-          "Everything included in the Exterior Safe Wash",
+          "Everything included in our 007 Exterior Safe Wash",
           "Paintwork decontamination where necessary",
-          "Additional protection top-up",
+          "Additional protection top-up as required",
         ],
       },
       {
         heading: "INTERIOR",
         items: [
-          "Full interior vacuum including boot",
-          "Carpets & mats deep cleaned",
-          "Interior surfaces detailed",
-          "Vents, switches & consoles cleaned",
-          "UV-protective interior dressing applied",
+          "Complete interior vacuum, including boot",
+          "Carpets & floor mats cleaned",
+          "Dashboard, trims & interior surfaces detailed",
+          "Vents, switches & centre console cleaned",
+          "UV-protective interior dressing applied where appropriate",
           "Interior & exterior glass cleaned",
-          "Door shuts & jambs cleaned",
+          "Door shuts & jambs cleaned & protected",
         ],
       },
     ],
     idealFor: [
-      "3–8 week maintenance",
-      "Family vehicles",
-      "Daily drivers",
-      "Keeping vehicles at a consistently high standard",
+      "Vehicles already brought up to an appropriate standard",
+      "Customers seeking regular 6–8 week upkeep",
+      "Maintaining ceramic coatings and previously protected paintwork",
     ],
     note:
-      "Vehicle must have received a Deep Clean, Maintenance Detail, or Paint Enhancement package within the last 2–8 weeks.",
-    durationDisplay: "Approx. 2.5–3 Hours",
+      "Maintenance pricing assumes the vehicle is already in good condition. Deep upholstery extraction, heavy contamination and restoration work are not included as routine maintenance.",
+    durationDisplay: "Approx. 2.5–3 Hours | Mobile",
     imageUrl: "/packages/spectre.webp",
-    pricingBySize: { small: "£90", medium: "£95", large: "£100", xl: "£120" },
+    pricingBySize: { small: "£80", medium: "£90", large: "£100", xl: "£120" },
   },
   {
     id: "007",
@@ -311,7 +333,7 @@ export const packagesData: PackageData[] = [
     title: "EXTERIOR SAFE WASH",
     tagline: "007",
     summary:
-      "A safe, professional maintenance wash designed to preserve your vehicle's finish using premium products and careful wash methods. Typical duration 1.5–2 hours.",
+      "A careful exterior maintenance wash for vehicles already prepared and maintained to a high standard. Designed to preserve the finish and existing protection between more comprehensive details. Typical duration 1.5–2 hours.",
     sections: [
       {
         heading: "EXTERIOR",
@@ -319,21 +341,23 @@ export const packagesData: PackageData[] = [
           "Safe pre-wash & snow foam",
           "Two-bucket contact wash",
           "Wheels, arches & exhaust tips cleaned",
-          "Intricate areas cleaned with soft brushes",
-          "3-month paint protection applied",
-          "Tyres & trims dressed",
-          "Plush towel & air-assisted drying process",
+          "Intricate areas cleaned using soft brushes",
+          "Paint protection topped up where required (up to three months of protection)",
+          "Tyres & exterior trims dressed",
+          "Plush towel & air-assisted drying",
         ],
       },
     ],
     idealFor: [
-      "Well-maintained vehicles",
-      "Weekly, fortnightly or monthly upkeep",
-      "Enthusiast-maintained cars",
+      "Existing maintenance clients",
+      "Well-maintained and previously prepared vehicles",
+      "Regular exterior upkeep between more intensive services",
     ],
-    durationDisplay: "Approx. 1.5–2 Hours",
+    note:
+      "Available only for vehicles already meeting our maintenance standard. Heavier contamination or neglected finishes require an initial detail or separate quotation.",
+    durationDisplay: "Approx. 1.5–2 Hours | Mobile",
     imageUrl: "/packages/exterior-wash.webp",
-    pricingBySize: { small: "£50", medium: "£55", large: "£60", xl: "£75" },
+    pricingBySize: { small: "£50", medium: "£55", large: "£65", xl: "£75" },
   },
 ];
 

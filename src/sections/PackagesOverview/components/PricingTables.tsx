@@ -176,8 +176,7 @@ export const PricingTables = ({ packages }: PricingTablesProps) => {
           <TieredTable packages={tiered} />
           {hasUnitOnly && (
             <p className="mt-3 font-figtree text-[13px] text-gray-500">
-              *Three-year ceramic coatings are carried out at the private unit and require overnight
-              curing.
+              *Three-year ceramic coatings are unit-only and need suitable curing conditions. Glass and alloy wheel faces are ceramic coated as standard; additional CARPRO glass and DLUX alloy coatings £100.
             </p>
           )}
         </div>

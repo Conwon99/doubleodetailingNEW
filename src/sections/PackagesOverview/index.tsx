@@ -277,7 +277,7 @@ export const PackagesOverview = ({ headingAs = "h1" }: { headingAs?: "h1" | "h2"
                     Unit & Mobile Services
                   </h4>
                   <p className="font-figtree text-[15px] text-gray-700 leading-6">
-                    Selected services are available mobile or from our private detailing unit. Three-year ceramic coatings are completed at the unit and require overnight curing.
+                    Valets and maintenance washes are available as mobile appointments. Gloss enhancement, paint correction and ceramic coatings are carried out at our private detailing unit.
                   </p>
                 </div>
               </div>

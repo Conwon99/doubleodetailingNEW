@@ -11,18 +11,18 @@ import { QuoteSection } from '../sections/QuoteSection';
 import { FooterSection } from '../sections/FooterSection';
 
 const faqs = [
-  { question: "How much does a car valet cost?", answer: "Our Exterior Safe Wash starts from £50, a Maintenance Valet (inside and out) from £90 and a Full Valet from £170. Prices depend on vehicle size, and very dirty vehicles may need a quote." },
+  { question: "How much does a car valet cost?", answer: "Our Exterior Safe Wash starts from £50, a Maintenance Valet (inside and out) from £80 and a Full Valet from £180. Prices depend on vehicle size, and very dirty vehicles may need a quote." },
   { question: "Do you offer mobile valeting?", answer: "Yes. Mobile valets are available seasonally, weather permitting, across Glasgow, Stirling and Dunbartonshire, including Bearsden, Milngavie, Bishopbriggs, Dumbarton, Helensburgh and Loch Lomond. We bring our own power and water. Send us your postcode and we'll confirm we can reach you." },
   { question: "What's the difference between a valet and a detail?", answer: "A valet cleans the car inside and out and adds short-term protection. Detailing goes further, with machine polishing to remove swirls and scratches and a ceramic coating to protect the paint for one to three years." },
-  { question: "Which valet should I book?", answer: "If the car hasn't had a proper clean in a while, start with a Full Valet. After that, a Maintenance Valet every 3–8 weeks keeps it at that standard (the Maintenance Valet is for cars that have had a Full Valet, maintenance valet or paint enhancement in the last 2–8 weeks). If the inside is already tidy and you just want the outside done safely, book the Exterior Safe Wash." },
-  { question: "How long does a valet take?", answer: "An Exterior Safe Wash takes about 1.5–2 hours, a Maintenance Valet about 2.5–3 hours and a Full Valet about 4–5 hours." },
+  { question: "Which valet should I book?", answer: "If the car hasn't had a proper clean in a while, start with a Full Valet. After that, a Maintenance Valet every 6–8 weeks keeps it at that standard (the Maintenance Valet is for cars already in good condition). If the inside is already tidy and you just want the outside done safely, book the Exterior Safe Wash." },
+  { question: "How long does a valet take?", answer: "An Exterior Safe Wash takes about 1.5–2 hours, a Maintenance Valet about 2.5–3 hours and a Full Valet about 4–6 hours." },
   { question: "Can you valet a ceramic-coated car?", answer: "Yes. We use coating-safe products and a contact-safe wash method, which helps a ceramic coating keep its gloss and water-beading for longer." },
 ];
 ---
 
 <Layout
   title="Car Valeting Glasgow | Mobile & Full Valets from £50 | Double O"
-  description="Car valeting in Glasgow, Stirling and Dunbartonshire. Mobile safe wash from £50, maintenance valet from £90 and full valet from £170. Unit based in Killearn."
+  description="Car valeting in Glasgow, Stirling and Dunbartonshire. Mobile safe wash from £50, maintenance valet from £80 and full valet from £180. Unit based in Killearn."
   canonical="https://doubleodetailing.co.uk/car-valeting"
 >
   <div class="min-h-screen bg-neutral-100 font-figtree text-black text-sm leading-5 antialiased">
@@ -70,9 +70,9 @@ const faqs = [
         intro="Three valets, from a quick safe wash to a full interior and exterior reset. Every one includes paint protection, and all prices are for a small car."
         muted
         picks={[
-          { id: "007", reason: "Exterior only. A safe contact wash, wheels and arches cleaned, and 3-month paint protection. For cars that are tidy inside." },
-          { id: "spectre", label: "For regular care", reason: "Inside and out, every 3–8 weeks, for cars that have had a Full Valet, maintenance valet or paint enhancement in the last 2–8 weeks. Keeps a family car or daily driver at a consistently high standard." },
-          { id: "shaken-not-stirred", reason: "The full valet: decontamination, carpets and mats shampooed, seats and interior detailed, and 6-month paint protection." },
+          { id: "007", reason: "Exterior only. A safe contact wash, wheels and arches cleaned, and paint protection topped up. For cars already maintained to a high standard." },
+          { id: "spectre", label: "For regular care", reason: "Inside and out, every 6–8 weeks, for cars already brought up to standard. Keeps a family car or daily driver at a consistently high standard." },
+          { id: "shaken-not-stirred", reason: "The full valet: decontamination, carpets and mats shampooed, seats and interior detailed, a light hand polish and 3–6 month paint protection." },
         ]}
       />
 

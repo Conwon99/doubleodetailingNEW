@@ -9,40 +9,40 @@ import { packagesData, PRICE_DISCLAIMER_TEXT } from "../data/packages";
 const polishing = packagesData.filter((p) => p.category === "machine-polishing" && p.pricingTiers);
 const sentence = (t: string) => t.charAt(0) + t.slice(1).toLowerCase();
 
-const tierInfo: Record<string, { name: string; blurb: string }> = {
-  "12 Month": {
+const tierInfo = [
+  {
     name: "12-month ceramic protection",
-    blurb: "Included as standard with every paint correction and gloss enhancement.",
+    blurb: "Included as standard with every paint correction and gloss enhancement, with glass and alloy wheel faces coated too.",
   },
-  "2 Year Ceramic": {
+  {
     name: "2-year ceramic coating",
-    blurb: "A longer-lasting coating applied after polishing, mobile or at our unit.",
+    blurb: "CARPRO UK 3.0, applied after polishing at our Killearn unit.",
   },
-  "3 Year Ceramic": {
+  {
     name: "3-year ceramic coating",
-    blurb: "Our longest-lasting coating. Applied at our Killearn unit with overnight curing.",
+    blurb: "CARPRO UK 4.0, our longest-lasting coating. Applied at our Killearn unit, where it can cure properly.",
   },
-};
+];
 
-const tierLabels = polishing[0]?.pricingTiers?.map((t) => t.label) ?? [];
-const tiers = tierLabels.map((label) => {
+const tierCount = polishing[0]?.pricingTiers?.length ?? 0;
+const tiers = Array.from({ length: tierCount }, (_, i) => {
   const options = polishing.map((pkg) => {
-    const tier = pkg.pricingTiers!.find((t) => t.label === label)!;
+    const tier = pkg.pricingTiers![i];
     return {
       pkgName: sentence(pkg.title),
       tagline: pkg.tagline,
+      coating: tier.label.split("–")[1]?.trim(),
       href: `/packages/${pkg.category}/${pkg.id}/`,
       from: tier.prices.small,
       duration: tier.duration,
       unitOnly: tier.unitOnly,
     };
   });
-  return { label, ...tierInfo[label], unitOnly: options.some((o) => o.unitOnly), options };
+  return { ...tierInfo[i], unitOnly: options.some((o) => o.unitOnly), options };
 });
 
-const wheels = polishing
-  .flatMap((p) => [...(p.priceOptions ?? []), ...(p.extras?.items ?? [])])
-  .find((t) => /wheels-off/i.test(t));
+const wheels = "Wheels-off ceramic protection (unit only): from £150";
+const surface = "Additional CARPRO glass and DLUX alloy coatings: £100";
 ---
 
 <section id="packages" class="box-border py-[60px] md:py-[100px] scroll-mt-24">
@@ -85,18 +85,16 @@ const wheels = polishing
               </li>
             ))}
           </ul>
-          {tier.options[0]?.duration && (
-            <p class="text-sm text-gray-500">{tier.options[0].duration}</p>
-          )}
+          <p class="text-sm text-gray-500">
+            {tier.options.map((o) => `${o.tagline ? o.tagline.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase()) : o.pkgName}: ${o.coating ?? ""}, ${o.duration?.toLowerCase()}`).join(" · ")}
+          </p>
         </div>
       ))}
     </div>
 
-    {wheels && (
-      <p class="text-[15px] text-center mt-8">
-        <strong>Add-on:</strong> {wheels}
-      </p>
-    )}
+    <p class="text-[15px] text-center mt-8">
+      <strong>Add-ons:</strong> {surface} · {wheels}
+    </p>
     <p class="text-sm text-gray-600 text-center max-w-[640px] mx-auto mt-4">
       "From" prices are for small vehicles. {PRICE_DISCLAIMER_TEXT}
     </p>

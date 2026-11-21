@@ -195,7 +195,7 @@ export const PackageFinder = () => {
                 Choose Your Protection Level
               </h2>
               <p className="font-figtree text-[15px] text-gray-600 text-center mb-6">
-                12-month ceramic protection is included as standard. Three-year ceramic coatings are carried out at our unit and require overnight curing.
+                12-month ceramic protection is included as standard. Polishing and coatings are carried out at our Killearn unit; three-year coatings need suitable curing conditions.
               </p>
               <div className="flex flex-col gap-3">
                 {pkg.pricingTiers.map((tier) => (
