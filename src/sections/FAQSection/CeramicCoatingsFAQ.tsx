@@ -29,7 +29,7 @@ const faqs: { question: string; answer: string }[] = [
   {
     question: "What areas do you cover?",
     answer:
-      "We're workshop-based in Killearn and provide mobile detailing across Loch Lomond, Glasgow West End, and surrounding premium areas. Contact us with your location and we'll confirm we can reach you.",
+      "We're based at our unit in Killearn and cover Glasgow, Stirling and Dunbartonshire, including Bearsden, Milngavie, Bishopbriggs, Dumbarton, Helensburgh and Loch Lomond. Mobile appointments are available seasonally, weather permitting. Contact us with your location and we'll confirm we can reach you.",
   },
 ];
 

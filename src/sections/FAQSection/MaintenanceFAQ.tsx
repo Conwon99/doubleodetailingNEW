@@ -29,12 +29,12 @@ const faqs: { question: string; answer: string }[] = [
   {
     question: "Do you come to my location?",
     answer:
-      "Yes. Mobile appointments are available seasonally, weather permitting, and we bring our own power and water. We're based in Killearn and cover Loch Lomond, Bearsden, Milngavie and Glasgow North. Contact us to confirm we can reach you.",
+      "Yes. Mobile appointments are available seasonally, weather permitting, and we bring our own power and water. We're based at our unit in Killearn and cover Glasgow, Stirling and Dunbartonshire, including Bearsden, Milngavie, Bishopbriggs, Dumbarton, Helensburgh and Loch Lomond. Contact us to confirm we can reach you.",
   },
   {
     question: "What areas do you cover?",
     answer:
-      "We're workshop-based in Killearn and provide mobile detailing across Loch Lomond, Glasgow West End, and surrounding premium areas. Get in touch with your location and we'll confirm we can reach you.",
+      "We're based at our unit in Killearn and cover Glasgow, Stirling and Dunbartonshire, including Bearsden, Milngavie, Bishopbriggs, Dumbarton, Helensburgh and Loch Lomond. Mobile appointments are available seasonally, weather permitting. Get in touch with your location and we'll confirm we can reach you.",
   },
 ];
 

@@ -61,7 +61,7 @@ export const QuoteSection = ({ showTerms = true }: QuoteSectionProps) => {
                   </a>
                 </div>
                 <div className="text-white/80 text-[15px] md:text-base">
-                  Loch Lomond, Glasgow West End & surrounding areas
+                  Glasgow, Stirling &amp; Dunbartonshire
                 </div>
               </div>
             </div>

@@ -36,10 +36,10 @@ const TOWNS_WITH_PAGES = [
 export const WORKSHOP_BASE = "Killearn";
 
 export const COVERAGE_HEADLINE =
-  "Workshop based in Killearn, covering Loch Lomond, Glasgow West End & surrounding areas.";
+  "Covering Glasgow, Stirling and Dunbartonshire from our unit in Killearn.";
 
 export const COVERAGE_FAQ_ANSWER =
-  "We're workshop-based in Killearn and provide mobile detailing across Loch Lomond, Glasgow West End, and surrounding premium areas. Contact us with your location and we'll confirm we can reach you.";
+  "We\'re based at our unit in Killearn and cover Glasgow, Stirling and Dunbartonshire, including Bearsden, Milngavie, Bishopbriggs, Dumbarton, Helensburgh and Loch Lomond. Contact us with your location and we'll confirm we can reach you.";
 
 export const locationRegions: { name: string; slugs: string[] }[] = [
   {
