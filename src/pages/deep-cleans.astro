@@ -4,7 +4,10 @@ import { Navbar } from '../sections/Navbar';
 import { HeroStats } from '../sections/Hero/components/HeroStats';
 import { WhyChooseDeepCleanSection } from '../sections/CoreValuesSection/WhyChooseDeepCleanSection';
 import { ProcessSectionDeepClean } from '../sections/ProcessSection/ProcessSectionDeepClean';
-import { DeepCleanFAQ } from '../sections/FAQSection/DeepCleanFAQ';
+import ServiceShowcaseSection from '../sections/ServiceShowcaseSection.astro';
+import TrainingTrustSection from '../sections/TrainingTrustSection.astro';
+import ServiceFAQSection from '../sections/ServiceFAQSection.astro';
+import { fullDetail } from '../data/serviceShowcase';
 import { ServiceAreasSection } from '../sections/ServiceAreasSection';
 import ReviewsSection from '../sections/ReviewsSection.astro';
 import { PackageCategorySection } from '../sections/PackageCategorySection';
@@ -58,9 +61,13 @@ import { FooterSection } from '../sections/FooterSection';
       </section>
 
       <PackageCategorySection client:load categoryId="deep-clean" embedded heading="Full detail packages" />
+
+      <ServiceShowcaseSection id="results" showcase={fullDetail} intro="A comprehensive interior and exterior detail for vehicles that need more than a maintenance wash, without machine polishing." />
       <WhyChooseDeepCleanSection client:load />
       <ProcessSectionDeepClean client:load />
-      <DeepCleanFAQ client:load />
+      <ServiceFAQSection heading="Full detail FAQs" groups={[{ faqs: fullDetail.faqs }]} />
+
+      <TrainingTrustSection />
       <ServiceAreasSection client:load />
       <ReviewsSection title="Reviews" />
       <QuoteSection client:load showTerms={false} />

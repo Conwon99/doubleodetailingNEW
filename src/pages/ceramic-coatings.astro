@@ -4,7 +4,10 @@ import { Navbar } from '../sections/Navbar';
 import { HeroStats } from '../sections/Hero/components/HeroStats';
 import { WhyChooseCeramicCoatingsSection } from '../sections/CoreValuesSection/WhyChooseCeramicCoatingsSection';
 import { ProcessSectionCeramicCoatings } from '../sections/ProcessSection/ProcessSectionCeramicCoatings';
-import { CeramicCoatingsFAQ } from '../sections/FAQSection/CeramicCoatingsFAQ';
+import ServiceShowcaseSection from '../sections/ServiceShowcaseSection.astro';
+import TrainingTrustSection from '../sections/TrainingTrustSection.astro';
+import ServiceFAQSection from '../sections/ServiceFAQSection.astro';
+import { ceramicCoating } from '../data/serviceShowcase';
 import { ServiceAreasSection } from '../sections/ServiceAreasSection';
 import ReviewsSection from '../sections/ReviewsSection.astro';
 import CeramicPackagesSection from '../sections/CeramicPackagesSection.astro';
@@ -65,11 +68,15 @@ import { FooterSection } from '../sections/FooterSection';
 
       <CeramicPackagesSection />
 
+      <ServiceShowcaseSection id="results" showcase={ceramicCoating} resultsHeading="Ceramic coating in action" intro="CARPRO ceramic coatings applied after machine polishing, with 12-month, 2-year and 3-year protection." />
+
       <WhyChooseCeramicCoatingsSection client:load />
 
       <ProcessSectionCeramicCoatings client:load />
 
-      <CeramicCoatingsFAQ client:load />
+      <ServiceFAQSection heading="Ceramic coating FAQs" groups={[{ faqs: ceramicCoating.faqs }]} />
+
+      <TrainingTrustSection />
 
       <ServiceAreasSection client:load />
 

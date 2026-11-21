@@ -4,7 +4,10 @@ import { Navbar } from '../sections/Navbar';
 import { HeroStats } from '../sections/Hero/components/HeroStats';
 import { WhyChooseMachinePolishingSection } from '../sections/CoreValuesSection/WhyChooseMachinePolishingSection';
 import { ProcessSectionMachinePolishing } from '../sections/ProcessSection/ProcessSectionMachinePolishing';
-import { MachinePolishingFAQ } from '../sections/FAQSection/MachinePolishingFAQ';
+import ServiceShowcaseSection from '../sections/ServiceShowcaseSection.astro';
+import TrainingTrustSection from '../sections/TrainingTrustSection.astro';
+import ServiceFAQSection from '../sections/ServiceFAQSection.astro';
+import { paintCorrection, glossEnhancement } from '../data/serviceShowcase';
 import { ServiceAreasSection } from '../sections/ServiceAreasSection';
 import ReviewsSection from '../sections/ReviewsSection.astro';
 import { PackageCategorySection } from '../sections/PackageCategorySection';
@@ -13,8 +16,8 @@ import { FooterSection } from '../sections/FooterSection';
 ---
 
 <Layout 
-  title="Paint Correction & Gloss Enhancement | Double O Detailing"
-  description="Professional paint correction and gloss enhancement to restore your vehicle's paintwork. Gloss enhancement and single-stage correction with 12-month ceramic protection. Glasgow and Central Scotland."
+  title="Paint Correction & Car Polishing Killearn | Double O Detailing"
+  description="Paint correction, gloss enhancement and car polishing from our Killearn unit, with ceramic protection included. See real jobs, prices and reviews. Free quote."
   canonical="https://doubleodetailing.co.uk/machine-polishing"
 >
   <div class="min-h-screen bg-neutral-100 font-figtree text-black text-sm leading-5 antialiased">
@@ -66,11 +69,24 @@ import { FooterSection } from '../sections/FooterSection';
 
       <PackageCategorySection client:load categoryId="machine-polishing" embedded heading="Paint correction packages" />
 
+      <ServiceShowcaseSection id="paint-correction" showcase={paintCorrection} intro="Single-stage paint correction for paintwork with visible swirls, oxidation, wash marring and lighter defects. Our Casino Royale package." />
+
+      <ServiceShowcaseSection id="gloss-enhancement" showcase={glossEnhancement} muted={false} intro="A lighter machine polish for new or well-kept paintwork, refining very fine imperfections and adding gloss before ceramic protection. Our No Time To Die package." />
+
       <WhyChooseMachinePolishingSection client:load />
 
       <ProcessSectionMachinePolishing client:load />
 
-      <MachinePolishingFAQ client:load />
+      <ServiceFAQSection
+        heading="Paint correction & gloss enhancement FAQs"
+        groups={[
+          { title: "Paint correction", faqs: paintCorrection.faqs },
+          { title: "Gloss enhancement", faqs: glossEnhancement.faqs },
+          { title: "Booking", faqs: [{ question: "Can you polish my car at my home or workplace?", answer: "Often, yes. Mobile appointments are available seasonally, weather permitting, and we bring our own power and water. Three-year ceramic coatings are carried out at our Killearn unit because they need overnight curing." }] },
+        ]}
+      />
+
+      <TrainingTrustSection />
 
       <ServiceAreasSection client:load />
 

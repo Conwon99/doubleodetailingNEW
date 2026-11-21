@@ -1,0 +1,54 @@
+---
+/**
+ * Static FAQ accordion (no JS) with FAQPage structured data.
+ * Pass one or more groups; groups with a title get their own sub-heading.
+ */
+import type { Faq } from "../data/serviceShowcase";
+
+interface Props {
+  heading: string;
+  groups: { title?: string; faqs: Faq[] }[];
+}
+
+const { heading, groups } = Astro.props;
+const all = groups.flatMap((g) => g.faqs);
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: all.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
+---
+
+<section class="bg-white box-border py-[60px] md:py-[100px]">
+  <div class="box-border max-w-[1204px] mx-auto px-5 md:px-8 flex flex-col gap-y-8 md:gap-y-10">
+    <div class="box-border inline-block border border-neutral-200 px-3 py-1 rounded-[1000px] border-solid w-fit">
+      <span class="font-medium leading-[22px]">FAQ</span>
+    </div>
+    <h2 class="text-3xl font-bold tracking-[-0.52px] leading-[35px] md:text-[52px] md:leading-[62px] font-refrigerator uppercase">
+      {heading}
+    </h2>
+    {groups.map((g) => (
+      <div class="flex flex-col gap-y-4">
+        {g.title && <h3 class="text-xl font-semibold md:text-2xl">{g.title}</h3>}
+        <div class="border border-neutral-200 rounded-xl overflow-hidden">
+          {g.faqs.map((f, i) => (
+            <details class="group border-b border-neutral-200 last:border-b-0" open={i === 0 && g === groups[0]}>
+              <summary class="list-none cursor-pointer flex items-center justify-between gap-4 py-5 px-5 md:py-6 md:px-6 hover:bg-neutral-50 [&::-webkit-details-marker]:hidden">
+                <span class="font-refrigerator uppercase text-base md:text-lg font-bold text-black">{f.question}</span>
+                <span class="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-neutral-100 text-neutral-600 transition-transform group-open:rotate-180" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </span>
+              </summary>
+              <div class="px-5 pb-5 md:px-6 md:pb-6 pt-0 text-[15px] leading-6 text-gray-700 md:text-base">{f.answer}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</section>
