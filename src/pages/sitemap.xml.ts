@@ -4,11 +4,6 @@ import { packagesData } from "../data/packages";
 
 const siteUrl = "https://doubleodetailing.co.uk";
 
-/** Package category slugs (from packages data) for category index pages */
-const packageCategories = [
-  ...new Set(packagesData.map((p) => p.category)),
-] as const;
-
 const staticPages: string[] = [
   "",
   "about",
@@ -22,7 +17,7 @@ const staticPages: string[] = [
   "machine-polishing",
   "maintenance",
   "packages",
-  ...packageCategories.map((cat) => `packages/${cat}`),
+  "packages/find-my-package",
   ...packagesData.map((p) => `packages/${p.category}/${p.id}`),
   "services",
   "soft-top-restoration",
@@ -46,7 +41,6 @@ function getPriority(path: string): string {
   const main = ["about", "services", "packages", "contact", "gallery"];
   if (main.includes(path)) return "0.9";
   if (path === "locations" || locationSlugs.includes(path)) return "0.85";
-  if (path.startsWith("packages/") && !path.includes("/", 9)) return "0.85"; // category
   if (path.startsWith("packages/")) return "0.8"; // package detail
   if (
     [

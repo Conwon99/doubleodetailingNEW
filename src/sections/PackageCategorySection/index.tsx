@@ -11,12 +11,44 @@ const categoryHeroImages: Record<PackageData["category"], string> = {
 
 type PackageCategorySectionProps = {
   categoryId: PackageData["category"];
+  /** Render only the package grid under an H2, for use inside a service page */
+  embedded?: boolean;
+  heading?: string;
 };
 
-export const PackageCategorySection = ({ categoryId }: PackageCategorySectionProps) => {
+export const PackageCategorySection = ({ categoryId, embedded = false, heading }: PackageCategorySectionProps) => {
   const label = categoryLabels[categoryId];
   const packages = packagesData.filter((p) => p.category === categoryId);
   const heroImage = categoryHeroImages[categoryId];
+
+  if (embedded) {
+    return (
+      <section id="packages" className="box-border py-[60px] md:py-[100px] scroll-mt-24">
+        <div className="box-border w-full max-w-[1204px] mx-auto px-5 md:px-8">
+          <div className="box-border flex flex-col gap-y-10 w-full">
+            <div className="text-center">
+              <div className="inline-block border border-black/20 px-3 py-1 rounded-[1000px] mb-4">
+                <span className="font-medium leading-[22px]">Packages & Pricing</span>
+              </div>
+              <h2 className="font-refrigerator uppercase text-3xl font-bold tracking-[-0.52px] leading-tight md:text-5xl md:leading-tight">
+                {heading ?? `${label} packages`}
+              </h2>
+            </div>
+            <div className="flex flex-wrap gap-6 md:gap-8 w-full">
+              {packages.map((pkg) => (
+                <div key={pkg.id} id={pkg.id} className="flex-[1_1_280px] min-w-[280px] scroll-mt-24">
+                  <PackageCard package={pkg} />
+                </div>
+              ))}
+            </div>
+            <p className="text-[15px] text-gray-600 md:text-base text-center max-w-[560px] mx-auto">
+              All packages are tailored to your vehicle. Get a quote for exact pricing.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <>

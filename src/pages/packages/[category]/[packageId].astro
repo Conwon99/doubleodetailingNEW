@@ -23,6 +23,12 @@ export async function getStaticPaths() {
 const { package: pkg } = Astro.props;
 const categoryId = pkg.category;
 const categoryLabel = categoryLabels[categoryId];
+/** Package categories now live on their service page (old /packages/{category}/ URLs 301 there) */
+const categoryServicePath: Record<PackageData["category"], string> = {
+  "machine-polishing": "/machine-polishing/#packages",
+  "deep-clean": "/deep-cleans/#packages",
+  maintenance: "/maintenance/#packages",
+};
 const sentence = (t: string) => t.charAt(0) + t.slice(1).toLowerCase();
 const serviceName = sentence(pkg.title);
 const fromPrice = getPricingRows(pkg)[0]?.prices.small;
@@ -62,7 +68,7 @@ const casinoRoyaleGallery =
             </a>
             <span class="text-gray-400 hidden sm:inline" aria-hidden="true">/</span>
             <a
-              href={`/packages/${categoryId}/`}
+              href={categoryServicePath[categoryId]}
               class="text-gray-600 hover:text-black"
             >
               {categoryLabel}
