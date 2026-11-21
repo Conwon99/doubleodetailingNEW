@@ -4,7 +4,7 @@ const faqs: { question: string; answer: string }[] = [
   {
     question: "How much does a mobile valet cost?",
     answer:
-      "Our Exterior Safe Wash (007) starts from £50 and our Maintenance Detail (Spectre), which covers the interior as well, starts from £90. Prices depend on vehicle size.",
+      "Our Exterior Safe Wash (007) starts from £50 and our Maintenance Detail (Spectre), which covers the interior as well, starts from £80. Prices depend on vehicle size.",
   },
   {
     question: "Do you maintain ceramic-coated cars?",

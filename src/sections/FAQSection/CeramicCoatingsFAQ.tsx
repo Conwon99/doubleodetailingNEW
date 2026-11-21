@@ -19,7 +19,7 @@ const faqs: { question: string; answer: string }[] = [
   {
     question: "Can you apply ceramic coating at my home?",
     answer:
-      "12-month and 2-year coatings can be applied at your home. Mobile appointments are available seasonally, weather permitting, and we bring our own power and water. Three-year ceramic coatings are carried out at our Killearn unit because they need overnight curing.",
+      "Ceramic coatings are applied at our Killearn unit, after a gloss enhancement or paint correction, so the paint is prepared properly and the coating can cure. Valets and maintenance washes, including coated-car maintenance, are available as mobile appointments.",
   },
   {
     question: "What’s the difference between the 12-month, 2-year and 3-year options?",

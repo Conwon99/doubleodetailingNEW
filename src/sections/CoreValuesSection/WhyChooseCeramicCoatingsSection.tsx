@@ -55,8 +55,7 @@ export const WhyChooseCeramicCoatingsSection = () => {
                     </div>
                   </div>
                   <div className="text-[15px] box-border caret-transparent leading-6 text-gray-700 md:text-base">
-                    Mobile or unit - 12-month and 2-year coatings can be applied at your home in season; 3-year coatings at our Killearn unit
-                  </div>
+                    Unit applied - every coating is applied at our Killearn unit after polishing, so it can cure properly.</div>
                 </div>
                 <div className="box-border caret-transparent gap-x-3 flex items-start gap-y-2">
                   <div className="text-black items-center bg-neutral-200 box-border caret-transparent flex h-6 justify-center w-6 overflow-hidden rounded-[50%] shrink-0 mt-0.5">

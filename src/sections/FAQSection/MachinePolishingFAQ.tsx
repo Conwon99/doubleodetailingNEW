@@ -9,12 +9,12 @@ const faqs: { question: string; answer: string }[] = [
   {
     question: "How long does machine polishing take?",
     answer:
-      "It depends on the vehicle size, condition, and the level of correction. Both our gloss enhancement and single-stage correction are full-day services. Three-year coatings add overnight curing at our unit. We'll give you a clearer timeframe when we assess your vehicle.",
+      "It depends on the vehicle size, condition, and the level of correction. Gloss enhancement is a full-day service and single-stage paint correction takes two to three days, both at our unit. Three-year coatings also need suitable curing conditions. We'll give you a clearer timeframe when we assess your vehicle.",
   },
   {
     question: "Can you polish my car at my home or workplace?",
     answer:
-      "Often, yes. Mobile appointments are available seasonally, weather permitting, and we bring our own power and water. Three-year ceramic coatings are carried out at our Killearn unit because they need overnight curing.",
+      "Paint correction and gloss enhancement are carried out at our Killearn unit, where we can control the lighting and let the ceramic coating cure properly. Valets and maintenance washes are available as mobile appointments, seasonally and weather permitting.",
   },
   {
     question: "Do I need a ceramic coating after polishing?",

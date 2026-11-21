@@ -25,7 +25,7 @@ export const ProcessStepsDeepClean = () => {
         imageUrl=""
         imageAlt="Protection"
         title="04. Finishing & protection."
-        description="Tyres and trim are dressed and 6-month paint protection is applied. Your vehicle is left looking immaculate and ready to use."
+        description="Tyres and trim are dressed and 3–6 month paint protection is applied. Your vehicle is left looking immaculate and ready to use."
       />
     </div>
   );
