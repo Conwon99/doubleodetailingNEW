@@ -2,6 +2,7 @@
 import '../styles/tailwind.css';
 import { locations } from '../data/locations';
 import { GOOGLE_REVIEW_COUNT } from '../data/business';
+import { CANONICAL_PHONE } from '../data/phone';
 
 interface LocationSchemaProp {
   name: string;
@@ -118,7 +119,7 @@ const defaultAreaServed = [
       "url": "https://doubleodetailing.co.uk",
       "logo": "https://doubleodetailing.co.uk/double-o-logo.png",
       "image": "https://doubleodetailing.co.uk/double-o-logo.png",
-      "telephone": "+447768243728",
+      "telephone": CANONICAL_PHONE.e164,
       "email": "doubleodetailing@icloud.com",
       "address": {
         "@type": "PostalAddress",
@@ -188,7 +189,7 @@ const defaultAreaServed = [
           "@type": "LocalBusiness",
           "name": "Double O Detailing",
           "url": `${siteUrl}/`,
-          "telephone": "+447768243728"
+          "telephone": CANONICAL_PHONE.e164
         },
         "areaServed": {
           "@type": "Place",
@@ -211,7 +212,7 @@ const defaultAreaServed = [
       "logo": "https://doubleodetailing.co.uk/double-o-logo.png",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+447768243728",
+        "telephone": CANONICAL_PHONE.e164,
         "contactType": "Customer Service",
         "areaServed": "GB",
         "availableLanguage": "English"
@@ -261,6 +262,15 @@ const defaultAreaServed = [
         });
         window.ddCookieSettings = function () { box.hidden = false; };
       })();
+    </script>
+    <script>
+      // Call tracking: swap static .astro phone links to the tracking number after load.
+      // React components handle their own swap via usePhoneNumber. Schema always keeps the canonical number.
+      import { TRACKING_PHONE } from '../data/phone';
+      document.querySelectorAll<HTMLAnchorElement>('a[data-tracking-phone]').forEach((a) => {
+        a.href = `tel:${TRACKING_PHONE.tel}`;
+        a.textContent = TRACKING_PHONE.display;
+      });
     </script>
   </body>
 </html>
