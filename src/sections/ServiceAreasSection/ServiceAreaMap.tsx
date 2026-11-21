@@ -109,7 +109,7 @@ export function ServiceAreaMap() {
       <div
         ref={containerRef}
         className="w-full h-full min-h-[280px] lg:min-h-[320px] rounded-xl overflow-hidden border border-neutral-200 shadow-sm bg-neutral-100 [&_.leaflet-control]:!z-[100] [&_.leaflet-pane]:!z-[1]"
-        aria-label="Map showing Double O Detailing service area near Loch Lomond and Glasgow West End"
+        aria-label="Map showing Double O Detailing service area across Glasgow, Stirling and Dunbartonshire"
       />
     </div>
   );
