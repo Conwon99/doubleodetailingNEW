@@ -8,6 +8,7 @@ const staticPages: string[] = [
   "",
   "about",
   "car-valeting",
+  "reviews",
   "ceramic-coatings",
   "contact",
   "deep-cleans",

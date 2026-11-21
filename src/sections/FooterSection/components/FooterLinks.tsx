@@ -28,6 +28,12 @@ export const FooterLinks = () => {
             Services
           </a>
           <a
+            href="/reviews/"
+            className="text-[15px] box-border caret-transparent leading-6 text-white/80 hover:text-white md:text-base"
+          >
+            Reviews
+          </a>
+          <a
             href="/contact/"
             className="text-[15px] box-border caret-transparent leading-6 text-white/80 hover:text-white md:text-base"
           >

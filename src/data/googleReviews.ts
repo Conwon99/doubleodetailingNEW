@@ -16,7 +16,7 @@ export type ReviewTag =
 
 export type GoogleReview = { name: string; text: string; tags: ReviewTag[] };
 
-export const GOOGLE_REVIEW_COUNT = 50;
+export { GOOGLE_REVIEW_COUNT } from "./business";
 
 export const googleReviews: GoogleReview[] = [
   { name: "Gary Cowan", tags: ["paint-correction", "ceramic"], text: "Great job! Gordie done 3 winter protection package deals for me, single stage polish and a coating, good communication and turned up when he said he would, can't ask for more!" },
@@ -54,6 +54,20 @@ export const googleReviews: GoogleReview[] = [
   { name: "Katie Lindsay", tags: ["general"], text: "5 Star rating. Gordie’s attention to detail is second to none. I know my car is in good hands when he’s about. I wouldn’t use anyone else to detail my car. My car always feels like a new car when Gordie is finished. 10/10" },
   { name: "shazaad arif", tags: ["general"], text: "Absolute master of his trade. Literally back to showroom condition every time. I wouldn't let anyone else touch my car." },
   { name: "W H", tags: ["general"], text: "Gordie did an excellent job. Really good attention to detail and went the extra mile putting an exceptional detail on the car. Well worth it and highly recommended." },
+  { name: "Kevin Mitchell", tags: ["general"], text: "Have now had a few cars and a boat detailed by Gordy and his service is first class. I will not use anywhere else going forward and cannot recommend enough." },
+  { name: "Evelyn Anderson", tags: ["general"], text: "If there were 007 stars Gordie would definitely be worthy. My cars have never looked as good. He takes pride in what he’s doing and it shows with the results. I can highly recommend Double-0 Detailing 🤩" },
+  { name: "alastair easton", tags: ["general"], text: "Amazing standard of work, my car was totally transformed by this friendly and professional service. Every detail was perfect. You will not be disappointed." },
+  { name: "David Mackie", tags: ["full-valet"], text: "Asked Gordie to detail a couple of vehicles. As well as a van that had not been cleaned in years. Truly superb service and finished results were excellent. Highly recommended." },
+  { name: "Katie Graham", tags: ["valeting"], text: "Highly recommend Gordie and Double O Detailing. Gordie’s attention to detail is second to none and my car is sparkling inside and out!" },
+  { name: "Larry Winning", tags: ["maintenance"], text: "Having used this company a number of times now, both my wife and myself are delighted at the perfection to detail with this company, every single time. Really, really excellent and reliable. A friend used them when selling his car and was enthusing about them too." },
+  { name: "Chantal Robinson", tags: [], text: "Absolutely fantastic job, car looks amazing. Thank you." },
+  { name: "Robert Brew", tags: [], text: "Top job! My car looks awesome! 100% recommendation." },
+  { name: "Cameron Brown", tags: [], text: "Great service with excellent attention to detail, professional and efficient. Not your average detailer 💪🏻" },
+  { name: "Andy Lennox", tags: [], text: "Excellent service from Double O Detailing. Would highly recommend. Very thorough service, delighted with result. Car looking better than new." },
+  { name: "Kayleigh Hopkinson", tags: [], text: "Really good service! Car was spotless and like new! Thanks again. Highly recommend" },
+  { name: "Sean Odonnell", tags: [], text: "5 star, great service and very professional, will definitely recommend and book again." },
+  { name: "Graham Martlew", tags: [], text: "Very efficient and a first class job" },
+  { name: "Harry Hutchison", tags: [], text: "Amazing service, charming and efficient team! Would highly recommend" },
 ];
 
 /** Reviews for a service page: tagged ones first, topped up with general reviews */
