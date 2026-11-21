@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { GOOGLE_REVIEW_COUNT } from "../../data/googleReviews";
 
 const GOOGLE_PROFILE_URL = "https://share.google/WHM6HVMqy1SvwnkkX";
 
@@ -52,7 +53,15 @@ function StarRating() {
   );
 }
 
-export function StaticReviews() {
+type ReviewCard = { name: string; text: string; meta?: string; time?: string; initial?: string; initialBg?: string };
+const AVATAR_BG = ["bg-violet-400", "bg-amber-500", "bg-emerald-500", "bg-sky-500", "bg-rose-400", "bg-teal-500"];
+
+export function StaticReviews({ reviews, heading }: { reviews?: ReviewCard[]; heading?: string } = {}) {
+  const items: ReviewCard[] = (reviews ?? REVIEWS).map((r, i) => ({
+    ...r,
+    initial: r.initial ?? r.name.trim().charAt(0).toUpperCase(),
+    initialBg: r.initialBg ?? AVATAR_BG[i % AVATAR_BG.length],
+  }));
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (dir: "left" | "right") => {
@@ -71,7 +80,7 @@ export function StaticReviews() {
             rel="noopener noreferrer"
             className="text-3xl font-bold tracking-[-0.52px] leading-[35px] md:text-[52px] md:leading-[62px] font-refrigerator uppercase text-white hover:text-white/90 transition-colors"
           >
-            What our customers say
+            {heading ?? "What our customers say"}
           </a>
         </h2>
         <div className="relative flex items-center gap-2 md:gap-4">
@@ -89,7 +98,7 @@ export function StaticReviews() {
             ref={scrollRef}
             className="flex gap-5 overflow-x-auto scroll-smooth py-2 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           >
-            {REVIEWS.map((review) => (
+            {items.map((review) => (
               <article
                 key={review.name}
                 className="shrink-0 w-[min(100%,320px)] md:w-[360px] snap-center rounded-xl bg-neutral-700/80 border border-neutral-600 p-6 flex flex-col"
@@ -102,8 +111,8 @@ export function StaticReviews() {
                   </div>
                   <div className="min-w-0">
                     <p className="font-refrigerator font-bold text-white uppercase text-base">{review.name}</p>
-                    <p className="text-neutral-400 text-sm">{review.meta}</p>
-                    <p className="text-neutral-500 text-sm">{review.time}</p>
+                    {review.meta && <p className="text-neutral-400 text-sm">{review.meta}</p>}
+                    {review.time ? <p className="text-neutral-500 text-sm">{review.time}</p> : <p className="text-neutral-400 text-sm">Google review</p>}
                   </div>
                 </div>
                 <p className="text-white text-[15px] leading-6 md:text-base flex-grow mb-5">{review.text}</p>
@@ -133,6 +142,11 @@ export function StaticReviews() {
             </svg>
           </button>
         </div>
+        <p className="mt-8 text-center md:text-left">
+          <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4 hover:text-white/80">
+            Read all {GOOGLE_REVIEW_COUNT} reviews on Google (5.0)
+          </a>
+        </p>
       </div>
     </section>
   );

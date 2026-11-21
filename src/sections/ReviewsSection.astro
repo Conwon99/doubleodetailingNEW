@@ -1,7 +1,19 @@
 ---
 import { StaticReviews } from './ReviewsSection/StaticReviews';
+import { reviewsFor, type ReviewTag } from '../data/googleReviews';
+
+interface Props {
+  title?: string;
+  /** Show Google reviews relevant to this service instead of the default set */
+  service?: ReviewTag;
+  heading?: string;
+  /** Reviewer names already shown elsewhere on the page */
+  exclude?: string[];
+}
+const { service, heading, exclude } = Astro.props;
+const reviews = service ? reviewsFor(service, { exclude }) : undefined;
 ---
 
 <section class="reviews-static-wrapper">
-  <StaticReviews client:load />
+  <StaticReviews client:load reviews={reviews} heading={heading} />
 </section>
