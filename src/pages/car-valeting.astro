@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../sections/Navbar';
+import { HeroStats } from '../sections/Hero/components/HeroStats';
+import PackagePicker from '../sections/PackagePicker.astro';
+import ServiceFAQSection from '../sections/ServiceFAQSection.astro';
+import TrainingTrustSection from '../sections/TrainingTrustSection.astro';
+import { ServiceAreasSection } from '../sections/ServiceAreasSection';
+import ReviewsSection from '../sections/ReviewsSection.astro';
+import { QuoteSection } from '../sections/QuoteSection';
+import { FooterSection } from '../sections/FooterSection';
+
+const faqs = [
+  { question: "How much does a car valet cost?", answer: "Our Exterior Safe Wash starts from £50, a Maintenance Valet (inside and out) from £90 and a Full Valet from £170. Prices depend on vehicle size, and very dirty vehicles may need a quote." },
+  { question: "Do you offer mobile valeting?", answer: "Yes. Mobile valets are available seasonally, weather permitting, across Killearn, Loch Lomond, Bearsden, Milngavie and Glasgow North & West. We bring our own power and water. Send us your postcode and we'll confirm we can reach you." },
+  { question: "What's the difference between a valet and a detail?", answer: "A valet cleans the car inside and out and adds short-term protection. Detailing goes further, with machine polishing to remove swirls and scratches and a ceramic coating to protect the paint for one to three years." },
+  { question: "Which valet should I book?", answer: "If the car hasn't had a proper clean in a while, start with a Full Valet. After that, a Maintenance Valet every 3–8 weeks keeps it at that standard (the Maintenance Valet is for cars that have had a Full Valet, maintenance valet or paint enhancement in the last 2–8 weeks). If the inside is already tidy and you just want the outside done safely, book the Exterior Safe Wash." },
+  { question: "How long does a valet take?", answer: "An Exterior Safe Wash takes about 1.5–2 hours, a Maintenance Valet about 2.5–3 hours and a Full Valet about 4–5 hours." },
+  { question: "Can you valet a ceramic-coated car?", answer: "Yes. We use coating-safe products and a contact-safe wash method, which helps a ceramic coating keep its gloss and water-beading for longer." },
+];
+---
+
+<Layout
+  title="Car Valeting Glasgow | Mobile & Full Valets from £50 | Double O"
+  description="Car valeting in Glasgow North & West, Bearsden, Milngavie and Loch Lomond. Mobile safe wash from £50, maintenance valet from £90 and full valet from £170."
+  canonical="https://doubleodetailing.co.uk/car-valeting"
+>
+  <div class="min-h-screen bg-neutral-100 font-figtree text-black text-sm leading-5 antialiased">
+    <Navbar client:load />
+    <main class="pt-0">
+      <section class="relative text-white overflow-hidden min-h-screen">
+        <div class="absolute inset-0">
+          <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url(&quot;/Deep clean detailing.webp&quot;);" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
+        <div class="relative mx-auto flex min-h-screen w-full max-w-[1204px] flex-col justify-end px-5 pb-8 pt-32 md:px-8 md:pb-12 md:pt-28 supports-[min-height:100dvh]:min-h-[100dvh]">
+          <div class="items-start box-border gap-x-10 flex flex-col justify-between gap-y-10 md:items-end md:gap-x-[60px] md:flex-row md:gap-y-[60px] w-full">
+            <div class="box-border basis-[0%] grow max-w-[650px] pt-24 md:pt-32">
+              <div class="box-border gap-x-4 flex flex-col gap-y-4">
+                <h1 class="text-[44px] font-bold box-border tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase">
+                  <div>Car Valeting</div>
+                  <div class="text-gray-400">Glasgow</div>
+                </h1>
+                <p class="text-base leading-[26px] md:text-lg font-figtree">
+                  Mobile and full car valets across Glasgow North &amp; West, Bearsden, Milngavie and Loch Lomond, from £50. Safe hand-wash methods, proper interior cleaning and paint protection on every valet.
+                </p>
+              </div>
+              <div class="items-center box-border gap-x-5 flex flex-wrap gap-y-5 mt-6 md:gap-x-6 md:gap-y-6 md:mt-7">
+                <a href="https://clienthub.getjobber.com/hubs/a44bef51-533c-4e99-b56c-1a3b824ae502/public/requests/5099095/new" target="_blank" rel="noopener noreferrer" class="text-black items-center bg-cta box-border gap-x-5 flex max-w-full gap-y-5 text-center border pl-6 pr-1 py-1 rounded-[100px] border-solid border-transparent hover:bg-white hover:border-cta-dark">
+                  <span class="relative text-sm font-medium z-[2] md:text-base md:leading-6">BOOK NOW</span>
+                  <span class="text-white items-center bg-[#8B6B3D] box-border flex h-12 justify-center w-12 overflow-hidden rounded-[50%]">
+                    <img src="https://c.animaapp.com/mhnzg6knJo6lE7/assets/icon-4.svg" alt="" class="h-3.5 w-3.5" style="filter: brightness(0) saturate(100%) invert(78%) sepia(45%) saturate(500%) hue-rotate(330deg) brightness(110%) contrast(85%)" />
+                  </span>
+                </a>
+                <a href="#choose-package" class="relative items-center box-border gap-x-2 flex max-w-full gap-y-2 overflow-hidden">
+                  <span class="text-[15px] font-medium leading-6 md:text-base">Choose Your Valet</span>
+                  <span class="relative h-6 w-6 overflow-hidden">
+                    <img src="https://c.animaapp.com/mhnzg6knJo6lE7/assets/icon-5.svg" alt="" class="h-full w-full" />
+                  </span>
+                  <span class="absolute bg-white box-border h-px bottom-0 inset-x-0" />
+                </a>
+              </div>
+            </div>
+            <HeroStats client:load />
+          </div>
+      </section>
+
+      <PackagePicker
+        heading="Choose your valet"
+        intro="Three valets, from a quick safe wash to a full interior and exterior reset. Every one includes paint protection, and all prices are for a small car."
+        muted
+        picks={[
+          { id: "007", reason: "Exterior only. A safe contact wash, wheels and arches cleaned, and 3-month paint protection. For cars that are tidy inside." },
+          { id: "spectre", label: "For regular care", reason: "Inside and out, every 3–8 weeks, for cars that have had a Full Valet, maintenance valet or paint enhancement in the last 2–8 weeks. Keeps a family car or daily driver at a consistently high standard." },
+          { id: "shaken-not-stirred", reason: "The full valet: decontamination, carpets and mats shampooed, seats and interior detailed, and 6-month paint protection." },
+        ]}
+      />
+
+      <section class="bg-white box-border py-[60px] md:py-[100px]">
+        <div class="box-border max-w-[1204px] mx-auto px-5 md:px-8 grid gap-10 md:grid-cols-2">
+          <div>
+            <h2 class="font-refrigerator uppercase text-3xl font-bold tracking-[-0.52px] leading-tight md:text-5xl md:leading-tight">A valet, done properly</h2>
+            <div class="mt-4 flex flex-col gap-y-4 text-[15px] leading-6 text-gray-700 md:text-base">
+              <p>Most swirl marks on dark cars come from washing, not driving. Brush car washes and a single dirty sponge drag grit across the paint. Every Double O valet uses a pre-wash, a two-bucket contact wash and plush drying towels with air-assisted drying, so the car comes back cleaner without picking up new marks.</p>
+              <p>Inside, we vacuum the boot and footwells properly, blow dust out of vents and seams, clean every surface and dress it with UV protection. The Full Valet goes further, shampooing and extracting carpets and mats.</p>
+            </div>
+          </div>
+          <div>
+            <h2 class="font-refrigerator uppercase text-3xl font-bold tracking-[-0.52px] leading-tight md:text-5xl md:leading-tight">Mobile or at our unit</h2>
+            <div class="mt-4 flex flex-col gap-y-4 text-[15px] leading-6 text-gray-700 md:text-base">
+              <p>Mobile valets are available seasonally, weather permitting, at your home or workplace across Glasgow North &amp; West, Bearsden, Milngavie, Bishopbriggs, Dumbarton, Helensburgh and Loch Lomond. We bring our own power and water.</p>
+              <p>If the paint needs more than a clean, with swirls, scratches or fading, have a look at <a href="/machine-polishing/" class="underline">paint correction</a> or <a href="/ceramic-coatings/" class="underline">ceramic coating</a>. Add <a href="/headlight-restoration/" class="underline">headlight restoration</a> or <a href="/engine-bay-detailing/" class="underline">an engine bay clean</a> to any valet.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <ServiceFAQSection heading="Car valeting FAQs" groups={[{ faqs }]} />
+      <TrainingTrustSection />
+      <ServiceAreasSection client:load />
+      <ReviewsSection title="Reviews" />
+      <QuoteSection client:load showTerms={false} />
+      <FooterSection client:load />
+    </main>
+  </div>
+</Layout>

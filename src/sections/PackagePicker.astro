@@ -1,0 +1,82 @@
+---
+/**
+ * "Choose your package" funnel block. Every service page ends visitors on one
+ * of the packages: each card links to the package page and straight to booking.
+ * Prices, duration and images come from src/data/packages.ts.
+ */
+import { packagesData, getPricingRows } from "../data/packages";
+
+interface Props {
+  heading: string;
+  intro?: string;
+  /** Package ids in display order, each with a one-line reason it fits this page */
+  picks: { id: string; reason: string; label?: string }[];
+  id?: string;
+  muted?: boolean;
+}
+
+const { heading, intro, picks, id = "choose-package", muted = false } = Astro.props;
+const BOOK_URL =
+  "https://clienthub.getjobber.com/hubs/a44bef51-533c-4e99-b56c-1a3b824ae502/public/requests/5099095/new";
+const sentence = (t: string) => t.charAt(0) + t.slice(1).toLowerCase();
+const title = (t: string) => t.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+
+const cards = picks
+  .map((p) => {
+    const pkg = packagesData.find((x) => x.id === p.id);
+    if (!pkg) return null;
+    const from = getPricingRows(pkg)[0]?.prices.small;
+    return {
+      ...p,
+      name: sentence(pkg.title),
+      tagline: pkg.tagline ? title(pkg.tagline) : "",
+      from,
+      duration: pkg.durationDisplay ?? pkg.serviceTime ?? "",
+      image: pkg.imageUrl,
+      href: `/packages/${pkg.category}/${pkg.id}/`,
+    };
+  })
+  .filter(Boolean) as any[];
+---
+
+<section id={id} class:list={["box-border py-[60px] md:py-[100px] scroll-mt-24", muted ? "bg-neutral-100" : "bg-white"]}>
+  <div class="box-border max-w-[1204px] mx-auto px-5 md:px-8">
+    <div class="inline-block border border-black/20 px-3 py-1 rounded-[1000px] mb-4">
+      <span class="font-medium leading-[22px]">Packages</span>
+    </div>
+    <h2 class="font-refrigerator uppercase text-3xl font-bold tracking-[-0.52px] leading-tight md:text-5xl md:leading-tight max-w-[820px]">
+      {heading}
+    </h2>
+    {intro && <p class="text-[15px] leading-6 text-gray-700 md:text-base mt-4 max-w-[720px]">{intro}</p>}
+    <div class:list={["grid gap-4 md:gap-6 mt-8 md:mt-10", cards.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3"]}>
+      {cards.map((c) => (
+        <article class="flex flex-col rounded-2xl overflow-hidden border border-neutral-200 bg-white">
+          {c.image && (
+            <a href={c.href} class="block aspect-[16/10] overflow-hidden bg-neutral-200">
+              <img src={c.image} alt={`${c.name} package`} loading="lazy" decoding="async" class="w-full h-full object-cover" />
+            </a>
+          )}
+          <div class="flex flex-col grow p-6">
+            {c.label && <span class="self-start text-xs font-semibold uppercase tracking-wide bg-black text-white rounded-full px-3 py-1 mb-3">{c.label}</span>}
+            <p class="text-sm text-gray-500 font-medium">{c.tagline}</p>
+            <h3 class="font-refrigerator uppercase text-2xl font-bold mt-1">
+              <a href={c.href} class="hover:underline">{c.name}</a>
+            </h3>
+            <p class="mt-1 font-medium">
+              {c.from?.startsWith("£") ? `From ${c.from}` : "Price on quote"}
+              {c.duration && <span class="text-gray-500 font-normal"> · {c.duration}</span>}
+            </p>
+            <p class="mt-3 text-[15px] leading-6 text-gray-700 grow">{c.reason}</p>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" class="bg-cta-dark text-white border border-cta-dark rounded-full px-5 py-3 text-sm font-medium hover:bg-white hover:text-cta-dark transition">Book this package</a>
+              <a href={c.href} class="border border-cta-dark text-cta-dark rounded-full px-5 py-3 text-sm font-medium hover:bg-cta-dark hover:text-white transition">See what's included</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+    <p class="mt-6 text-[15px] text-gray-700">
+      Not sure which one? <a href="/packages/find-my-package/" class="underline font-medium">Answer a few questions</a> and we'll suggest a package, or <a href="/packages/" class="underline font-medium">compare every package and price</a>.
+    </p>
+  </div>
+</section>

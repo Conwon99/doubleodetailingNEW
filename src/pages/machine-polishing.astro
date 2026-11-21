@@ -1,4 +1,5 @@
 ---
+import PackagePicker from '../sections/PackagePicker.astro';
 import Layout from '../layouts/Layout.astro';
 import { Navbar } from '../sections/Navbar';
 import { HeroStats } from '../sections/Hero/components/HeroStats';
@@ -87,6 +88,15 @@ import { FooterSection } from '../sections/FooterSection';
             { question: "Is car polishing the same as paint correction?", answer: "Paint correction is machine polishing done to remove defects such as swirl marks, wash marring and light scratches, rather than just adding shine. Our gloss enhancement is a lighter polish for paint in good condition; single-stage paint correction removes more defects." },
           ] },
           { title: "Booking", faqs: [{ question: "Can you polish my car at my home or workplace?", answer: "Often, yes. Mobile appointments are available seasonally, weather permitting, and we bring our own power and water. Three-year ceramic coatings are carried out at our Killearn unit because they need overnight curing." }] },
+        ]}
+      />
+
+      <PackagePicker
+        heading="Book your paint correction"
+        intro="Both packages include full paint preparation and 12-month ceramic protection, with 2-year and 3-year coating upgrades. We confirm which one suits your paint after an inspection."
+        picks={[
+          { id: "no-time-to-die", reason: "Gloss enhancement (minor paint correction) for newer or well-kept paint with light haze and fine swirls." },
+          { id: "casino-royale", label: "Most correction", reason: "Single-stage paint correction for visibly swirled, dull or weathered paint that needs real defect removal." },
         ]}
       />
 
