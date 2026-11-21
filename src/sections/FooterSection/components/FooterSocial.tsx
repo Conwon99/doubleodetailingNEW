@@ -1,4 +1,7 @@
+import { usePhoneNumber } from '../../../hooks/usePhoneNumber';
+
 export const FooterSocial = () => {
+  const { phoneNumber, phoneHref } = usePhoneNumber();
   return (
     <div className="box-border caret-transparent basis-[100%] md:basis-[0%] md:grow md:max-w-[250px]">
       <div className="text-lg font-medium box-border caret-transparent leading-7 mb-4 md:text-xl md:mb-6">
@@ -12,7 +15,7 @@ export const FooterSocial = () => {
         <div className="text-[15px] box-border caret-transparent leading-6 text-white/80 md:text-base">
           <div className="font-medium text-white mb-1">Phone</div>
           <div><a 
-            href="tel:07768243728" 
+            href={phoneHref} 
             onClick={() => {
               if (typeof window !== 'undefined' && (window as any).gtag) {
                 (window as any).gtag('event', 'phone_nav', {
@@ -22,7 +25,7 @@ export const FooterSocial = () => {
               }
             }}
             className="hover:text-white"
-          >07768 243 728</a></div>
+          >{phoneNumber}</a></div>
         </div>
         <div className="text-[15px] box-border caret-transparent leading-6 text-white/80 md:text-base">
           <div className="font-medium text-white mb-1">Service</div>
