@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../sections/Navbar';
+import { QuoteSection } from '../sections/QuoteSection';
+import { FooterSection } from '../sections/FooterSection';
+import { googleReviews, GOOGLE_REVIEW_COUNT, type ReviewTag } from '../data/googleReviews';
+
+const GOOGLE_PROFILE_URL = "https://share.google/WHM6HVMqy1SvwnkkX";
+const tagInfo: Partial<Record<ReviewTag, { label: string; href: string }>> = {
+  "paint-correction": { label: "Paint correction", href: "/machine-polishing/" },
+  ceramic: { label: "Ceramic coating", href: "/ceramic-coatings/" },
+  "full-valet": { label: "Full valet", href: "/deep-cleans/" },
+  maintenance: { label: "Maintenance", href: "/maintenance/" },
+  valeting: { label: "Car valeting", href: "/car-valeting/" },
+  headlight: { label: "Headlight restoration", href: "/headlight-restoration/" },
+  "engine-bay": { label: "Engine bay", href: "/engine-bay-detailing/" },
+  interior: { label: "Interior detailing", href: "/interior-fabric-coating/" },
+};
+const filters = Object.entries(tagInfo).map(([tag, info]) => ({
+  tag,
+  ...info!,
+  count: googleReviews.filter((r) => r.tags.includes(tag as ReviewTag)).length,
+}));
+const bg = ["bg-violet-400", "bg-amber-500", "bg-emerald-500", "bg-sky-500", "bg-rose-400", "bg-teal-500"];
+---
+
+<Layout
+  title="Customer Reviews | 5.0 on Google | Double O Detailing"
+  description={`Read all ${GOOGLE_REVIEW_COUNT} Google reviews for Double O Detailing, rated 5.0. Paint correction, ceramic coating, full valets and maintenance across Glasgow, Stirling and Dunbartonshire.`}
+  canonical="https://doubleodetailing.co.uk/reviews/"
+>
+  <div class="min-h-screen bg-neutral-100 font-figtree text-black text-sm leading-5 antialiased">
+    <Navbar client:load />
+    <main class="pt-0">
+      <section class="pt-[120px] md:pt-[150px] pb-6">
+        <div class="max-w-[1204px] mx-auto px-5 md:px-8">
+          <h1 class="text-[44px] font-bold tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase">Customer reviews</h1>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4">
+            <span class="text-3xl font-bold">5.0</span>
+            <span class="text-yellow-500 text-2xl tracking-wider" aria-hidden="true">★★★★★</span>
+            <span class="text-[15px] text-gray-700 md:text-base">from {GOOGLE_REVIEW_COUNT} Google reviews</span>
+          </div>
+          <p class="text-[15px] leading-6 text-gray-700 mt-4 md:text-base max-w-[720px]">
+            Every review below was left on our Google Business Profile by a customer. Filter by service to see what people say about the work you're interested in.
+          </p>
+          <div class="flex flex-wrap gap-3 mt-6">
+            <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer" class="bg-cta-dark text-white border border-cta-dark rounded-full px-5 py-3 text-sm font-medium hover:bg-white hover:text-cta-dark transition">View on Google</a>
+            <a href="/contact/" class="border border-cta-dark text-cta-dark rounded-full px-5 py-3 text-sm font-medium hover:bg-cta-dark hover:text-white transition">Get a quote</a>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-8" role="group" aria-label="Filter reviews by service">
+            <button type="button" data-filter="all" class="review-filter is-active rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium">All ({googleReviews.length})</button>
+            {filters.map((f) => (
+              <button type="button" data-filter={f.tag} class="review-filter rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium">{f.label} ({f.count})</button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="pb-[60px] md:pb-[100px]">
+        <div class="max-w-[1204px] mx-auto px-5 md:px-8 columns-1 md:columns-2 lg:columns-3 gap-5">
+          {googleReviews.map((r, i) => (
+            <article class="review-card break-inside-avoid mb-5 rounded-xl bg-white border border-neutral-200 p-6" data-tags={r.tags.join(" ")}>
+              <div class="flex items-center gap-3 mb-3">
+                <div class={`w-10 h-10 rounded-full ${bg[i % bg.length]} flex items-center justify-center text-white font-bold shrink-0`}>{r.name.trim().charAt(0).toUpperCase()}</div>
+                <div>
+                  <p class="font-medium text-[15px]">{r.name}</p>
+                  <p class="text-yellow-500 text-sm" aria-label="5 out of 5 stars">★★★★★</p>
+                </div>
+              </div>
+              <p class="text-[15px] leading-6 text-gray-800">{r.text}</p>
+              {r.tags.filter((t) => tagInfo[t]).length > 0 && (
+                <div class="flex flex-wrap gap-2 mt-4">
+                  {r.tags.filter((t) => tagInfo[t]).map((t) => (
+                    <a href={tagInfo[t]!.href} class="text-xs bg-neutral-100 border border-neutral-200 rounded-full px-2.5 py-1 hover:border-black">{tagInfo[t]!.label}</a>
+                  ))}
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
+        <p class="max-w-[1204px] mx-auto px-5 md:px-8 text-sm text-gray-500 mt-2">
+          Reviews copied from our Google Business Profile. One further 5-star review was left without a comment.
+        </p>
+      </section>
+
+      <QuoteSection client:load showTerms={false} />
+      <FooterSection client:load />
+    </main>
+  </div>
+</Layout>
+
+<style>
+  .review-filter.is-active { background: #111; color: #fff; border-color: #111; }
+</style>
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.review-filter');
+  const cards = document.querySelectorAll<HTMLElement>('.review-card');
+  buttons.forEach((b) =>
+    b.addEventListener('click', () => {
+      const f = b.dataset.filter;
+      buttons.forEach((x) => x.classList.toggle('is-active', x === b));
+      cards.forEach((c) => {
+        c.style.display = f === 'all' || (c.dataset.tags || '').split(' ').includes(f!) ? '' : 'none';
+      });
+    })
+  );
+</script>

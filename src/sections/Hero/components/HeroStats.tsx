@@ -1,14 +1,11 @@
 import { GOOGLE_REVIEW_COUNT } from "@/data/business";
-const GOOGLE_PROFILE_URL = "https://share.google/WHM6HVMqy1SvwnkkX";
 
 export const HeroStats = () => {
   return (
     <a
-      href={GOOGLE_PROFILE_URL}
-      target="_blank"
-      rel="noopener noreferrer"
+      href="/reviews/"
       className="backdrop-blur-[21px] bg-[linear-gradient(45deg,rgba(255,255,255,0),rgba(255,255,255,0.33))] box-border caret-transparent gap-x-4 flex blur-0 flex-col w-auto gap-y-4 border p-3 rounded-lg border-solid border-white/20 md:p-4 hover:border-white/40 transition-colors block"
-      aria-label="View our Google reviews (opens in new tab)"
+      aria-label="Read our customer reviews"
     >
       <div className="flex items-center justify-center gap-2 md:gap-3 mb-1.5 md:mb-2">
         <div className="flex-shrink-0">

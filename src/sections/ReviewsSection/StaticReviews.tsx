@@ -142,11 +142,14 @@ export function StaticReviews({ reviews, heading }: { reviews?: ReviewCard[]; he
             </svg>
           </button>
         </div>
-        <p className="mt-8 text-center md:text-left">
-          <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4 hover:text-white/80">
-            Read all {GOOGLE_REVIEW_COUNT} reviews on Google (5.0)
+        <div className="mt-8 flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-3">
+          <a href="/reviews/" className="bg-white text-black rounded-full px-5 py-3 text-sm font-medium hover:bg-white/90 transition">
+            Read all {GOOGLE_REVIEW_COUNT} reviews
           </a>
-        </p>
+          <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4 hover:text-white/80">
+            View on Google (5.0)
+          </a>
+        </div>
       </div>
     </section>
   );
