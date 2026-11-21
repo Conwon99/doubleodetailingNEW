@@ -38,10 +38,10 @@ import { FooterSection } from '../sections/FooterSection';
               <div class="box-border gap-x-4 flex flex-col gap-y-4">
                 <h1 class="text-[44px] font-bold box-border tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase">
                   <div>Paint Correction</div>
-                  <div>and Gloss Enhancements</div>
+                  <div>& Car Polishing</div>
                 </h1>
                 <p class="text-base leading-[26px] md:text-lg font-figtree">
-                  Professional paint correction and gloss enhancement to restore your vehicle's paintwork to showroom condition. We use premium products and proven techniques for lasting results.
+                  Machine polishing from our Killearn unit to remove swirl marks, scratches and dull, oxidised paint. Choose single-stage paint correction or a lighter gloss enhancement (minor paint correction), both finished with ceramic protection.
                 </p>
               </div>
               <div class="items-center box-border gap-x-5 flex flex-wrap gap-y-5 mt-6 md:gap-x-6 md:gap-y-6 md:mt-7">
@@ -71,7 +71,7 @@ import { FooterSection } from '../sections/FooterSection';
 
       <ServiceShowcaseSection id="paint-correction" showcase={paintCorrection} intro="Single-stage paint correction for paintwork with visible swirls, oxidation, wash marring and lighter defects. Our Casino Royale package." />
 
-      <ServiceShowcaseSection id="gloss-enhancement" showcase={glossEnhancement} muted={false} intro="A lighter machine polish for new or well-kept paintwork, refining very fine imperfections and adding gloss before ceramic protection. Our No Time To Die package." />
+      <ServiceShowcaseSection id="gloss-enhancement" showcase={glossEnhancement} muted={false} resultsHeading="Gloss enhancement (minor paint correction)" intro="A lighter machine polish for new or well-kept paintwork, refining very fine imperfections and adding gloss before ceramic protection. Our No Time To Die package." />
 
       <WhyChooseMachinePolishingSection client:load />
 
@@ -82,6 +82,10 @@ import { FooterSection } from '../sections/FooterSection';
         groups={[
           { title: "Paint correction", faqs: paintCorrection.faqs },
           { title: "Gloss enhancement", faqs: glossEnhancement.faqs },
+          { title: "Prices", faqs: [
+            { question: "How much does paint correction cost?", answer: "Single-stage paint correction starts from £350 with 12-month ceramic protection included, rising to £425 with a 2-year coating or £500 with a 3-year coating. Gloss enhancement (minor paint correction) starts from £295. Prices depend on vehicle size and paint condition, and we confirm the price after inspecting the paint." },
+            { question: "Is car polishing the same as paint correction?", answer: "Paint correction is machine polishing done to remove defects such as swirl marks, wash marring and light scratches, rather than just adding shine. Our gloss enhancement is a lighter polish for paint in good condition; single-stage paint correction removes more defects." },
+          ] },
           { title: "Booking", faqs: [{ question: "Can you polish my car at my home or workplace?", answer: "Often, yes. Mobile appointments are available seasonally, weather permitting, and we bring our own power and water. Three-year ceramic coatings are carried out at our Killearn unit because they need overnight curing." }] },
         ]}
       />

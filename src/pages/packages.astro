@@ -9,13 +9,35 @@ import { FooterSection } from '../sections/FooterSection';
 
 <Layout 
   title="Car Detailing Packages & Prices | Double O Detailing"
-  description="View our car detailing packages and pricing: Paint Correction and Gloss Enhancements, Premium Detailing, and Maintenance. Casino Royale, Spectre, 007 and more. Get a quote for your vehicle in Glasgow and Central Scotland."
+  description="Car detailing prices: paint correction from £350, ceramic coating from £295, full valet from £170 and mobile maintenance washes from £50. Killearn and Glasgow North."
   canonical="https://doubleodetailing.co.uk/packages"
 >
   <div class="min-h-screen bg-neutral-100 font-figtree text-black text-sm leading-5 antialiased">
     <Navbar client:load />
     <main class="pt-0">
       <PackagesOverview client:load />
+      <section id="detail-vs-valet" class="bg-white box-border py-[60px] md:py-[100px]">
+        <div class="box-border max-w-[1204px] mx-auto px-5 md:px-8">
+          <h2 class="font-refrigerator uppercase text-3xl font-bold tracking-[-0.52px] leading-tight md:text-5xl md:leading-tight">Detailing vs valeting: which do you need?</h2>
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            <a href="/maintenance/" class="rounded-2xl border border-neutral-200 p-6 hover:border-black transition">
+              <h3 class="font-refrigerator uppercase text-xl font-bold">Mobile valet</h3>
+              <p class="mt-1 font-medium">From £50</p>
+              <p class="mt-3 text-[15px] leading-6 text-gray-700">A safe wash or maintenance clean every 3–8 weeks to keep a car that's already in good condition looking right.</p>
+            </a>
+            <a href="/deep-cleans/" class="rounded-2xl border border-neutral-200 p-6 hover:border-black transition">
+              <h3 class="font-refrigerator uppercase text-xl font-bold">Full valet</h3>
+              <p class="mt-1 font-medium">From £170</p>
+              <p class="mt-3 text-[15px] leading-6 text-gray-700">A deep clean inside and out with decontamination, carpet shampoo and 6-month paint protection. No machine polishing.</p>
+            </a>
+            <a href="/machine-polishing/" class="rounded-2xl border border-neutral-200 p-6 hover:border-black transition">
+              <h3 class="font-refrigerator uppercase text-xl font-bold">Detailing</h3>
+              <p class="mt-1 font-medium">From £295</p>
+              <p class="mt-3 text-[15px] leading-6 text-gray-700">Machine polishing to remove swirls and scratches, finished with a ceramic coating. For paint that needs correcting, not just cleaning.</p>
+            </a>
+          </div>
+        </div>
+      </section>
       <ReviewsSection />
       <QuoteSection client:load showTerms={false} />
       <FooterSection client:load />
