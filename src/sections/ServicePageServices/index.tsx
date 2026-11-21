@@ -47,6 +47,15 @@ export const ServicePageServices = ({ heading = "Browse our services." }: Servic
                 iconAlt="Icon"
               />
               <ServiceCard
+                href="/car-valeting/"
+                imageUrl="/Deep clean detailing.webp"
+                imageSizes="(max-width: 767px) 100vw, 740px"
+                title="Car Valeting"
+                description="Mobile and full car valets from £50, with safe hand-wash methods, proper interior cleaning and paint protection on every valet."
+                iconUrl="https://c.animaapp.com/mkllold3CHU3xz/assets/icon-5.svg"
+                iconAlt="Icon"
+              />
+              <ServiceCard
                 href="/maintenance/"
                 imageUrl="/Maintenance.webp"
                 imageSizes="(max-width: 767px) 100vw, 740px"
@@ -63,7 +72,7 @@ export const ServicePageServices = ({ heading = "Browse our services." }: Servic
               <ul className="space-y-3 list-none pl-0">
                 <li>
                   <span className="font-refrigerator uppercase text-base md:text-lg font-bold text-black">
-                    Headlight Restoration <span className="font-normal normal-case text-[13px] md:text-sm text-gray-600">(Starts from £80)</span>
+                    <a href="/headlight-restoration/" className="underline decoration-1 underline-offset-4 hover:no-underline">Headlight Restoration</a> <span className="font-normal normal-case text-[13px] md:text-sm text-gray-600">(Starts from £80)</span>
                   </span>
                   <span className="font-figtree text-[15px] text-gray-700 leading-6">
                     {" "}
@@ -72,7 +81,7 @@ export const ServicePageServices = ({ heading = "Browse our services." }: Servic
                 </li>
                 <li>
                   <span className="font-refrigerator uppercase text-base md:text-lg font-bold text-black">
-                    Soft Top Clean & Protection <span className="font-normal normal-case text-[13px] md:text-sm text-gray-600">(Starts from £140)</span>
+                    <a href="/soft-top-restoration/" className="underline decoration-1 underline-offset-4 hover:no-underline">Soft Top Clean & Protection</a> <span className="font-normal normal-case text-[13px] md:text-sm text-gray-600">(Starts from £140)</span>
                   </span>
                   <span className="font-figtree text-[15px] text-gray-700 leading-6">
                     {" "}
@@ -81,7 +90,7 @@ export const ServicePageServices = ({ heading = "Browse our services." }: Servic
                 </li>
                 <li>
                   <span className="font-refrigerator uppercase text-base md:text-lg font-bold text-black">
-                    Fabric Coating (Interior) <span className="font-normal normal-case text-[13px] md:text-sm text-gray-600">(Starts from £75)</span>
+                    <a href="/interior-fabric-coating/" className="underline decoration-1 underline-offset-4 hover:no-underline">Fabric Coating (Interior)</a> <span className="font-normal normal-case text-[13px] md:text-sm text-gray-600">(Starts from £75)</span>
                   </span>
                   <span className="font-figtree text-[15px] text-gray-700 leading-6">
                     {" "}
@@ -90,7 +99,7 @@ export const ServicePageServices = ({ heading = "Browse our services." }: Servic
                 </li>
                 <li>
                   <span className="font-refrigerator uppercase text-base md:text-lg font-bold text-black">
-                    Engine Bay Detailing <span className="font-normal normal-case text-[13px] md:text-sm text-gray-600">(Starts from £50)</span>
+                    <a href="/engine-bay-detailing/" className="underline decoration-1 underline-offset-4 hover:no-underline">Engine Bay Detailing</a> <span className="font-normal normal-case text-[13px] md:text-sm text-gray-600">(Starts from £50)</span>
                   </span>
                   <span className="font-figtree text-[15px] text-gray-700 leading-6">
                     {" "}

@@ -1,4 +1,5 @@
 ---
+import PackagePicker from '../sections/PackagePicker.astro';
 import Layout from '../layouts/Layout.astro';
 import { Navbar } from '../sections/Navbar';
 import { HeroStats } from '../sections/Hero/components/HeroStats';
@@ -74,6 +75,15 @@ import { FooterSection } from '../sections/FooterSection';
           { question: "Can you protect the seats and carpets after cleaning?", answer: "Yes. Our interior fabric coating can be added after the clean to help repel spills and stains. See interior fabric coating for details." },
         ] },
       ]} />
+
+      <PackagePicker
+        heading="Book your full valet"
+        intro="Start with a Full Valet to bring the car up to standard, then keep it there with a maintenance valet every few weeks."
+        picks={[
+          { id: "shaken-not-stirred", label: "Start here", reason: "The full interior and exterior reset: decontamination, carpets and mats shampooed and 6-month paint protection. Add engine bay, pet hair or odour treatment." },
+          { id: "spectre", reason: "Afterwards: a maintenance valet every 3–8 weeks keeps the car at the same standard for less." },
+        ]}
+      />
 
       <TrainingTrustSection />
       <ServiceAreasSection client:load />

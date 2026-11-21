@@ -1,4 +1,5 @@
 ---
+import PackagePicker from '../sections/PackagePicker.astro';
 import Layout from '../layouts/Layout.astro';
 import { Navbar } from '../sections/Navbar';
 import { HeroStats } from '../sections/Hero/components/HeroStats';
@@ -13,7 +14,7 @@ import { FooterSection } from '../sections/FooterSection';
 ---
 
 <Layout
-  title="Mobile Car Valeting & Maintenance Washes | Double O Detailing"
+  title="Maintenance Valets & Safe Washes from £50 | Double O Detailing"
   description="Mobile car valeting and maintenance washes from £50 across Killearn, Loch Lomond, Bearsden, Milngavie and Glasgow North. Ideal for ceramic-coated cars. Book online."
   canonical="https://doubleodetailing.co.uk/maintenance"
 >
@@ -30,8 +31,8 @@ import { FooterSection } from '../sections/FooterSection';
             <div class="box-border basis-[0%] grow max-w-[650px] pt-24 md:pt-32">
               <div class="box-border gap-x-4 flex flex-col gap-y-4">
                 <h1 class="text-[44px] font-bold box-border tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase">
-                  <div>Mobile Valeting</div>
-                  <div>& Maintenance</div>
+                  <div>Maintenance</div>
+                  <div>Valets</div>
                 </h1>
                 <p class="text-base leading-[26px] md:text-lg font-figtree">
                   Mobile car valeting and maintenance washes every 3–8 weeks. We come to you across Killearn, Loch Lomond, Bearsden, Milngavie and Glasgow North, bringing our own power and water. The safe way to keep a detailed or ceramic-coated car looking its best.
@@ -61,6 +62,16 @@ import { FooterSection } from '../sections/FooterSection';
       <WhyChooseMaintenanceSection client:load />
       <ProcessSectionMaintenance client:load />
       <MaintenanceFAQ client:load />
+      <PackagePicker
+        heading="Choose your maintenance valet"
+        intro="Maintenance valets keep a car that's already in good condition looking right. If it hasn't had a proper clean recently, start with a Full Valet."
+        picks={[
+          { id: "spectre", label: "Inside and out", reason: "Interior and exterior every 3–8 weeks, for cars that have had a Full Valet, maintenance valet or paint enhancement in the last 2–8 weeks." },
+          { id: "007", reason: "Exterior only. A safe snow foam and two-bucket wash with 3-month paint protection. Ideal weekly, fortnightly or monthly." },
+          { id: "shaken-not-stirred", label: "First visit", reason: "Car not been cleaned properly in a while? Book a Full Valet first, then move onto maintenance." },
+        ]}
+      />
+
       <ServiceAreasSection client:load />
       <ReviewsSection title="Reviews" />
       <QuoteSection client:load showTerms={false} />

@@ -7,6 +7,7 @@ const siteUrl = "https://doubleodetailing.co.uk";
 const staticPages: string[] = [
   "",
   "about",
+  "car-valeting",
   "ceramic-coatings",
   "contact",
   "deep-cleans",

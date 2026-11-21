@@ -1,4 +1,5 @@
 ---
+import PackagePicker from '../sections/PackagePicker.astro';
 import Layout from '../layouts/Layout.astro';
 import { Navbar } from '../sections/Navbar';
 import { HeroStats } from '../sections/Hero/components/HeroStats';
@@ -9,7 +10,6 @@ import { ServiceAreasSection } from '../sections/ServiceAreasSection';
 import ReviewsSection from '../sections/ReviewsSection.astro';
 import { QuoteSection } from '../sections/QuoteSection';
 import { FooterSection } from '../sections/FooterSection';
-import { CrossSell } from '../sections/CrossSell';
 ---
 
 <Layout title="Headlight Restoration Killearn & Glasgow North | Mobile | Double O" description="Mobile headlight restoration from £80. Cloudy and yellowed headlights wet-sanded, polished and sealed with UV protection. Killearn, Loch Lomond, Bearsden and Glasgow North." canonical="https://doubleodetailing.co.uk/headlight-restoration">
@@ -31,8 +31,8 @@ import { CrossSell } from '../sections/CrossSell';
                   <span class="relative text-sm font-medium z-[2] md:text-base md:leading-6">BOOK NOW</span>
                   <span class="text-white items-center bg-[#8B6B3D] box-border flex h-12 justify-center w-12 overflow-hidden rounded-[50%]"><img src="https://c.animaapp.com/mhnzg6knJo6lE7/assets/icon-4.svg" alt="" class="h-3.5 w-3.5" style="filter: brightness(0) saturate(100%) invert(78%) sepia(45%) saturate(500%) hue-rotate(330deg) brightness(110%) contrast(85%)" /></span>
                 </a>
-                <a href="/packages/" class="relative items-center box-border gap-x-2 flex max-w-full gap-y-2 overflow-hidden">
-                  <span class="text-[15px] font-medium leading-6 md:text-base">View Packages</span>
+                <a href="#choose-package" class="relative items-center box-border gap-x-2 flex max-w-full gap-y-2 overflow-hidden">
+                  <span class="text-[15px] font-medium leading-6 md:text-base">Choose a Package</span>
                   <span class="relative h-6 w-6 overflow-hidden"><img src="https://c.animaapp.com/mhnzg6knJo6lE7/assets/icon-5.svg" alt="" class="h-full w-full" /></span>
                   <span class="absolute bg-white box-border h-px bottom-0 inset-x-0" />
                 </a>
@@ -43,8 +43,16 @@ import { CrossSell } from '../sections/CrossSell';
       </section>
       <WhyChooseHeadlightRestorationSection client:load />
       <ProcessSectionHeadlightRestoration client:load />
-      <CrossSell heading="Paint looking as tired as the lights?" intro="Headlights that have gone cloudy usually mean the paint has dulled too. Headlight restoration (from £80) can be added to any of these." />
       <HeadlightRestorationFAQ client:load />
+      <PackagePicker
+        heading="Restore the lights, then the rest of the car"
+        intro="Headlight restoration (from £80) can be booked on its own or added to any package. Cloudy lights usually mean the paint has dulled too."
+        picks={[
+          { id: "shaken-not-stirred", reason: "Add headlight restoration to a Full Valet and get the whole car cleaned, decontaminated and protected in one visit." },
+          { id: "no-time-to-die", reason: "Paint as tired as the lights? A gloss enhancement lifts dull paint and includes 12-month ceramic protection." },
+        ]}
+      />
+
       <ServiceAreasSection client:load />
       <ReviewsSection title="Reviews" />
       <QuoteSection client:load showTerms={false} />

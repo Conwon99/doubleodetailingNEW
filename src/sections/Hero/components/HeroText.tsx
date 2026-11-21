@@ -8,7 +8,7 @@ export const HeroText = () => {
           <div><span className="text-gray-400">Glasgow</span></div>
         </h1>
         <div className="text-base box-border caret-transparent blur-0 leading-[26px] md:text-lg font-figtree">
-          Car detailing, machine polishing and ceramic coating from our Killearn unit, plus mobile valeting covering Loch Lomond, Bearsden, Milngavie and Glasgow West End.
+          Professional car detailing &amp; valeting services covering Glasgow, Stirling and Dunbartonshire. Mobile detailing and valeting available, with our unit based in Killearn.
         </div>
       </div>
       <div className="items-center box-border caret-transparent gap-x-5 flex blur-0 flex-wrap gap-y-5 mt-6 md:gap-x-6 md:gap-y-6 md:mt-7">

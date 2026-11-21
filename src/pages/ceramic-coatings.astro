@@ -1,4 +1,5 @@
 ---
+import PackagePicker from '../sections/PackagePicker.astro';
 import Layout from '../layouts/Layout.astro';
 import { Navbar } from '../sections/Navbar';
 import { HeroStats } from '../sections/Hero/components/HeroStats';
@@ -92,6 +93,15 @@ import { FooterSection } from '../sections/FooterSection';
           { question: "Do you ceramic coat new cars?", answer: "Yes. New cars are ideal for a coating. We usually give the paint a light gloss enhancement first to remove marks from transport and dealer preparation, then apply the coating." },
         ] },
       ]} />
+
+      <PackagePicker
+        heading="Choose your ceramic coating package"
+        intro="Every coating is applied after machine polishing, so the paint is corrected before it's sealed in. Pick the polish level, then choose 12-month, 2-year or 3-year protection when you book."
+        picks={[
+          { id: "no-time-to-die", label: "Best for new cars", reason: "Gloss enhancement plus ceramic coating. Ideal for new or well-kept cars: from £295 with 12-month protection, £370 for 2-year and £445 for 3-year." },
+          { id: "casino-royale", reason: "Single-stage paint correction plus ceramic coating for swirled or dull paint: from £350 with 12-month protection, £425 for 2-year and £500 for 3-year." },
+        ]}
+      />
 
       <TrainingTrustSection />
 
