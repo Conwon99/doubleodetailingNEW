@@ -21,6 +21,8 @@ export type LocationContent = {
   /** Straight-line distance from the Killearn workshop, in miles */
   milesFromWorkshop: number;
   heading: string;
+  /** Optional hand-written meta description (otherwise built from the copy) */
+  metaDescription?: string;
   paragraphs: string[];
   /** Service slugs most relevant to this town, linked from the page */
   focusServices: string[];
@@ -106,6 +108,39 @@ export const locationContent: Record<string, LocationContent> = {
       "Being right on the water, cars here are exposed to salt air all year as well as to road salt in winter, and that speeds up corrosion on exposed metal and fading on soft tops and trim. We pay extra attention to the underside of the arches and the brightwork, and for convertibles a soft top clean and re-proof is worth doing every year.",
     ],
     focusServices: ["soft-top-restoration", "ceramic-coatings", "deep-cleans"],
+    recentJobs: [],
+  },
+  alexandria: {
+    milesFromWorkshop: 9,
+    heading: "Detailing in Alexandria and the Vale of Leven",
+    metaDescription: "Car detailing and valeting in Alexandria and the Vale of Leven: full valets from £170 with carpet shampoo, pet hair removal and odour treatment. 9 miles from Killearn.",
+    paragraphs: [
+      "Alexandria is in the Vale of Leven, between Balloch and Dumbarton, about nine miles west of our Killearn workshop.",
+      "If your car doubles as dog transport for walks along the River Leven or up to the loch, the inside probably needs more work than the outside. Our full valet shampoos and extracts the carpets and mats and detail-cleans the seats, with pet hair removal and an ozone odour treatment available as add-ons. An interior fabric coating afterwards makes the next round of muddy paws far easier to clean up.",
+    ],
+    focusServices: ["deep-cleans", "interior-fabric-coating", "maintenance"],
+    recentJobs: [],
+  },
+  bishopbriggs: {
+    milesFromWorkshop: 10.7,
+    heading: "Detailing in Bishopbriggs",
+    metaDescription: "Mobile car valeting and detailing in Bishopbriggs, Kirkintilloch and Lenzie. Headlight restoration from £80, maintenance valets from £50 and full valets from £170.",
+    paragraphs: [
+      "Bishopbriggs is on the north edge of Glasgow, about eleven miles south-east of our Killearn workshop, and we also cover nearby Kirkintilloch, Lenzie and Torrance.",
+      "Cars here tend to rack up motorway miles on the M80 and through the city, which means traffic film, brake dust baked onto the wheels and headlights that have gone yellow and cloudy. Headlight restoration brings cloudy lenses back to clear, and a mobile maintenance valet every few weeks keeps a daily driver clean without having to go near a brush car wash.",
+    ],
+    focusServices: ["headlight-restoration", "maintenance", "deep-cleans"],
+    recentJobs: [],
+  },
+  stirling: {
+    milesFromWorkshop: 17.5,
+    heading: "Detailing for Stirling and Stirlingshire",
+    metaDescription: "Car detailing for Stirling and Stirlingshire: paint correction from £350 and ceramic coatings from £295 at our Killearn unit, 30 minutes away on the A811.",
+    paragraphs: [
+      "Stirling is about half an hour from our Killearn workshop along the A811, so it's an easy drive for customers in the city as well as Bridge of Allan, Dunblane, Kippen and Gargunnock.",
+      "Paint correction and three-year ceramic coatings are done at our Killearn unit, because the car needs to stay indoors overnight while the coating cures. That makes it a good fit for Stirling customers who want a proper result rather than a quick wash, especially on cars that do a lot of M9 and A84 miles and come back swirled, tar-spotted and dull. Mobile valets and maintenance visits in Stirling depend on our schedule, so send us your postcode and we'll confirm.",
+    ],
+    focusServices: ["machine-polishing", "ceramic-coatings", "headlight-restoration"],
     recentJobs: [],
   },
 };

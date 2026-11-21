@@ -264,8 +264,6 @@
 /balmaha/*  /locations/  301
 /gartocharn  /locations/  301
 /gartocharn/*  /locations/  301
-/alexandria  /locations/  301
-/alexandria/*  /locations/  301
 /rhu  /locations/  301
 /rhu/*  /locations/  301
 /cardross  /locations/  301
@@ -282,10 +280,6 @@
 /jordanhill/*  /locations/  301
 /hyndland  /locations/  301
 /hyndland/*  /locations/  301
-/stirling  /locations/  301
-/stirling/*  /locations/  301
-/bishopbriggs  /locations/  301
-/bishopbriggs/*  /locations/  301
 /lennoxtown  /locations/  301
 /lennoxtown/*  /locations/  301
 

@@ -28,6 +28,9 @@ const TOWNS_WITH_PAGES = [
   "balfron",
   "bearsden",
   "milngavie",
+  "alexandria",
+  "bishopbriggs",
+  "stirling",
 ];
 
 export const WORKSHOP_BASE = "Killearn";
@@ -60,11 +63,31 @@ export const locationRegions: { name: string; slugs: string[] }[] = [
   },
   {
     name: "Glasgow North & West",
-    slugs: ["bearsden", "milngavie", "jordanhill", "hyndland"],
+    slugs: ["bearsden", "milngavie", "bishopbriggs", "jordanhill", "hyndland"],
+  },
+  {
+    name: "Stirling",
+    slugs: ["stirling"],
   },
 ];
 
 export const locations: Location[] = [
+  {
+    slug: "stirling",
+    name: "Stirling",
+    addressLocality: "Stirling",
+    region: "Stirling",
+    geo: { latitude: "56.1165", longitude: "-3.9369" },
+    neighborhoods: ["Bridge of Allan", "Dunblane", "Gargunnock", "Kippen"],
+  },
+  {
+    slug: "bishopbriggs",
+    name: "Bishopbriggs",
+    addressLocality: "East Dunbartonshire",
+    region: "Glasgow North & West",
+    geo: { latitude: "55.9061", longitude: "-4.2250" },
+    neighborhoods: ["Kirkintilloch", "Lenzie", "Torrance", "Milngavie"],
+  },
   {
     slug: "killearn",
     name: "Killearn",
