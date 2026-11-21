@@ -2,6 +2,16 @@ import { useState } from "react";
 
 const faqs: { question: string; answer: string }[] = [
   {
+    question: "How much does a mobile valet cost?",
+    answer:
+      "Our Exterior Safe Wash (007) starts from £50 and our Maintenance Detail (Spectre), which covers the interior as well, starts from £90. Prices depend on vehicle size.",
+  },
+  {
+    question: "Do you maintain ceramic-coated cars?",
+    answer:
+      "Yes. Our maintenance washes use coating-safe products and methods, which helps a ceramic coating keep its gloss and water-beading for longer.",
+  },
+  {
     question: "What is a maintenance package?",
     answer:
       "Maintenance packages are designed to keep your vehicle looking good between full details. They typically include a thorough wash, light decontamination, protection top-up (sealant/wax), and an interior refresh. They help preserve the results of a previous detail or coating.",

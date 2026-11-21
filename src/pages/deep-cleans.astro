@@ -4,7 +4,10 @@ import { Navbar } from '../sections/Navbar';
 import { HeroStats } from '../sections/Hero/components/HeroStats';
 import { WhyChooseDeepCleanSection } from '../sections/CoreValuesSection/WhyChooseDeepCleanSection';
 import { ProcessSectionDeepClean } from '../sections/ProcessSection/ProcessSectionDeepClean';
-import { DeepCleanFAQ } from '../sections/FAQSection/DeepCleanFAQ';
+import ServiceShowcaseSection from '../sections/ServiceShowcaseSection.astro';
+import TrainingTrustSection from '../sections/TrainingTrustSection.astro';
+import ServiceFAQSection from '../sections/ServiceFAQSection.astro';
+import { fullDetail } from '../data/serviceShowcase';
 import { ServiceAreasSection } from '../sections/ServiceAreasSection';
 import ReviewsSection from '../sections/ReviewsSection.astro';
 import { PackageCategorySection } from '../sections/PackageCategorySection';
@@ -13,8 +16,8 @@ import { FooterSection } from '../sections/FooterSection';
 ---
 
 <Layout
-  title="Full Car Detail with Paint Protection | Double O Detailing"
-  description="Our most comprehensive deep clean. A thorough interior and exterior detail with decontamination and long-lasting protection. Mobile service across Glasgow and Central Scotland."
+  title="Full Valet & Car Detailing Killearn & Glasgow North | Double O"
+  description="A premium full valet from £170: interior deep clean, carpet shampoo, decontamination and 6-month paint protection. Killearn unit and mobile valeting across Glasgow North."
   canonical="https://doubleodetailing.co.uk/deep-cleans"
 >
   <div class="min-h-screen bg-neutral-100 font-figtree text-black text-sm leading-5 antialiased">
@@ -30,11 +33,11 @@ import { FooterSection } from '../sections/FooterSection';
             <div class="box-border basis-[0%] grow max-w-[650px] pt-24 md:pt-32">
               <div class="box-border gap-x-4 flex flex-col gap-y-4">
                 <h1 class="text-[44px] font-bold box-border tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase">
-                  <div>Full Detail</div>
-                  <div>& Protection</div>
+                  <div>Full Valet &</div>
+                  <div>Car Detailing</div>
                 </h1>
                 <p class="text-base leading-[26px] md:text-lg font-figtree">
-                  Our most comprehensive deep clean. A thorough interior and exterior detail with decontamination and long-lasting protection to restore your vehicle's appearance inside and out.
+                  Our Full Detail is a premium full valet: a deep interior clean with carpets and mats shampooed, a full exterior decontamination and 6-month paint protection. Available at our Killearn unit or as a mobile valet across Glasgow North.
                 </p>
               </div>
               <div class="items-center box-border gap-x-5 flex flex-wrap gap-y-5 mt-6 md:gap-x-6 md:gap-y-6 md:mt-7">
@@ -45,7 +48,7 @@ import { FooterSection } from '../sections/FooterSection';
                   </span>
                 </a>
                 <a href="#packages" class="relative items-center box-border gap-x-2 flex max-w-full gap-y-2 overflow-hidden">
-                  <span class="text-[15px] font-medium leading-6 md:text-base">View Premium Detailing Packages</span>
+                  <span class="text-[15px] font-medium leading-6 md:text-base">View Full Valet Packages</span>
                   <span class="relative h-6 w-6 overflow-hidden">
                     <img src="https://c.animaapp.com/mhnzg6knJo6lE7/assets/icon-5.svg" alt="" class="h-full w-full" />
                   </span>
@@ -58,9 +61,21 @@ import { FooterSection } from '../sections/FooterSection';
       </section>
 
       <PackageCategorySection client:load categoryId="deep-clean" embedded heading="Full detail packages" />
+
+      <ServiceShowcaseSection id="results" showcase={fullDetail} intro="A comprehensive interior and exterior detail for vehicles that need more than a maintenance wash, without machine polishing." />
       <WhyChooseDeepCleanSection client:load />
       <ProcessSectionDeepClean client:load />
-      <DeepCleanFAQ client:load />
+      <ServiceFAQSection heading="Full valet & detail FAQs" groups={[
+        { faqs: fullDetail.faqs },
+        { title: "Valeting", faqs: [
+          { question: "Is a Full Detail the same as a full valet?", answer: "It's a more thorough version of one. A typical full valet is a wash, hoover and wipe-down; our Full Detail adds chemical decontamination (tar, iron and sap removal), carpet and mat shampoo and extraction, door shuts, and 6-month paint protection." },
+          { question: "How much does a full valet cost?", answer: "Our Full Detail starts from £170 for a small car, £185 medium, £200 large and £230 for vans and 7-seaters. Very dirty vehicles, excessive pet hair or odours may need a separate quote." },
+          { question: "Can you remove pet hair and odours?", answer: "Yes. Excessive pet hair removal and ozone odour treatment are available as add-ons to a Full Detail, priced on inspection." },
+          { question: "Can you protect the seats and carpets after cleaning?", answer: "Yes. Our interior fabric coating can be added after the clean to help repel spills and stains. See interior fabric coating for details." },
+        ] },
+      ]} />
+
+      <TrainingTrustSection />
       <ServiceAreasSection client:load />
       <ReviewsSection title="Reviews" />
       <QuoteSection client:load showTerms={false} />

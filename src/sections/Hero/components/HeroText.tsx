@@ -3,12 +3,12 @@ export const HeroText = () => {
     <div className="box-border caret-transparent basis-[0%] grow max-w-[650px]">
       <div className="box-border caret-transparent gap-x-4 flex flex-col gap-y-4">
         <h1 className="text-[44px] font-bold box-border caret-transparent blur-0 tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase">
-          <div>Premium Vehicle</div>
-          <div>Detailing</div>
-          <div><span className="text-gray-400">Killearn &amp; Glasgow North</span></div>
+          <div>Car Detailing</div>
+          <div>&amp; Valeting</div>
+          <div><span className="text-gray-400">Glasgow</span></div>
         </h1>
         <div className="text-base box-border caret-transparent blur-0 leading-[26px] md:text-lg font-figtree">
-          Professional vehicle detailing - mobile services covering Loch Lomond, Glasgow West End & surrounding areas. Workshop based in Killearn.
+          Car detailing, machine polishing and ceramic coating from our Killearn unit, plus mobile valeting covering Loch Lomond, Bearsden, Milngavie and Glasgow West End.
         </div>
       </div>
       <div className="items-center box-border caret-transparent gap-x-5 flex blur-0 flex-wrap gap-y-5 mt-6 md:gap-x-6 md:gap-y-6 md:mt-7">

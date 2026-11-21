@@ -1,0 +1,130 @@
+---
+/**
+ * Before & after, recent jobs and testimonials for a service.
+ * Data: src/data/serviceShowcase.ts
+ */
+import type { ServiceShowcase } from "../data/serviceShowcase";
+
+interface Props {
+  showcase: ServiceShowcase;
+  /** Anchor id for the block, e.g. "gloss-enhancement" */
+  id?: string;
+  /** Optional intro shown under the first heading */
+  intro?: string;
+  /** Set false to use a white background (alternating blocks) */
+  muted?: boolean;
+  /** Heading for the image block (default "{label}: before & after") */
+  resultsHeading?: string;
+}
+
+const { showcase, id, intro, muted = true, resultsHeading } = Astro.props;
+const label = showcase.label;
+const lower = label.toLowerCase();
+---
+
+<section id={id} class:list={["box-border py-[60px] md:py-[100px] scroll-mt-24", muted ? "bg-neutral-100" : "bg-white"]}>
+  <div class="box-border w-full max-w-[1204px] mx-auto px-5 md:px-8 flex flex-col gap-y-16 md:gap-y-24">
+    {/* Before & after */}
+    {showcase.beforeAfter.length > 0 && (
+      <div class="flex flex-col gap-y-8">
+        <div class="max-w-[720px]">
+          <div class="inline-block border border-black/20 px-3 py-1 rounded-[1000px] mb-4">
+            <span class="font-medium leading-[22px]">Results</span>
+          </div>
+          <h2 class="font-refrigerator uppercase text-3xl font-bold tracking-[-0.52px] leading-tight md:text-5xl md:leading-tight">
+            {resultsHeading ?? `${label}: before & after`}
+          </h2>
+          {intro && <p class="text-[15px] leading-6 text-gray-700 md:text-base mt-4">{intro}</p>}
+        </div>
+        <div class:list={["grid gap-4 md:gap-6", showcase.beforeAfter.length === 1 ? "grid-cols-1 max-w-[720px]" : showcase.beforeAfter.length === 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1 sm:grid-cols-3"]}>
+          {showcase.beforeAfter.map((im) => (
+            <figure class="rounded-2xl overflow-hidden bg-black">
+              <img src={im.src} alt={im.alt} width={im.width} height={im.height} loading="lazy" decoding="async" class:list={["w-full block", showcase.beforeAfter.length === 2 ? "aspect-[4/5] object-cover" : "h-auto"]} />
+            </figure>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {/* Recent jobs */}
+    <div class="flex flex-col gap-y-10">
+      <h2 class="font-refrigerator uppercase text-3xl font-bold tracking-[-0.52px] leading-tight md:text-5xl md:leading-tight">
+        Recent {lower} jobs
+      </h2>
+      <div class="flex flex-col gap-y-12 md:gap-y-16">
+        {showcase.jobs.map((job, i) => (
+          <article class:list={["grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-start"]}>
+            <div class:list={["grid gap-3", job.images.length > 1 ? "grid-cols-2" : "grid-cols-1", i % 2 === 1 && "md:order-2"]}>
+              {job.images.map((im, j) => (
+                <img
+                  src={im.src}
+                  alt={im.alt}
+                  width={im.width}
+                  height={im.height}
+                  loading="lazy"
+                  decoding="async"
+                  class:list={[
+                    "w-full rounded-2xl object-cover bg-neutral-200",
+                    job.images.length === 1
+                      ? "aspect-[4/3]"
+                      : job.images.length === 2
+                        ? "aspect-[4/5]"
+                        : j === 0
+                          ? "col-span-2 aspect-[16/10]"
+                          : "aspect-square",
+                  ]}
+                />
+              ))}
+            </div>
+            <div class="flex flex-col gap-y-4">
+              <div>
+                <h3 class="text-2xl font-semibold md:text-[28px] md:leading-9">{job.title}</h3>
+                <p class="text-[15px] font-medium text-amber-700 mt-1">{job.services}</p>
+              </div>
+              <p class="text-[15px] leading-6 text-gray-700 md:text-base">{job.intro}</p>
+              {job.bulletGroups.map((g) => (
+                <div>
+                  {g.heading && <p class="text-[15px] font-semibold mb-2">{g.heading}</p>}
+                  <ul class="flex flex-col gap-y-2">
+                    {g.items.map((item) => (
+                      <li class="flex gap-3 text-[15px] leading-6 text-gray-800 md:text-base">
+                        <svg class="h-5 w-5 shrink-0 mt-0.5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <p class="text-[15px] leading-6 italic text-gray-600 md:text-base border-l-2 border-amber-500 pl-4">{job.outcome}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    {/* Testimonials */}
+    {showcase.testimonials.length > 0 && (
+      <div class="flex flex-col gap-y-8">
+        <h2 class="font-refrigerator uppercase text-3xl font-bold tracking-[-0.52px] leading-tight md:text-5xl md:leading-tight">
+          What {lower} customers say
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {showcase.testimonials.map((t) => (
+            <figure class="bg-black text-white rounded-2xl p-6 md:p-8 flex flex-col gap-y-5">
+              <div class="flex gap-1 text-amber-400" aria-label="5 out of 5 stars">
+                {[0, 1, 2, 3, 4].map(() => (
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.36 1.12l1.07 3.29c.3.92-.76 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.18 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12L2.98 8.72c-.78-.57-.38-1.81.59-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z" /></svg>
+                ))}
+              </div>
+              <blockquote class="text-base leading-7 md:text-lg md:leading-8">“{t.quote}”</blockquote>
+              <figcaption class="mt-auto pt-4 border-t border-amber-500/40 flex flex-wrap items-baseline justify-between gap-2">
+                <span class="font-semibold">{t.name}</span>
+                <span class="text-xs uppercase tracking-[0.15em] text-amber-400">{t.service} · {t.vehicle}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</section>

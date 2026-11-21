@@ -4,7 +4,10 @@ import { Navbar } from '../sections/Navbar';
 import { HeroStats } from '../sections/Hero/components/HeroStats';
 import { WhyChooseCeramicCoatingsSection } from '../sections/CoreValuesSection/WhyChooseCeramicCoatingsSection';
 import { ProcessSectionCeramicCoatings } from '../sections/ProcessSection/ProcessSectionCeramicCoatings';
-import { CeramicCoatingsFAQ } from '../sections/FAQSection/CeramicCoatingsFAQ';
+import ServiceShowcaseSection from '../sections/ServiceShowcaseSection.astro';
+import TrainingTrustSection from '../sections/TrainingTrustSection.astro';
+import ServiceFAQSection from '../sections/ServiceFAQSection.astro';
+import { ceramicCoating } from '../data/serviceShowcase';
 import { ServiceAreasSection } from '../sections/ServiceAreasSection';
 import ReviewsSection from '../sections/ReviewsSection.astro';
 import CeramicPackagesSection from '../sections/CeramicPackagesSection.astro';
@@ -14,7 +17,7 @@ import { FooterSection } from '../sections/FooterSection';
 
 <Layout 
   title="Ceramic Coating Killearn, Bearsden & Glasgow North | Double O Detailing"
-  description="Professional ceramic coating protection for your vehicle. 12-month protection included with polishing, 2-year and 3-year upgrades, UV and chemical resistance, hydrophobic finish. Glasgow and Central Scotland."
+  description="Ceramic coating from our Killearn unit for Bearsden, Milngavie and Glasgow North. 12-month, 2-year and 3-year coatings from £295, applied after machine polishing. New cars welcome."
   canonical="https://doubleodetailing.co.uk/ceramic-coatings"
 >
   <div class="min-h-screen bg-neutral-100 font-figtree text-black text-sm leading-5 antialiased">
@@ -33,8 +36,8 @@ import { FooterSection } from '../sections/FooterSection';
             <div class="box-border basis-[0%] grow max-w-[650px] pt-24 md:pt-32">
               <div class="box-border gap-x-4 flex flex-col gap-y-4">
                 <h1 class="text-[44px] font-bold box-border tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase">
-                  <div>Ceramic</div>
-                  <div>Coatings</div>
+                  <div>Ceramic Coating</div>
+                  <div class="text-gray-400 text-[28px] leading-[34px] md:text-5xl md:leading-[56px]">Killearn, Bearsden & Glasgow North</div>
                 </h1>
                 <p class="text-base leading-[26px] md:text-lg font-figtree">
                   Long-lasting ceramic coating protection for your vehicle. Superior defence against UV, chemicals, and environmental damage with a hydrophobic, easy-to-maintain finish.
@@ -65,11 +68,32 @@ import { FooterSection } from '../sections/FooterSection';
 
       <CeramicPackagesSection />
 
+      <ServiceShowcaseSection id="results" showcase={ceramicCoating} resultsHeading="Ceramic coating in action" intro="CARPRO ceramic coatings applied after machine polishing, with 12-month, 2-year and 3-year protection." />
+
       <WhyChooseCeramicCoatingsSection client:load />
 
       <ProcessSectionCeramicCoatings client:load />
 
-      <CeramicCoatingsFAQ client:load />
+      <section id="new-car-ceramic-coating" class="bg-neutral-100 box-border py-[60px] md:py-[100px] scroll-mt-24">
+        <div class="box-border max-w-[1204px] mx-auto px-5 md:px-8 max-w-[820px]">
+          <div class="inline-block border border-black/20 px-3 py-1 rounded-[1000px] mb-4"><span class="font-medium leading-[22px]">New cars</span></div>
+          <h2 class="font-refrigerator uppercase text-3xl font-bold tracking-[-0.52px] leading-tight md:text-5xl md:leading-tight">New car ceramic coating</h2>
+          <div class="mt-4 flex flex-col gap-y-4 text-[15px] leading-6 text-gray-700 md:text-base">
+            <p>The best time to ceramic coat a car is when it's new, before the first winter. Even new cars often leave the dealer with light marring and holograms from transport and preparation, so we give the paint a <a href="/machine-polishing/#gloss-enhancement" class="underline">gloss enhancement</a> first and then apply the coating.</p>
+            <p>A coating makes the car easier to wash, keeps the gloss for longer and gives some resistance to bird droppings, road salt and UV fading. It doesn't stop stone chips or scratches. Our 12-month package suits most new cars; choose a 2-year or 3-year coating if you plan to keep the car longer. Wheels-off ceramic protection for the wheels and calipers is available at the unit from £125.</p>
+          </div>
+        </div>
+      </section>
+
+      <ServiceFAQSection heading="Ceramic coating FAQs" groups={[
+        { faqs: ceramicCoating.faqs },
+        { title: "Prices", faqs: [
+          { question: "How much does a ceramic coating cost?", answer: "Our ceramic coating packages start from £295 with 12-month protection, £370 for a 2-year coating and £445 for a 3-year coating, all including machine polishing first. Single-stage paint correction with a coating starts from £350. The final price depends on vehicle size and paint condition." },
+          { question: "Do you ceramic coat new cars?", answer: "Yes. New cars are ideal for a coating. We usually give the paint a light gloss enhancement first to remove marks from transport and dealer preparation, then apply the coating." },
+        ] },
+      ]} />
+
+      <TrainingTrustSection />
 
       <ServiceAreasSection client:load />
 

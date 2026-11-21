@@ -31,8 +31,8 @@ export const LocationHero = ({ location }: LocationHeroProps) => {
           <div className="box-border basis-[0%] grow max-w-[650px]">
             <div className="box-border gap-x-4 flex flex-col gap-y-4">
               <h1 className="text-[44px] font-bold box-border tracking-[-1.44px] leading-[52px] md:text-7xl md:leading-[80px] font-refrigerator uppercase">
-                <div>Premium Vehicle</div>
-                <div>Detailing</div>
+                <div>Car Detailing</div>
+                <div>&amp; Valeting</div>
                 <div>
                   <span className="text-gray-400">in {name}</span>
                 </div>
